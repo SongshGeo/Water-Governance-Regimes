@@ -8,24 +8,7 @@ import os
 import pandas as pd
 import numpy as np
 from matplotlib import pyplot as plt
-from constants import UP, MIDDLE, DOWN
 import csv
-
-
-def judge_region(data):
-    up_df = pd.DataFrame(columns=data.columns)
-    mid_df = pd.DataFrame(columns=data.columns)
-    down_df = pd.DataFrame(columns=data.columns)
-    for region, group in data.groupby('分区'):
-        if region in UP:
-            up_df = up_df.append(group)
-        elif region in MIDDLE:
-            mid_df = mid_df.append(group)
-        elif region in DOWN:
-            down_df = down_df.append(group)
-        else:
-            pass
-    return [up_df, mid_df, down_df]
 
 
 
