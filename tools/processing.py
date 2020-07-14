@@ -28,3 +28,14 @@ def pd_read_dbf(io, usecols=False):
             if col not in usecols:
                 df.drop(col, axis=1, inplace=True)
     return df
+
+
+def dbf_data_list(folder_path):
+    """使用保存dbf文件的路径返回所有dbf文件列表
+    folder_path: 装有dbf文件的文件夹"""
+    dbf_files = []
+    full_list = os.listdir(folder_path)
+    for file in full_list:
+        if file.endswith(".dbf"):
+            dbf_files.append(file)
+    return dbf_files
