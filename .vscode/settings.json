@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "D:\\anaconda3.5\\python.exe"
+    "python.pythonPath": "D:\\anaconda3.5\\python.exe",
+    "ltex.ignoreRuleInSentence": [
+        {
+            "rule": "UPPERCASE_SENTENCE_START",
+            "sentence": "^\\Qpnasresearcharticle Water resource utilization regimes at a basin scale: transition framework and development traps\\E$"
+        }
+    ]
 }
