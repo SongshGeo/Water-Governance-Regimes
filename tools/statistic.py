@@ -113,7 +113,7 @@ def Pettitt_change_points(inputdata, p_shr=0.001):
     return change_points
 
 
-def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None, colors=None):
+def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None, colors=None, legend=True, **kargs):
     from scipy import optimize
     def linear(x, k, b):
         return k * x + b
@@ -135,13 +135,14 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
         
         # 绘图
         if colors: 
-            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), color=colors[i-1])  # 源数据散点图
+            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), color=colors[i-1], **kargs)  # 源数据散点图
             ax.plot(xi, y_simu, '--', color=colors[i-1])  # 拟合直线图
         else: 
-            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1])) 
+            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), **kargs) 
             ax.plot(xi, y_simu, '--')
     
-    ax.legend()
+    if legend:
+        ax.legend()
     y_position = ax.get_ylim()[1]
     for cp in change_points:
         ax.axvline(x=cp, ls=":", c="gray", lw=2)
