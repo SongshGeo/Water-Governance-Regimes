@@ -6,6 +6,7 @@
 % {pnasresearcharticle} = Template for a two-column research article
 % {pnasmathematics} %= Template for a one-column mathematics article
 % {pnasinvited} %= Template for a PNAS invited submission
+% \usepackage{cite}
 	
 % 文章标题：“流域尺度的水资源利用体系：过渡框架和发展困局”
 \title{Water resource utilization regimes at a basin scale: transition framework and development traps}
@@ -110,26 +111,12 @@
 \maketitle
 \thispagestyle{firststyle}
 \ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
-
 % If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
 
 % tag 引言第一段
-% 水资源在人类世的重要性，是支持人类社会发展的基础
-\dropcap{W}ater, at “the centre of the planetary drama of the Anthropocene”, 
-is not only essential for myriad Earth system processes,
-but also a key resource supporting development of human societies in various aspects \cite{gleesonIlluminatingWaterCycle2020}.
-% 但同时, 人类的改造也深刻影响了自然水循环过程, 相关变化可能影响人水系统功能的不利转变，并带来发展困局。
-At the same time, however, human's modification has profoundly influenced water processes 
-and related changes may lead to adverse transitions in functions of human-water systems,
-along with various development traps. 
-% 世界上诸多大河流域都是经济和文明发展的中心，同时也是面临人类世压力挑战的主要地区，亟需综合水资源治理以实现可持续发展
-Facing major challenges of the Anthropocene, many of the world's big river basins are also centres of economy and civilization 
-and urgently in need for integrated water resources management toward sustainability. \cite{bestAnthropogenicStressesWorld2019}
-% 因此理解人类社会发展与水资源利用的复杂关系，对此有帮助
-Therefore, understanding the complex relationship between human societies and water resources utilization 
-provides underlying supports to development in a coordinated way, at a basin scale.
+% 水资源在人类世的重要性，是支持人类社会发展的基础。但同时, 人类的改造也深刻影响了自然水循环过程, 相关变化可能影响人水系统功能的不利转变，并带来发展困局。世界上诸多大河流域都是经济和文明发展的中心，同时也是面临人类世压力挑战的主要地区，亟需综合水资源治理以实现可持续发展。因此理解人类社会发展与水资源利用的复杂关系，对此有帮助。
 
-
+\dropcap{W}ater, at “the centre of the planetary drama of the Anthropocene”, is not only essential for myriad Earth system processes, but also a key resource supporting development of human societies in various aspects \cite{gleesonIlluminatingWaterCycle2020}. At the same time, however, human's modification has profoundly influenced water processes and related changes may lead to adverse transitions in functions of human-water systems, along with various development traps \cite{cummingLinkingEconomicGrowth2018}. Facing major challenges of the Anthropocene, many of the world's big river basins are also centres of economy and civilization and urgently in need for integrated water resources management toward sustainability \cite{bestAnthropogenicStressesWorld2019}. Therefore, understanding the complex relationship between human societies and water resources utilization provides underlying supports to development in a coordinated way, at a basin scale\cite{HuangHeFangZongZongHeShiCeShiShiDiaoDuGuGanShuiKu}.
 
 % tag 引言第二段
 % Regime的定义。
