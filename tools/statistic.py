@@ -217,7 +217,7 @@ def ratio_contribution(numerator, denominator, breakpoints=[1978, 1993]):
 
 
     
-def plot_ratio_contribution(contribution_df, ax=None, bar_width=0.4, denominator_label='Denominator', colors=None, denominator_color=None):
+def plot_ratio_contribution(contribution_df, ax=None, bar_width=0.4, denominator_label='Denominator', colors=None, denominator_color=None, legend_loc=1):
     if colors is None:
         colors = ["#0077b6", "#e07a5f", "#f2cc8f","#81b29a"]
     if denominator_color is None:
@@ -234,7 +234,8 @@ def plot_ratio_contribution(contribution_df, ax=None, bar_width=0.4, denominator
                    height=contribution_df.loc['Numerator', period], 
                    label=denominator_label, 
                    width=bar_width, 
-                   color=colors[0])
+                   color=colors[0],
+                   edgecolor='lightgray')
             
         else:  # 分子有多个需要分别计算贡献
             bottom = 0
@@ -246,12 +247,13 @@ def plot_ratio_contribution(contribution_df, ax=None, bar_width=0.4, denominator
                              bottom=bottom, 
                              label=contribution_df.index[j], 
                              width=bar_width, 
-                             color=colors[color_index])
+                             color=colors[color_index], 
+                             edgecolor='lightgray')
                 bottom += height
                 color_index += 1
-        ax.bar(x=denominator_position, height=contribution_df.loc['Denominator', period], width=bar_width, color=denominator_color, label=denominator_label)
+        ax.bar(x=denominator_position, height=contribution_df.loc['Denominator', period], width=bar_width, color=denominator_color, label=denominator_label, edgecolor='lightgray')
         
         if i == 0:
-            ax.legend()
+            ax.legend(loc=legend_loc)
     ax.set_xticks(np.arange(0, len(contribution_df.columns), 1))
     ax.set_xticklabels(contribution_df.columns.tolist())

@@ -39,3 +39,11 @@ def dbf_data_list(folder_path):
         if file.endswith(".dbf"):
             dbf_files.append(file)
     return dbf_files
+
+
+def get_position_by_ratio(ax, x_ratio, y_ratio):
+     x_min, x_max = ax.get_xlim()
+     y_min, y_max = ax.get_ylim()
+     x = (x_max-x_min) * x_ratio + x_min
+     y = (y_max-y_min) * y_ratio + y_min
+     return x, y
