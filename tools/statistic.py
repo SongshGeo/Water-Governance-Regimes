@@ -127,7 +127,7 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
     if ax is None:
         fig, ax = plt.subplots()
     i = 0
-    legend = []
+    legends = []
     for xi, yi in zip(x_arr, y_arr):
         i += 1
         k, b = optimize.curve_fit(linear, xi, yi)[0]  # 最小二乘拟合直线
@@ -136,12 +136,12 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
         
         # 绘图
         if colors: 
-            a = ax.scatter(xi, yi, label='P{}'.format(i), color=colors[i-1], **kargs)  # 源数据散点图
+            a = ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), color=colors[i-1], **kargs)  # 源数据散点图
             ax.plot(xi, y_simu, '--', color=colors[i-1])  # 拟合直线图
         else: 
-            a = ax.scatter(xi, yi, label='P{}'.format(i), **kargs) 
+            a = ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), **kargs) 
             ax.plot(xi, y_simu, '--')
-        legend.append(a)
+        legends.append(a)
     if legend:
         ax.legend()
     y_position = ax.get_ylim()[1]
@@ -151,7 +151,7 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
     if returns == 'slopes':
         return slopes
     elif returns == 'legend':
-        return legend
+        return legends
         
         
 def plot_slopes(slopes, ax=None, colors=None):    
