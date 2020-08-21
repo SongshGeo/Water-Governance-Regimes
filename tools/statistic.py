@@ -113,7 +113,7 @@ def Pettitt_change_points(inputdata, p_shr=0.001):
     return change_points
 
 
-def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None, colors=None, legend=True, **kargs):
+def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None, colors=None, returns='slopes', legend=True, **kargs):
     from scipy import optimize
     def linear(x, k, b):
         return k * x + b
@@ -127,6 +127,7 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
     if ax is None:
         fig, ax = plt.subplots()
     i = 0
+    legend = []
     for xi, yi in zip(x_arr, y_arr):
         i += 1
         k, b = optimize.curve_fit(linear, xi, yi)[0]  # 最小二乘拟合直线
@@ -135,19 +136,22 @@ def plot_pittitt_change_points(series, ax=None, p_shr=0.001, change_points=None,
         
         # 绘图
         if colors: 
-            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), color=colors[i-1], **kargs)  # 源数据散点图
+            a = ax.scatter(xi, yi, label='P{}'.format(i), color=colors[i-1], **kargs)  # 源数据散点图
             ax.plot(xi, y_simu, '--', color=colors[i-1])  # 拟合直线图
         else: 
-            ax.scatter(xi, yi, label='P{}: {}-{}'.format(i, xi[0], xi[-1]), **kargs) 
+            a = ax.scatter(xi, yi, label='P{}'.format(i), **kargs) 
             ax.plot(xi, y_simu, '--')
-    
+        legend.append(a)
     if legend:
         ax.legend()
     y_position = ax.get_ylim()[1]
     for cp in change_points:
         ax.axvline(x=cp, ls=":", c="gray", lw=2)
         # ax.text(cp, y_position, "{}".format(cp), va='top', ha='center')  注释年份
-    return slopes
+    if returns == 'slopes':
+        return slopes
+    elif returns == 'legend':
+        return legend
         
         
 def plot_slopes(slopes, ax=None, colors=None):    
