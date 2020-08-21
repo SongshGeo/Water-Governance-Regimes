@@ -158,10 +158,10 @@ def plot_slopes(slopes, ax=None, colors=None):
     if colors:
         color_list = colors.copy()
         color_list.reverse()
-        slopes.plot.barh(color=color_list, ax=ax)
+        slopes.plot.barh(color=color_list, ax=ax, edgecolor='lightgray')
     else:
-        slopes.plot.barh(color='gray', ax=ax)
-    ax.axvline(x=0, c='gray', lw=2)
+        slopes.plot.barh(color='gray', ax=ax, edgecolor='lightgray')
+    ax.axvline(x=0, c='gray', lw=2, ls="--")
 
     
     
