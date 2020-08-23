@@ -13,45 +13,45 @@ while executing---line 1013 of file pnas-new.bst
 Warning--empty note in wangCOSUSTMs0530Review
 You can't pop an empty literal stack for entry scoonesTransformationsSustainabilityCombining2020a
 while executing---line 1013 of file pnas-new.bst
-You've used 29 entries,
+You've used 30 entries,
             1811 wiz_defined-function locations,
-            673 strings with 12218 characters,
-and the built_in function-call counts, 6372 in all, are:
-= -- 624
-> -- 274
+            682 strings with 12508 characters,
+and the built_in function-call counts, 6590 in all, are:
+= -- 648
+> -- 279
 < -- 0
-+ -- 87
-- -- 58
-* -- 556
-:= -- 999
-add.period$ -- 56
-call.type$ -- 29
-change.case$ -- 29
++ -- 89
+- -- 59
+* -- 575
+:= -- 1032
+add.period$ -- 58
+call.type$ -- 30
+change.case$ -- 30
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 247
-empty$ -- 576
-format.name$ -- 58
-if$ -- 1380
+cite$ -- 31
+duplicate$ -- 256
+empty$ -- 597
+format.name$ -- 59
+if$ -- 1427
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 26
-newline$ -- 117
-num.names$ -- 28
-pop$ -- 39
+int.to.str$ -- 30
+missing$ -- 27
+newline$ -- 121
+num.names$ -- 29
+pop$ -- 40
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 111
+skip$ -- 114
 stack$ -- 0
-substring$ -- 605
-swap$ -- 29
+substring$ -- 630
+swap$ -- 30
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 1
-while$ -- 69
-width$ -- 31
-write$ -- 283
+while$ -- 72
+width$ -- 32
+write$ -- 293
 (There were 5 error messages)

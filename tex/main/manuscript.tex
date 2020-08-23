@@ -360,7 +360,7 @@ Typically, these may lead to a reduction in resilience of basins and leave highl
 	Among of them, by taking changes of water flexibility and variability into account, 
 	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective,
 	which considered a valid indicator of temporal changes in water stresses.
-	\subsubsection*{Lopsidedness}
+	\subsubsection*{Tendentiousness}
 	% xxx等人通过考虑消费品中的水消耗提出了虚拟水理论
 	% 但随着水资源利用方式的变迁，在其基础上兴起的水足迹研究，则进一步泛化了水相关的产品和服务概念。
 	% 如今，世界非产品形式供给于人类的水资源已达xx%，范围包含了xxxxxx等方式，人类在“消耗水”向“利用水”和的倾斜。
@@ -368,8 +368,25 @@ Typically, these may lead to a reduction in resilience of basins and leave highl
 	\subsubsection*{Patterns}
 
 	\subsection*{Change points detection}
+		The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
+		The approach after Pettitt (1979) is commonly applied to detect a single change-point in hydrological series or climate series with continuous data \cite{pettittNonParametricApproachChangePoint1979}. It tests the $H0$: The variables follow one or more distributions that have the same location parameter (no change), against the alternative: a change point exists. The non-parametric statistic is defined as:
 	
+		$$ K_t = max|U_{t, T}|$$
+		where:
+		$$ U_{t, T} = \sum_{i=1}^t\sum_{j=t+1}^T sgn(X_i - X_j) $$
+	
+		The change-point of the series is located at $K_T$, provided that the statistic is significant. We use 0.001 as the threshold of p-value, which means the probability of a statistically significant change-point judgment being valid is more than $99.9\%$. Since this method only can return one significant change point, we repeat it Until all significant change points were detected.
+	
+	% 计算贡献度
 	\subsection*{Contribution decomposition}
+		We have decomposed the amount of variation in each index at different stages in order to observe the contribution of each influencing factor to them. Use Integrated Water Resources Utilization (IWRU) Index as an example, which influenced by three dimensions: stress (S), tendentiousness (T) and pattern (P) (indicated by their own index respectively, see Water utilization regime index and supplementary Methods. S3):
+		$$ IWRU = T * P * S ^ {-1} $$
+		Take the logarithm of both sides then, we get:
+		$$ ln(IWRU) = ln(S) + ln(T) - ln(P) $$
+		Since the changes of IWRU $\Delta IWRU$ can be expressed as $\Delta IWRU = ln(IWRU_2) - ln(IWRU_1)$, where $IWRU_2$ and $IWRU_1$ are ending and beginning values of IWRU in a certain time period, combining the above equations we can get:
+		$$ \Delta IWRU = ln(\frac{S_1}{S_2}) + ln(\frac{T_2}{T_1}) + ln(\frac{P_2}{P_1}) = -\Delta S + \Delta T + \Delta P $$
+		Then, we can calculate contributions $C_F$ of a certain factor $F$ in a certain period by:
+		$$ C_{F} = \frac{|\Delta C_{F}|}{\Delta IWRU}$$
 }
 
 \showmatmethods{} % Display the Materials and Methods section
