@@ -360,16 +360,41 @@ Here, we constructed the Integrated Water Resources Utilization (IWRU) Index whi
 	where $i$ is stress, tendentiousness or pattern, and $I'_i$ is standardized sub-indicator of them. A brief description of the sub-indicators used to measure each dimension follows (see SI Methods. S3 for more details).
 
 	\subsubsection*{Sub-indicator of Stresses}
-% 提出了很多的指标度量水压力，如水资源压力指数，水资源xxx等
-	Various metrics, therefore, proposed for water stress (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), where the dimensions of human impact are increasingly valued.
-	% 其中SFV指数比较有用
-	Among of them, by taking changes of water flexibility and variability into account,	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid indicator of temporal changes in water stresses.
+	Humans use technology to continuously manage water resources, so a simple physical water scarcity index cannot reasonably assess water scarcity in the evolution and transition of socio-water systems. Therefore, we refer to the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water scarcity in the basin. The index takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity \cite{qinFlexibilityIntensityGlobal2019}.
+
+	To apply this method, we need to combine three metrics following: 
+	
+	First for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume, in year $j$ and region $i$:
+	$$ A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}} $$
+	Second for flexibility, $B_{i, j}$ is the inflexible water use $WU_{inflexible}$ (i.e. for thermal power plants or humans and livestock) as a proportion of average multi-year runoff, in year $i$ and region $j$:
+	$$ B_{i, j} = \frac{WU_{inflexible}}{R_{i, avg}} $$
+	Finally for variability, the capacity of the reservoir and the positive effects of storage on natural runoff fluctuations are also considered.
+	$$ C_i = C1_i * (1 - C2_i) $$
+	$$ C1_{i, j} = \frac{R_{i, std}}{R_{i, avg}} $$
+	$$ C2_{i} = \frac{RC_{i}}{R_{i, avg}}, \ if RC < R_{i, avg} $$
+	$$ C2_{i} = 1, \ if RC >= R_{i, avg} $$
+	In all the equations above, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
+
+	Finally, assuming three metrics (scarcity, flexibility and variability) have the same weights, we can calculate $SFV$ index after normalizing them:
+	$$ V = \frac{A_{normalize} + B_{normalize} + C_{normalize}}{3} $$
+	$$ a = \frac{1}{V_{max} - V_{min}}; $$
+	$$ b = \frac{1}{V_{min} - V_{max}} * V_{min} $$
+	$$ SFV = a * V + b $$
+
 	\subsubsection*{Sub-indicator of Tendentiousness}
-	% xxx等人通过考虑消费品中的水消耗提出了虚拟水理论
-	% 但随着水资源利用方式的变迁，在其基础上兴起的水足迹研究，则进一步泛化了水相关的产品和服务概念。
-	% 如今，世界非产品形式供给于人类的水资源已达xx%，范围包含了xxxxxx等方式，人类在“消耗水”向“利用水”和的倾斜。
+	To tendentiousness, we use non-provisioning shares of water use as an indicator. While provisional water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, the non-provisioning water use ($WU_{non-pro}$) includes industrial and urban services water uses. Then, we can calculate the non-provisioning shares by:
+	$$ NPS_{ij} = \frac{WU_{indirect, i, j}}{WU_{direct, i, j} + WU_{undirect, i, j}} $$
 
 	\subsubsection*{Sub-indicator of Patterns}
+	To description of patterns between regions or sections, we designed an indicator by imitation of information entropy. Assuming the most egalitarian water allocation is assumed to be that each region or sectoral development utilizes the same proportion of water resources (the case of maximum entropy). The ratio between the actual water allocation entropy and this maximum entropy is the allocation entropy index.
+	$$ ratio = \frac{Entropy}{Entropy_{max}} $$
+	where $Entropy$ and $Entropy_{max}$ are entropy and maximum entropy of water distributions, respectively. They can be calculated by:
+	$$ Entropy = \sum_{i=1}^n \sum_{j=1}^m -log(p_{ij}) * p_{ij} $$
+	$$ Entropy_{max} = n * \sum_{j=1}^m -\frac{p_j}{n} * log(\frac{p_j}{n}) $$ 
+	where $p_j$ and $p_ij$ are proportions of water use in sector $j$ and region $i$:
+	$$ p_j = \frac{\sum_{i=1}^n WU_j}{\sum_{i=1}^n WU} $$
+	$$ p_{ij} = \frac{WU_{ij}} {\sum_{i=1}^n \sum_{j=1}^m WU_{ij}} $$
+	where $n$ is the total number of regions ($n=4$ here, see supplementary Methods. S1) and $m$ is the total number of sectors ($m=4$ here, see supplementary Methods. S2).
 
 	\subsection*{Change points detection}
 		The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
