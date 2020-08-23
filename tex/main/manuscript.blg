@@ -8,45 +8,50 @@ You can't pop an empty literal stack for entry rochaCascadingRegimeShifts2018a
 while executing---line 1013 of file pnas-new.bst
 You can't pop an empty literal stack for entry xiangWillEnergyIndustry2016
 while executing---line 1013 of file pnas-new.bst
-You've used 23 entries,
+You can't pop an empty literal stack for entry cummingQuantifyingSocialEcologicalScale2020
+while executing---line 1013 of file pnas-new.bst
+Warning--empty note in wangCOSUSTMs0530Review
+You can't pop an empty literal stack for entry scoonesTransformationsSustainabilityCombining2020a
+while executing---line 1013 of file pnas-new.bst
+You've used 28 entries,
             1811 wiz_defined-function locations,
-            636 strings with 10268 characters,
-and the built_in function-call counts, 4875 in all, are:
-= -- 479
-> -- 209
+            666 strings with 11995 characters,
+and the built_in function-call counts, 6158 in all, are:
+= -- 603
+> -- 269
 < -- 0
-+ -- 67
-- -- 44
-* -- 421
-:= -- 767
-add.period$ -- 44
-call.type$ -- 23
-change.case$ -- 23
++ -- 85
+- -- 57
+* -- 537
+:= -- 966
+add.period$ -- 54
+call.type$ -- 28
+change.case$ -- 28
 chr.to.int$ -- 0
-cite$ -- 23
-duplicate$ -- 199
-empty$ -- 443
-format.name$ -- 44
-if$ -- 1056
+cite$ -- 29
+duplicate$ -- 238
+empty$ -- 554
+format.name$ -- 57
+if$ -- 1333
 int.to.chr$ -- 0
-int.to.str$ -- 23
-missing$ -- 21
-newline$ -- 93
-num.names$ -- 22
-pop$ -- 33
+int.to.str$ -- 28
+missing$ -- 25
+newline$ -- 113
+num.names$ -- 27
+pop$ -- 38
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 88
+skip$ -- 108
 stack$ -- 0
-substring$ -- 423
-swap$ -- 23
+substring$ -- 581
+swap$ -- 28
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 56
-width$ -- 25
-write$ -- 225
-(There were 3 error messages)
+warning$ -- 1
+while$ -- 67
+width$ -- 30
+write$ -- 273
+(There were 5 error messages)
