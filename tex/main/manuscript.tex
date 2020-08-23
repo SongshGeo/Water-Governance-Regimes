@@ -347,25 +347,29 @@ Typically, these may lead to a reduction in resilience of basins and leave highl
 
 
 %tag 研究方法
-\matmethods{Please describe your materials and methods here. This can be more than one paragraph, and may contain subsections and equations as required. Authors should include a statement in the methods section describing how readers will be able to access the data in the paper. 
+\matmethods{
+Here, we constructed the Integrated Water Resources Utilization (IWRU) Index which consists of three dimensions and identified the regime in the changes of the index over time by change points detection. Finally, the contribution to changes of IWRU index along with each main indicators were calculated separately for each regime (i.e. period). 
 	
-	\subsection*{Water utilization regime index}
-	Example text for subsection.
-	\subsubsection*{Stresses}
+	\subsection*{Integrated Water Resources Utilization (IWRU) Index}
+	The Integrated Water Resources Utilization (IWRU) Index consists of three dimensions (stresses, tendentiousnesses and patterns, denoted by sub-indicators correspondingly). Assuming they have equal weights, we log-transformed and standardized the three sub-indicators for elimination of differences between indicators. It means for each indicator $I_{sub}$, we performed:
+	$$ I' = log(I_{sub}) $$
+	$$ I = (I' - I'_{min}) / (I'_{max}-I'_{min})$$
+	where $I$ is standardized series for $I_{sub}$.
+	Then, since we assumed different relationships between development and sub-indicators, we added them together in equal weights:
+	$$ IWRU = \sum_{i}^3 I'_i $$
+	where $i$ is stress, tendentiousness or pattern, and $I'_i$ is standardized sub-indicator of them. A brief description of the sub-indicators used to measure each dimension follows (see SI Methods. S3 for more details).
+
+	\subsubsection*{Sub-indicator of Stresses}
 % 提出了很多的指标度量水压力，如水资源压力指数，水资源xxx等
-	Various metrics, therefore, proposed for water stress 
-	(e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), 
-	where the dimensions of human impact are increasingly valued.
+	Various metrics, therefore, proposed for water stress (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), where the dimensions of human impact are increasingly valued.
 	% 其中SFV指数比较有用
-	Among of them, by taking changes of water flexibility and variability into account, 
-	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective,
-	which considered a valid indicator of temporal changes in water stresses.
-	\subsubsection*{Tendentiousness}
+	Among of them, by taking changes of water flexibility and variability into account,	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid indicator of temporal changes in water stresses.
+	\subsubsection*{Sub-indicator of Tendentiousness}
 	% xxx等人通过考虑消费品中的水消耗提出了虚拟水理论
 	% 但随着水资源利用方式的变迁，在其基础上兴起的水足迹研究，则进一步泛化了水相关的产品和服务概念。
 	% 如今，世界非产品形式供给于人类的水资源已达xx%，范围包含了xxxxxx等方式，人类在“消耗水”向“利用水”和的倾斜。
 
-	\subsubsection*{Patterns}
+	\subsubsection*{Sub-indicator of Patterns}
 
 	\subsection*{Change points detection}
 		The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
@@ -379,7 +383,7 @@ Typically, these may lead to a reduction in resilience of basins and leave highl
 	
 	% 计算贡献度
 	\subsection*{Contribution decomposition}
-		We have decomposed the amount of variation in each index at different stages in order to observe the contribution of each influencing factor to them. Use Integrated Water Resources Utilization (IWRU) Index as an example, which influenced by three dimensions: stress (S), tendentiousness (T) and pattern (P) (indicated by their own index respectively, see Water utilization regime index and supplementary Methods. S3):
+		We have decomposed the amount of variation in each index at different stages in order to observe the contribution of each influencing factor to them. Use Integrated Water Resources Utilization (IWRU) Index as an example, which influenced by three dimensions: stress ($S$), tendentiousness ($T$) and pattern ($P$) (indicated by their own index respectively, see Water utilization regime index and supplementary Methods. S3):
 		$$ IWRU = T * P * S ^ {-1} $$
 		Take the logarithm of both sides then, we get:
 		$$ ln(IWRU) = ln(S) + ln(T) - ln(P) $$
