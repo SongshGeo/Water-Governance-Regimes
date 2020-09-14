@@ -1,0 +1,13 @@
+{
+    "ltex.ignoreRuleInSentence": [
+        {
+            "rule": "UPPERCASE_SENTENCE_START",
+            "sentence": "^\\Qpnassupportinginfo\\E$"
+        }
+    ],
+    "ltex.workspaceFolderDictionary": {
+        "en-GB": [
+            "Loess"
+        ]
+    }
+}
