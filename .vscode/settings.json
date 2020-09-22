@@ -5,5 +5,10 @@
             "rule": "UPPERCASE_SENTENCE_START",
             "sentence": "^\\Qpnasresearcharticle Water resource utilization regimes at a basin scale: transition framework and development traps\\E$"
         }
-    ]
+    ],
+    "ltex.workspaceFolderDictionary": {
+        "en-GB": [
+            "YRCC"
+        ]
+    }
 }
