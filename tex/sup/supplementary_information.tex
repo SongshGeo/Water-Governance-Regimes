@@ -22,6 +22,7 @@
 % Type or paste text here. This should be additional explanatory text such as an extended technical description of results, full details of mathematical models, etc.   
 
 % tag 研究区定义
+\newpage
 \section*{Methods S1. Definition of study area}
 
 \subsection*{Region divisions of Yellow River Basin}
@@ -54,6 +55,7 @@ Historic and recent river basin management practices have strong impacts on wate
 
 
 % tag 数据集介绍
+\newpage
 \section*{Methods S2. Detailed information on datasets}
 
 Multiple types of dataset were used in this study (see Table S1). 
@@ -75,8 +77,36 @@ For the policy data set, we select the laws and policies related to the Yellow R
 
 
 % tag 数据处理
+\newpage
 \section*{Methods S3. Harmonization of datasets}
+% 由于我们的数据集来源广泛，且具有不同的空间尺度，我们需要在区域尺度（SR，UR，MR和DR）上对数据进行调和，根据数据的空间尺度有不同的处理方式。
+Due to the wide sources of our data set and the different spatial scales, we need to reconcile the data on the regional scale (SR, UR, MR and DR), and have different processing methods according to the spatial scale of the data.
+\begin{itemize}
+    \item 1. Watersheds:
+    % 由于流域的分区由水文分区决定，所以水文年报数据和实测径流量数据都能直接根据其对应的水文站直接划分。
+        Due to the fact that the subdivision of a basin is determined by hydrological subdivision, hydrological annual data and measured runoff data can be directly divided according to their corresponding hydrological stations.
+    \item 2. Perfects:
+    % 在市县尺度下，我们分别计算了市县在不同流域分区中所占的面积，选取其中最大的区域，如果该面积占该县面积的95%以上，则认为该市属于该区域，即：
+        At the scale of cities and counties, we respectively calculate the area occupied by cities and counties in different watershed districts, and select the largest region. If this area accounts for more than 95\% of the area of the county, the city is considered to belong to this region, that is:
+        $$ S_{ij} = MAX(S_ij / S_i)$$
+        where $i$ refers a certain perfect and $j$ refers a region within YRB, i.e. SR, UR, MR, or DR. $S_i$ refers the area of perfect $i$, and $S_{ij}$ refers intersecting area between perfect $i$ and region $j$.
+        We define perfect $i$ belongs to region $j$ if their intersecting area over 95\% of $S_i$, i.e.:
+        $$ MAX(S_{ij}) > 0.95 * S_i $$
+    \item 3. Province:
+    % 在省域尺度的数据（即不同行业的GDP数据）更多用以定性描述，且不与县域尺度数据进行横向比例，因此数据的精度不再重要。我们采用了粗略的处理。即，根据不同区域包含的主要省份，判断该省的数据被融合进哪个区域。参考传统划分惯例，我们进行的划分是：
+    Data at the provincial scale (i.e., GDP data of different industries) are more used for qualitative description, and do not carry out horizontal proportion with data at the county scale, so the accuracy of the data is no longer important. We have adopted a rough treatment. That is, according to the major provinces contained in different regions, determine which region the data of that province is merged into. Referring to the traditional division practice, we made the following division:
+    \begin{itemize}
+        \item SR: Qinghai Gansu and Sichuan,
+        \item UR: Ningxia and Neimeng,
+        \item MR: Shanxi and Shaanxi,
+        \item DR: Shandong, Hebei and Henan
+    \end{itemize}
+\end{itemize}
 
+% 最后，当我们处理位置点数据（如水库修建位置数据时），根据其所在位置判断其所属省份，再按照省尺度的区域归类方式进行处理。经过上述处理，所有的数据都能很好的在区域尺度得到协调。
+Finally, when we process the location data (such as the location data of reservoir construction), we judge the province it belongs to according to its location, and then process it according to the regional classification method on the provincial scale. After the above processing, all the data can be well coordinated at the regional scale.
+
+\newpage
 % 指数介绍
 \section*{Methods S4. Water Utility Regime Index}
 
@@ -92,7 +122,7 @@ For the policy data set, we select the laws and policies related to the Yellow R
 	% 但随着水资源利用方式的变迁，在其基础上兴起的水足迹研究，则进一步泛化了水相关的产品和服务概念。
 	% 如今，世界非产品形式供给于人类的水资源已达xx%，范围包含了xxxxxx等方式，人类在“消耗水”向“利用水”和的倾斜。
 
-\section{Methods S4. Water Management Practices}
+\section{Methods S5. Water Management Practices}
 
 % tag 附录图
 
