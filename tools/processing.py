@@ -10,6 +10,19 @@ import numpy as np
 from matplotlib import pyplot as plt
 import csv
 
+PROVINCES = [
+    '青海', '青海省', 'Qinghai',
+    '四川', '四川省', 'Sichuan',
+    '甘肃', '甘肃省', 'Gansu',
+    '宁夏', '宁夏回族自治区', 'Ningxia',
+    '内蒙', '内蒙古', '内蒙古自治区', 'Neimeng',
+    '陕西', '陕西省', 'Shanxi', 
+    '山西', '山西省', 'Shaanxi',
+    '河南', '河南省', 'Henan',
+    '山东', '山东省', 'Shandong'
+    '河北', '河北省', 'Hebei'
+]
+
 
 # 划分子图
 def add_subplot_by_order(gs=(2, 2), order=1):
@@ -21,7 +34,6 @@ def add_subplot_by_order(gs=(2, 2), order=1):
 
 # 根据省份判断所在区域
 def get_region_by_province_name(name):
-    from values import PROVINCES
     """使用省份名称获取该省属于哪个区域（SR, UR, MR or DR）
     name: 一个中国黄河流域的省份
     return: 区域（源区上中下游，或返回空值）

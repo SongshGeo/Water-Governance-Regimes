@@ -7,7 +7,11 @@
 
 import numpy as np
 import pandas as pd
+from matplotlib import pyplot as plt
 
+REGIONS = ['SR', 'UR', 'MR', 'DR']
+INDUSTRIES = ['第一', '第二', '第三']  # 三个产业
+INDUSTRIES_eng = ['Agriculture', 'Industry', 'Services']  # 三个产业对应的英文
 
 # 清洗列名
 def from_col_name_extract_province_and_industry(name):
@@ -94,5 +98,67 @@ def extract_gdp_by_industry(data, industry):
     return df.sum(axis=1)
 
 
+# 加载经济数据
+def clean_gdp_data():
+
+    gdp = (pd.read_excel(r'../data/GDP.xlsx')  # 读取数据
+            .drop(0)  # 删除单位行
+            .astype(float)  # 转为浮点
+            .rename({'指标名称': 'Year'}, axis=1)  # 将年份列改名
+            .astype({'Year': int})  # 将年份从浮点改为整形
+            .set_index('Year')  # 并设置为索引
+            .replace(0., np.nan)  # 空值是没数据，不可能为 0
+            .drop(list(np.arange(1949, 1965)), axis=0)  # 删除不考虑的时间范围
+            )
+
+    region_dict = {region: pd.DataFrame() for region in REGIONS}  # 用来储存每个区域的GDP数据
+    for col in gdp:
+        province = from_col_name_extract_province_and_industry(col)[0]  # 清洗列名
+        region = get_region_by_province_name(province)  # 属于哪个区域
+        if region: region_dict[region][col] = gdp[col]  # 如果是黄河流域的省份，存进对应的字典
+        else:  gdp.drop(col, axis=1, inplace=True)  # 不是黄河流域的省份，就丢掉
+
+    return region_dict
+
+
+
+# GDP 制图
+def plot_gdp(ax, colors, start_yr, end_yr, **kargs):
+    region_dict = clean_gdp_data()
+    # 对每个区域进行处理
+    for i, region in enumerate(REGIONS):
+        use_data = region_dict[region]  # 某个区域的数据
+        mean = []  # 用来储存该区域的 一、二、三 产业的总平均 gdp
+        # std = []  # 用来储存该区域的 一、二、三 产业的gdp方差
+
+        gdp_region_data = {}
+        # 对每个产业进行处理
+        for industry in INDUSTRIES:
+            # 该区域、该产业的gdp序列，以产业为键存入字典，以供函数调用
+            gdp_region_data[industry] = extract_gdp_by_industry(use_data, industry)
+
+        legends = plot_bar_by_category(
+            ax=ax,
+            data=gdp_region_data,
+            categories=INDUSTRIES, 
+            position=i,
+            start_yr=start_yr,
+            end_yr=end_yr,
+            colors=colors,
+            **kargs
+        )
+        
+    ax.set_xticks(np.arange(4))
+    ax.set_xticklabels(REGIONS)
+    ax.set_xlabel('Regions')
+    ax.set_ylabel('GDP')
+    ax.legend(legends, labels=INDUSTRIES_eng)
+    return mean
+
+
 if __name__ == "__main__":
+    fig, ax = plt.subplots()
+    start_yr, end_yr = 1980, 2000
+    gdp_colors = index_colors
+    plot_gdp(ax, gdp_colors, start_yr, end_yr)
     pass
