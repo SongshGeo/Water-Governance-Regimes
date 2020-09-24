@@ -128,19 +128,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# latex documents
-*.aux
-*.synctex
-*.bbl
-*.blg
-*.docx
-*.bst
-*.sty
-*.cls
-*.out
-*.gz
-
-
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
