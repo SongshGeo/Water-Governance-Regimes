@@ -5,13 +5,15 @@
 # GitHub   : https://github.com/SongshGeo
 # Research Gate: https://www.researchgate.net/profile/Song_Shuang9
 
-import numpy as np
+
 import pandas as pd
+import numpy as np
 from matplotlib import pyplot as plt
 
-REGIONS = ['SR', 'UR', 'MR', 'DR']
-INDUSTRIES = ['第一', '第二', '第三']  # 三个产业
-INDUSTRIES_eng = ['Agriculture', 'Industry', 'Services']  # 三个产业对应的英文
+import sys
+sys.path.append(r"..")
+from tools.values import REGIONS, PROVINCE, INDUSTRIES, INDUSTRIES_eng
+from tools.processing import get_region_by_province_name
 
 # 清洗列名
 def from_col_name_extract_province_and_industry(name):
@@ -156,9 +158,124 @@ def plot_gdp(ax, colors, start_yr, end_yr, **kargs):
     return mean
 
 
-if __name__ == "__main__":
-    fig, ax = plt.subplots()
-    start_yr, end_yr = 1980, 2000
-    gdp_colors = index_colors
-    plot_gdp(ax, gdp_colors, start_yr, end_yr)
-    pass
+
+# 加载实测径流量
+def get_measured_runoff(region):
+    use_cols = {
+        '年份': 'Year',
+        '唐乃亥': 'SR',  # 唐乃亥控制源区
+        '头道拐': 'UR',  # 头道拐控制上游
+        '花园口': 'MR',  # 花园口控制中游
+        '利津': 'DR'     # 利津控制下游
+    }
+    measured_runoff = pd.read_csv(r'../data/hydrology/1956-2016_runoff.csv')
+    measured_runoff = measured_runoff.loc[:, use_cols.keys()]
+    measured_runoff.rename(use_cols, axis=1, inplace=True)
+    measured_runoff.set_index('Year', inplace=True)
+    return measured_runoff[region]
+
+
+# 获取天然径流量的差值
+def get_runoff_difference(region):
+    index = REGIONS.index(region)
+    if index == 0:
+        runoff_in = 0
+    else:
+        runoff_in = get_measured_runoff(REGIONS[index-1])
+    runoff_out = get_measured_runoff(region)
+    return runoff_out - runoff_in
+
+
+# 加载消耗量
+def get_consumptions(region):
+    """计算从此区域及其上游区域，合计的【水资源】消耗量，单位是立方千米"""
+    city_yr = pd.read_csv(r'../data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv')
+    water_use = city_yr[['Year', 'Region', 'Total water use']]
+    consumption = water_use.groupby(['Region', 'Year']).sum().loc[region]['Total water use']
+    flag = 0
+    index = REGIONS.index(region)
+    while flag < index:
+        consumption += water_use.groupby(['Region', 'Year']).sum().loc[REGIONS[flag]]['Total water use']
+        flag += 1
+    return consumption * 10  # 单位由 10^8 变成 10^9
+
+
+# 计算每个区域的地表/地下水修正系数
+def get_surface_groundwater_coefficient(region):
+    watersheds = pd.read_csv(r"../data/watershed_merged.csv")
+
+    def get_type_data(d, p):
+        return d.groupby("项目").get_group(p)
+
+    SR = ['龙羊峡以上', '龙羊峡至兰州', '河源-兰州']
+    UR = ['兰州至头道拐', '兰州-头道拐']
+    MR = ['头道拐至龙门', '龙门至三门峡', '三门峡至花园口', '头道拐-龙门', '龙门-三门峡', '三门峡-花园口']
+    DR = ['花园口以下', '花园口-利津', '利津-河口']
+    WATERSHED_TO_SUBREGION = {
+        "SR": SR,
+        "UR": UR,
+        "MR": MR,
+        "DR": DR
+    }
+
+    def judge_region(x):
+        for k, v in WATERSHED_TO_SUBREGION.items():
+            if x in v:
+                return k
+
+            
+    watersheds['region'] = watersheds['分区'].apply(judge_region)
+    watersheds = watersheds[watersheds['region'].notna()]
+    withdraw = get_type_data(watersheds, "取水量")
+
+    def calculate_ratio(data, sector):
+        sur = sector + "_surface"
+        gro = sector + "_groundwater"
+        data[sector+'_sum'] = data[sur] + data[gro]
+        data[sector+'_ratio'] = data[gro] / data[sector+'_sum']
+        return data
+
+    data = calculate_ratio(withdraw, '合计').groupby(['region', '年份']).mean()['合计_ratio']
+    return data.loc[region]
+
+
+def plot_wu(ax, colors, start_yr, end_yr, **kargs):
+    legends = []
+    
+    for i, region in enumerate(REGIONS):
+        use_data = water_use.groupby(['Region', 'Year']).sum().loc[region]  # 关注区域的年人口变化
+        mean, std = extract_data_by_yr(use_data, start_yr, end_yr)     
+        bar = ax.bar(
+                x=i,
+                height=mean,
+                yerr=std,
+                color=colors[i],
+                **kargs
+            )
+        legends.append(bar)
+    ax.set_xticks(np.arange(4))
+    ax.set_xticklabels(REGIONS)
+    ax.set_xlabel('Regions')
+    ax.set_ylabel('Total water use')
+
+
+def plot_water(ax, start_yr, end_yr, colors):
+    legends = []  # 图例
+    for i, region in enumerate(REGIONS):  # 循环每个区域
+        measured_runoff = get_runoff_difference(region)  # 获取这个区域的径流量
+        wu = get_consumptions(region)  # 获取该区域的消耗量
+        c_ser = get_surface_groundwater_coefficient(region)
+        c = extract_data_by_yr(c_ser, start_yr, end_yr)[0]
+        natual_runoff = measured_runoff + wu * (1-c)
+        mean, std = extract_data_by_yr(natual_runoff, start_yr, end_yr)
+        bar = ax.bar(
+            x=i,
+            height=mean,
+            yerr=std,
+            color=colors[i]
+        )
+        legends.append(bar)
+    ax.set_xticks(np.arange(4))
+    ax.set_xticklabels(REGIONS)
+    ax.set_xlabel('Regions')
+    ax.set_ylabel('Natural yield')
