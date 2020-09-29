@@ -197,7 +197,7 @@ def plot_wu(ax, colors, start_yr, end_yr, **kargs):
         mean, std = extract_data_by_yr(use_data, start_yr, end_yr)     
         bar = ax.bar(
                 x=i,
-                height=mean,
+                height=mean * 10,  # 这里换算单位成为 10^8 m^3
                 yerr=std,
                 color=colors[i],
                 **kargs
@@ -309,3 +309,18 @@ def plot_water(ax, start_yr, end_yr, colors):
     ax.set_xticklabels(REGIONS)
     ax.set_xlabel('Regions')
     ax.set_ylabel('Natural yield')
+
+
+def get_consumptions_ratio(yr, revise=False):
+    measured = get_measured_runoff('DR')
+    water_use_all_regions = pd.DataFrame()
+    for region in REGIONS:
+        if revise:
+            c = get_surface_groundwater_coefficient(region)
+            data = get_consumptions(region) * c
+        else:
+            data = get_consumptions(region)
+        water_use_all_regions[region] = data
+    wu = water_use_all_regions.sum(axis=1)
+    ratio = wu / (measured + wu)
+    return ratio.loc[yr]
