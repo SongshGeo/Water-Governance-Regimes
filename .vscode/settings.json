@@ -8,9 +8,10 @@
     ],
     "ltex.workspaceFolderDictionary": {
         "en-GB": [
-            "YRCC",
+            "Jupyter",
             "Loess",
-            "YRB"
+            "YRB",
+            "YRCC"
         ]
     }
 }
