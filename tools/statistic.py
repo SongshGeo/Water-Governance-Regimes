@@ -261,3 +261,17 @@ def plot_ratio_contribution(contribution_df, ax=None, bar_width=0.4, denominator
             ax.legend(loc=legend_loc)
     ax.set_xticks(np.arange(0, len(contribution_df.columns), 1))
     ax.set_xticklabels(contribution_df.columns.tolist())
+
+
+def judge_one_way_f_test(group1, group2):
+    from scipy import stats
+    F, p = stats.f_oneway(group1, group2)
+    F_test = stats.f.ppf((1-0.05), 4, 15)
+    print('F值是{:.2f}，p值是{:.5f}'.format(F,p))
+    print('F_test的值是{:.2f}'.format(F_test))
+    if F>=F_test:
+        print('拒绝原假设，两组均值不相等, 显著性是{:.5f}'.format(p))
+        return False
+    else:
+        print('接受原假设，两组均值可认为是相等，显著性是{:.5f}'.format(p))
+        return True
