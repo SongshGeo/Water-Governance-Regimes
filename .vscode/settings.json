@@ -4,13 +4,22 @@
         {
             "rule": "UPPERCASE_SENTENCE_START",
             "sentence": "^\\Qpnasresearcharticle Water resource utilization regimes at a basin scale: transition framework and development traps\\E$"
+        },
+        {
+            "rule": "UPPERCASE_SENTENCE_START",
+            "sentence": "^\\Qpnasresearcharticle Universal regime transition for water resources utilization in developing river basins\\E$"
         }
     ],
     "ltex.workspaceFolderDictionary": {
         "en-GB": [
             "Jupyter",
+            "Liujia",
             "Loess",
+            "Longyang",
+            "Pettitt",
+            "Sanmen",
             "Transboundary",
+            "Xiaolangdi",
             "YRB",
             "YRCC"
         ]
