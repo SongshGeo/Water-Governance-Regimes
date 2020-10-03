@@ -8,6 +8,14 @@
         {
             "rule": "UPPERCASE_SENTENCE_START",
             "sentence": "^\\Qpnasresearcharticle Universal regime transition for water resources utilization in developing river basins\\E$"
+        },
+        {
+            "rule": "PUNCTUATION_PARAGRAPH_END",
+            "sentence": "^\\QHistory of YRCC Political Documents 1949-2002 YRCC \\E(?:Dummy|Ina|Jimmy-)[0-9]+$"
+        },
+        {
+            "rule": "ENGLISH_WORD_REPEAT_BEGINNING_RULE",
+            "sentence": "^\\QMeasures for the Administration of Water Drawing Permits -revised 2 2017 Ministry of Water Resources of the PRC 11.\\E$"
         }
     ],
     "ltex.workspaceFolderDictionary": {
