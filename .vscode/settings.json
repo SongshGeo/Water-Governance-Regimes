@@ -16,6 +16,18 @@
         {
             "rule": "ENGLISH_WORD_REPEAT_BEGINNING_RULE",
             "sentence": "^\\QMeasures for the Administration of Water Drawing Permits -revised 2 2017 Ministry of Water Resources of the PRC 11.\\E$"
+        },
+        {
+            "rule": "PUNCTUATION_PARAGRAPH_END",
+            "sentence": "^\\QReferring to the traditional division practice, we made the following division: SR: Qinghai Gansu and Sichuan, UR: Ningxia and Neimeng, MR: Shanxi and Shaanxi, DR: Shandong, Hebei and Henan\\E$"
+        },
+        {
+            "rule": "UPPERCASE_SENTENCE_START",
+            "sentence": "^\\Qpnassupportinginfo\\E$"
+        },
+        {
+            "rule": "ENGLISH_WORD_REPEAT_BEGINNING_RULE",
+            "sentence": "^\\QRegulations on the Allocation of Water in the Yellow River 2006 State Council of the PRC 7.\\E$"
         }
     ],
     "ltex.workspaceFolderDictionary": {
@@ -24,6 +36,7 @@
             "Liujia",
             "Loess",
             "Longyang",
+            "Neimeng",
             "Pettitt",
             "Sanmen",
             "Transboundary",
