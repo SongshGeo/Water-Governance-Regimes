@@ -483,7 +483,13 @@ Here, we constructed the Integrated Water Resources Utilization (IWRU) Index whi
 		
 	\subsubsection*{Net contributions}
 		% TODO 这里补充 ”net contribution“ 的方法介绍
-		}
+		% 不同于变化贡献，净贡献不考虑变化方向，旨在表达不同因子对指标的影响力，与变化贡献的计算方式也略有不同：
+		Different from the change contribution, the net contribution does not consider the direction of changes and is intended to express the influence of different factors on the indicator. The calculation method is also slightly different from the change contribution:
+
+		$$ Cn_{F} = \frac{|\Delta C_{F}|}{\sum_{i=1}^n |C_{Fi}|} $$
+		
+		where $Cn_{F}$ denotes the net contribution of factor $F$, $|\Delta C_{Fi}|$ refers net change of the factor $F$, and $|C_{Fi}|$ refers net change of the factor $F_i$. The factor $F_i$ to $F_n$ are $n$ elements in the same level involved in changes of the index. 
+}
 
 \showmatmethods{} % Display the Materials and Methods section
 
