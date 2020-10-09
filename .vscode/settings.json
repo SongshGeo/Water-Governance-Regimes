@@ -28,6 +28,10 @@
         {
             "rule": "ENGLISH_WORD_REPEAT_BEGINNING_RULE",
             "sentence": "^\\QRegulations on the Allocation of Water in the Yellow River 2006 State Council of the PRC 7.\\E$"
+        },
+        {
+            "rule": "UPPERCASE_SENTENCE_START",
+            "sentence": "^\\Qpnasresearcharticle Regime transition identification for water utilization in river basin developments\\E$"
         }
     ],
     "ltex.workspaceFolderDictionary": {
