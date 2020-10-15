@@ -34,7 +34,6 @@ This is a preliminary version.
 ### Results
 
 - Detection of regime shifts.
-- Differences between different regimes.
 - Drivers of regime shifts.
 
 ### Discussion
