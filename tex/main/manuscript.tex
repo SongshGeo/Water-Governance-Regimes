@@ -373,17 +373,42 @@ Taken together, based on the identification of current phases and development di
 
 %tag 研究方法
 \matmethods{
-Here, we constructed the Integrated Water Resources Utilization (IWRU) Index which consists of three dimensions and identified the regime in the changes of the index over time by change points detection. 
-Each dimension is reflected by an indicator after normalization.
-Finally, the contribution to changes of IWRU index along with each main indicators were calculated separately for each regime (i.e. period). 
+Here, we constructed the Integrated Water Resources Utilization (IWRU) Index which consists of three dimensions and identified the changes periods of the index over time by change points detection. 
+Each dimension is reflected by an independent indicator after normalization, and water utilization regime were characterized by combination of impacts of each dimension in periods.
+In addition, the contribution to changes of IWRU index along with each main indicators were decomposed and calculated separately for each regime (i.e. period). 
 	
 	\subsection*{Integrated Water Resources Utilization (IWRU) Index}
-	Assuming they have equal weights, the Integrated Water Resources Utilization (IWRU) Index consists of three dimensions (S: stresses, P: priority and C: configurations, denoted by sub-indicators correspondingly):
+	% 我们认为水资源利用制度，与水资源利用的三个维度紧密相关：
+	We believe that water resources utilization system is closely related to the social developments in three dimensions below (see \textit{SI Appendix} Methods S4 for details):
+	
+	% - 社会的发展通常伴随着用水向社会经济系统倾斜，用水方式优先向收益更高的非供给性方式倾斜：
+	\begin{itemize}
+		\item Social development is usually accompanied by a change of priority in water use towards social and economic systems because of higher returns:
+		$$ Dev. \propto P $$
+		% - 社会发展通常伴随着更具结构性的水资源配置，如区域部门之间的分工合作，以及区域的统筹配置：
+		\item Social development usually lead to more complex structure in configuration of water resources, which is a result of division and cooperation between regions and sectors for developing:
+		$$ Dev \propto C $$ 
+		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
+		\item Further social development can only be achieved by effectively alleviating the water resource stresses generated in the process of development through technological means:
+		$$ Dev \propto S^{-1} $$
+	\end{itemize}
+	
+	% 将三者合一起，即：
+	We combine the above three dimensions for an integrated index, remaining their positive or negative relationship with social development: 
+	$$ Dev. \propto P*C*S^{-1} $$
+
+	% 在上述假设的基础上，我们要构建流域综合耦合指数(Integrated Water Resources Utilization, IWRU)，使 IWRU 有效表征与用水相关的三个维度。首先为每个维度选择一个合适的指示因子（indicator, $I_x$, 其中$x=P, C or S$）。将上式进行自然对数转换，从而让三个维度之间变成加减关系：
+	To effectively represent the three dimensions, we select an appropriate indicator ($I_x$, $x=P$, $C$ or $S$ corresponding to Priority, Configuration and Stress respectively) for each dimension after which, the above equation is transformed into a natural logarithm to facilitate calculation:
+
+	$$ Dev. \propto ln(I_P) + ln(I_C) - ln(I_S) $$
+
+	Assuming they have equal weights, the Integrated Water Resources Utilization (IWRU) Index:
 
 	$$ IWRU = I'_T + I'_P - I'_S $$
 
-	% 其中 I 是代表每个维度的每个子指标
-	Where $I'$ is normalized indicator of a certain dimension (P: Priority, C: Configuration, S: Stress). The direction of stress is different from the other two dimensions because the expected change of this indicator with social development is different (see \textit{SI Appendix} Methods S4).
+	where $I'_x$ is a normalization of log-transformed indicator $I_x$ for a certain dimension:
+
+	$$ I'_x = normalize(ln(I_x)) $$
 	
 	\subsubsection*{Normalization}
 	We log-transformed and standardized the three sub-indicators for elimination of differences between indicators. It means for actual values of each indicator $I_{indicator}$, we performed:
@@ -413,11 +438,11 @@ Finally, the contribution to changes of IWRU index along with each main indicato
 
 
 	\subsubsection*{Sub-indicator of configurations}
-	To description of configurations $I_C$, we designed an indicator by imitation of information entropy, called Configuration Entropy Metric (CEL). CEL is a metric to measure the degree of evenness of water configuration (see \textit{SI Appendix} Methods S4), basin development is often accompanied by the reduction of regional differences and sectors' differences in the whole basin, but there is a complement of sectors between regions, i.e.:
+	To description of configurations $I_C$, we designed an indicator by imitation of information entropy, called Configuration Entropy Metric (CEM). CEM is a metric to measure the degree of evenness of water configuration (see \textit{SI Appendix} Methods S4), basin development is often accompanied by the reduction of regional differences and sectors' differences in the whole basin, but there is a complement of sectors between regions, i.e.:
 
-	$$ I_C = \frac{CEL_{r} * CEL_{s}}{CEL_{rs}} $$
+	$$ I_C = \frac{CEN_{r} * CEN_{s}}{CEN_{rs}} $$
 	
-	where $CEL_{r}$ and $CEL_{s}$ are Configuration Entropy Metric in different regions and different sectors. $CEL_{rs}$ is differences between sectors in a certain region to the whole basin (see \textit{SI Appendix} Methods S4). 
+	where $CEN_{r}$ and $CEN_{s}$ are Configuration Entropy Metric in different regions and different sectors. $CEN_{rs}$ is differences between sectors in a certain region to the whole basin (see \textit{SI Appendix} Methods S4). 
 
 	\subsection*{Change points detection}
 		The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
