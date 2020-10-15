@@ -32,6 +32,10 @@
         {
             "rule": "UPPERCASE_SENTENCE_START",
             "sentence": "^\\Qpnasresearcharticle Regime transition identification for water utilization in river basin developments\\E$"
+        },
+        {
+            "rule": "ENGLISH_WORD_REPEAT_BEGINNING_RULE",
+            "sentence": "^\\QWater Law of PRC -revised 2 2016 National People's Congress of the PRC 4.\\E$"
         }
     ],
     "ltex.workspaceFolderDictionary": {
