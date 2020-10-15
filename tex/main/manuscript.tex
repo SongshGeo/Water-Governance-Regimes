@@ -411,66 +411,70 @@ In addition, the contribution to changes of IWRU index along with each main indi
 	$$ I'_x = normalize(ln(I_x)) $$
 	
 	\subsubsection*{Normalization}
-	We log-transformed and standardized the three sub-indicators for elimination of differences between indicators. It means for actual values of each indicator $I_{indicator}$, we performed:
+	In fact, we have tested different normalization methods and it makes no difference in change points detection (see \textit{SI Appendix} Methods S5. Sensitivity analysis). In this study, finally, we performed min-max normalization as the formulation below:
 
-	$$ I' = (I - I_{min}) / (I_{max} - I_{min}) $$
+	$$ normalize(X) = (X - X_{min}) / (X_{max} - X_{min}) $$
 
-	Where $I$ is log-transformed series of actual values for $I_{F}$ and $F$ can be P: Priority, C: Configuration or S: Stress.
+	\subsubsection*{Indicator of Stress}
+	We refer to the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the indicator in a certain region $i$ \cite{qinFlexibilityIntensityGlobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, indicator of stress $I_S$ is the average stress of all regions' SFV-index: 
 
-	\subsubsection*{Sub-indicator of Stresses}
-	We refer to the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water scarcity in a certain region $SFV_i$ as indicator \cite{qinFlexibilityIntensityGlobal2019}. The index takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity:
-
-	$$ SFV_i = a * V_i + b $$
-	$$ V_i = \frac{A_i + B_i + C_i}{3} $$
-	$$ a = \frac{1}{V_{i, max} - V_{i, min}}; $$
-	$$ b = \frac{1}{V_{i, min} - V_{i, max}} * V_{i, min} $$
+	$$ I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i} $$
 	
-	where $A_i$, $B_i$, and $C_i$ are sub-indicators of scarcity, flexibility and variability of water in a certain region $i$(see \textit{SI Appendix} Methods S4). For the whole basin, we use the average NPS as indicator of stress $I_S$:
-	
-	$$ I_S = \frac{1}{n} * \sum_{i=1}^n SFV_{i} $$.
+	Where $SFV_i$ is the SFV-index for region $i$, and $i=1$ to $4$ refers SR, UR, MR, and DR (see \textit{SI Appendix} Methods S1 Definition of study area).
 
-	\subsubsection*{Sub-indicator of priority}
+	\subsubsection*{Indicator of priority}
 	To priority $I_P$, we use Non-Provisioning Shares (NPS) of water use as an indicator. While provisional water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, the non-provisioning water use ($WU_{non-pro}$) includes industrial and urban services water uses. Then, we can calculate the non-provisioning shares by:
 
 	$$ NPS_{i} = \frac{WU_{non-pro, i}}{WU_{pro, i} + WU_{non-pro, i}} $$
 
-	Where $i$ refers a certain region, or the whole basin (i.e. $I_P$ = $NPS_{basin}$).
+	Where $i$ refers a certain region, or the whole basin, i.e:
 
+	$I_P$ = $NPS_{basin}$
 
-	\subsubsection*{Sub-indicator of configurations}
-	To description of configurations $I_C$, we designed an indicator by imitation of information entropy, called Configuration Entropy Metric (CEM). CEM is a metric to measure the degree of evenness of water configuration (see \textit{SI Appendix} Methods S4), basin development is often accompanied by the reduction of regional differences and sectors' differences in the whole basin, but there is a complement of sectors between regions, i.e.:
+	\subsubsection*{Indicator of configurations}
+	%$CEM$ 指标度量的是水资源配置“不均匀”的程度，类似于信息熵是对“混乱程度”的度量，即参与分配的各个单位之间，分配比例差距越大，则熵越小。
+	% 而我们的指标应反映随着社会发展，水资源配置在区域之间更加均衡（比例差距小）、整体满足不同用水部门的发展需求（比例差距减小）、但不同区域存在部门分工（比例差距增大）的趋势。
+	To description of configurations $I_C$, we designed an indicator by imitation of information entropy, called Configuration Entropy Metric (CEM), a metric to measure the degree of evenness of water configuration (see \textit{SI Appendix} Methods S4).
+	While our indicator $I_C$ should reflect that with the development of society, water resources configuration is more balanced among regions and generally meets the needs of different sectors (means smaller gaps, too), but different regions have a trend of division of labour among various sectors (with larger gaps):
 
-	$$ I_C = \frac{CEN_{r} * CEN_{s}}{CEN_{rs}} $$
+	$$ I_C = \frac{CEM_{r}*CEM_{s}}{CEM_{rs}}$$
 	
 	where $CEN_{r}$ and $CEN_{s}$ are Configuration Entropy Metric in different regions and different sectors. $CEN_{rs}$ is differences between sectors in a certain region to the whole basin (see \textit{SI Appendix} Methods S4). 
 
 	\subsection*{Change points detection}
 		The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
-		The approach after Pettitt (1979) is commonly applied to detect a single change-point in hydrological series or climate series with continuous data \cite{pettittNonParametricApproachChangePoint1979}. It tests the $H0$: The variables follow one or more distributions that have the same location parameter (no change), against the alternative: a change point exists. The non-parametric statistic is defined as:
+		The approach after Pettitt (1979) is commonly applied to detect a single change-point in hydrological series or climate series with continuous data \cite{pettittNonParametricApproachChangePoint1979}. 
+		It tests the $H0$: The variables follow one or more distributions that have the same location parameter (no change), against the alternative: a change point exists. The non-parametric statistic is defined as:
 	
 		$$ K_t = max|U_{t, T}|$$
-		where:
+
+		Where:
+
 		$$ U_{t, T} = \sum_{i=1}^t\sum_{j=t+1}^T sgn(X_i - X_j) $$
 	
-		The change-point of the series is located at $K_T$, provided that the statistic is significant. We use 0.001 as the threshold of p-value, which means the probability of a statistically significant change-point judgment being valid is more than $99.9\%$. Since this method only can return one significant change point, we repeat it Until all significant change points were detected.
+		The change-point of the series is located at $K_T$, provided that the statistic is significant. We use 0.001 as the threshold  of p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), which means the probability of a statistically significant change-point judgment being valid is more than $99.9\%$.
+		Since this method only can return one significant change point, we repeat it Until all significant change points were detected.
 	
 	% 计算贡献度
 	\subsection*{Contribution decomposition}
-		We have decomposed the amount of variation in each index at different stages in order to observe the contribution of each influencing factor to them. Use Integrated Water Resources Utilization (IWRU) Index as an example, which influenced by three dimensions: stress ($I_S$), priority ($I_P$) and configuration ($I_C$) (indicated by their own index respectively. Since $I_{F}$ refers log-transformed of indicator $F$ ($F$ can be one of P: Priority, C: Configuration or S: Stress), we calculate log-transformed IWRU index $ln(IWRU)$ by:
+		We have decomposed the amount of variation in each index at different stages in order to observe the contribution of each influencing factor to them. Use Integrated Water Resources Utilization (IWRU) Index as an example, which influenced by three dimensions' normalized indicator: stress ($I'_S$), priority ($I'_P$) and configuration ($I'_C$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
 
-		$$ ln(IWRU) = I_{P} + I_{C} - I_{S} $$
+		\begin{align*}
+			\Delta IWRU &= (I'_{P_{y_2}} + I'_{C_{y_2}} - I'_{S_{y_2}}) - (I'_{P_{y_1}} + I'_{C_{y_1}} - I'_{S_{y_1}}) \\
+			&= (I'_{P_{y_2}} - I'_{P_{y_1}}) + (I'_{C_{y_2}} - I'_{C_{y_1}}) + (I'_{S_{y_1}} - I'_{S_{y_2}}) \\
+			&= \Delta I'_P + \Delta I'_C + (-\Delta I'_S)
+		\end{align*}
+		Then, the contribution of dimension $x$ to IWRU's changes can be referred as:
 
-		Since the changes of IWRU $\Delta IWRU$ can be expressed as $\Delta IWRU = ln(IWRU_2) - ln(IWRU_1)$, while $IWRU_2$ and $IWRU_1$ are ending and beginning values of IWRU in a certain time period, combining the above equations we can get:
+		$$ Contribution_x = \frac{\Delta I'_x}{|\Delta IWRU|} $$
 
-		$$ \Delta IWRU = ln(\frac{S_1}{S_2}) + ln(\frac{T_2}{T_1}) + ln(\frac{P_2}{P_1}) = -\Delta I_P + \Delta I_C + \Delta I_S $$
+		Since $Contribution_x$ can be positive or negative, we used an absolute value to evaluate the contribution (in proportion) of a certain dimension in the all three dimensions to the changes:
+		$$  Contribution_x\% = \frac{|\Delta I'_x|}{\sum_x |\Delta I'_x|} $$
 
-		Then, we can calculate contributions of a certain factor $F$ in a certain period by:
+		or just for contributions (in proportion) within a certain year $j$ to the regime:
+		$$ Contribution_{x,j}\% = \frac{|I'_{x, j}|}{|\sum_x I'_{x, j}|} $$
 
-		$$ Cn_{F} = \frac{|\Delta C_{F}|}{\sum_{i=1}^n |C_{Fi}|} $$
-
-		where $Cn_{F}$ denotes the net contribution of factor $F$, $|\Delta C_{Fi}|$ refers net change of the factor $F$, and $|C_{Fi}|$ refers net change of the factor $F_i$. The factor $F_i$ to $F_n$ are $n$ elements in the same level involved in changes of the index. 
-
-	\subsection*{Dataset for calculating indicators}
+	\subsection*{Datasets}
 	% 为了计算 IWRU ，我们需要计算多个指标及子指标，所有使用的数据集都在表中列出，数据的详细介绍可见补充材料。
 	In order to calculate IWRU, we need to calculate multiple indicators and sub-indicators. All the datasets used are listed in the \textit{SI Appendix} table S1. A detailed description of the data can be seen in the supplementary materials \textit{SI Appendix} Methods S2.
 }
