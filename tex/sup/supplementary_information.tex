@@ -3,7 +3,7 @@
 
 \templatetype{pnassupportinginfo}
 
-\title{Water resource utilization regimes at a basin scale: transition framework and development traps}
+\title{Regime transition identification for water utilization in river basin developments}
 \author{Shuang Song, Shuai Wang, Bojie Fu, Xutong Wu (complete author list)}
 \correspondingauthor{Shuai Wang.\\E-mail: shuaiwang@bnu.edu.cn}
 
@@ -15,7 +15,7 @@
 \maketitle
 
 %% Adds the main heading for the SI text. Comment out this line if you do not have any supporting information text.
-\SItext{This supplementary document consists of four \textit{Methods} sections, 9 \textit{SI Appendix} figures and 2 \textit{SI Appendix} tables. Firstly, we introduced our study area, the Yellow River Basin, and its subdivisions in the section Methods S1. Then, we give a detailed description of used datasets and analysis their uncertainties in the section Methods S2. Further, we introduced how to harmonized different datasets with various spatial and temporal scales in Methods S3. Finally, the index along with corresponding indicators are introduced in the section Methods S4.}
+\SItext{This supplementary document consists of 5 \textit{Methods} sections, 9 \textit{SI Appendix} figures and 2 \textit{SI Appendix} tables. Firstly, we introduced our study area, the Yellow River Basin, and its subdivisions in the section Methods S1. Then, we give a detailed description of used datasets and analysis their uncertainties in the section Methods S2. Further, we introduced how to harmonized different datasets with various spatial and temporal scales in Methods S3. Then, the indicators corresponding to the IWRU are introduced in the section Methods S4. Finally, we proposed a sensitivity analysis in the section Methods S5, to test the robustness of our results.}
 
 
 % \subsection*{Brief description of Supplementary Information contents: }
@@ -118,16 +118,16 @@ Finally, when we process the location data (such as the location data of reservo
 
 \newpage
 % 指数介绍
-\section*{Methods S4. Water Utility Regime Index}
+\section*{Methods S4. Indicators of IWRU}
 % 水资源利用稳态指数考虑了流域尺度内人类利用水资源时最主要的三个维度，分别对应了 “有多少水”，“怎么用”和“给谁用”三个问题。
-The steady-state index of water resources utilization considers the three most important dimensions of human utilization of water resources at the watershed scale, corresponding to the three questions of ``how much water'', ``how to use'' and ``for whom, for where'' respectively. 
+The Integrated Water Resources Utilization (IWRU) index of water resources utilization considers the three basic dimensions of human utilization of water resources at the watershed scale, corresponding to the three questions of ``how much water'', ``how to use'' and ``for whom, for where'' respectively. 
 % TODO 这里需要增加参考文献，证明这三个维度是最重要的。
 % 无论如何，为了让这些维度能够被量化，我们寻找或发明了共计三个度量指标来对应指示其变化趋势：
-In order for these dimensions to be quantified, we found or invented a total of three metrics corresponding to the trend indicating their change: SFV Index, Non-provisioning Share and Allocation Entropy Metric.
+In order for these dimensions to be quantified, we found or invented a total of three metrics corresponding to the trend indicating their change: SFV Index, Non-provisioning Share and Configuration Entropy Metric.
 
 \subsection*{Stress: SFV-index}
 	%* 提出了很多的指标度量水压力，如水资源压力指数，水资源xxx等
-	There is how much water can be used in a certain basin? How many stresses has societies put on the water resources of the basin? Various metrics, therefore, proposed for water stress (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), where the dimensions of human impact are increasingly valued.
+	There is how much water can be used in a certain basin? How many stresses has societies put on the water resources of the basin? Answering these questions are crucial for water utilization. Various metrics, therefore, proposed for water stress (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), where the aspect of human impact are increasingly valued.
 	%* 其中SFV指数比较有用
     Among of them, by taking changes of water flexibility and variability into account,	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid metric of temporal changes in water stresses \cite{qinFlexibilityIntensityGlobal2019}.
     %* 该指标从人类开发利用水资源的角度，考虑了影响人类感知水资源压力的三个方面：水资源的总量、水资源变异性、人类利用水资源的灵活性。
@@ -154,46 +154,67 @@ In order for these dimensions to be quantified, we found or invented a total of 
 \subsection*{Priority: Non-provisioning share}
     %* 从消耗水 到 利用水
     % xxx等人通过考虑消费品中的水消耗提出了虚拟水理论，发现水资源作为粮食与消耗产品的供给是水资源的主要用途，且能够随着贸易发生流动。但随着水资源利用方式的变迁，在其基础上兴起的水足迹研究，则进一步泛化了水相关的产品和服务概念。如今，世界非产品形式供给于人类的水资源已达xx%，范围包含了xxxxxx等方式，人类社会发生着从“消耗水”向“利用水”的倾斜。
-    How to use water resources? There has been put forward the virtual water theory by considering the water consumption in consumer goods, and found that the supply of water resources as food and consumption provisions is the main use of water resources, and can flow with trade. However, with the change of water resource utilization mode, the water footprint research on the basis of water footprint further generalizes the concept of water-related provisions and services. Today, the world's non-provisioning form of water supply to human beings are increasing more than 20 times faster growth, including industry, services and other ways, the human society is occurring from ``consumption of water'' to ``use of water'' tilt.
+    How to use water resources?
+    % 这里是一段关于虚拟水的介绍 
+    % There has been put forward the virtual water theory by considering the water consumption in consumer goods, and found that the supply of water resources as food and consumption provisions is the main use of water resources, and can flow with trade. However, with the change of water resource utilization mode, the water footprint research on the basis of water footprint further generalizes the concept of water-related provisions and services. 
+    Today, the world's non-provisioning form of water supply to human beings are increasing more than 20 times faster growth, including industry, services and other ways, the human society is transformed from ``consumption of water'' to ``make use of water''.
     % TODO 这里要补充一些材料
     % *这里我们使用非用于供给性的水资源量所占的比例作为指标，即:
     Here, we use Non-Provisioning Shares (NPS) of used water resources as a metric to indicate priority of water utility:
-    $$ NPS_{ij} = \frac{WU_{indirect, i, j}}{WU_{direct, i, j} + WU_{undirect, i, j}} $$
-    where $i$ refers a certain year and $j$ refers a certain region. Thus, $WU_{i,j}$ means the water use in $i$ year and region $j$, where $direct$ part and $undirect$ part indicate provisioning sectors and non-provisioning sectors respectively.
+    $$ NPS_{i} = \frac{WU_{non-pro, i}}{WU_{pro, i} + WU_{non-pro, i}} $$
+    Where $i$ refers a certain region, or the whole basin, i.e:
+	$I_P$ = $NPS_{basin}$
     %* 直接用水和非直接用水
     % 在本研究中，我们将牲畜用水、农村或城市的居民用水、农业用水认为是供给型用水。对应的，非供给性用水常常是工业用水，其中以能源用水为主。根据广泛的研究表明，水-粮食-能源之间存在广泛的联结，是水资源供应倾向性的一种体现，其中供给性用水常常是能够作为支持农产品生产的关键，而非供给水则更多参与了工业等社会过程。对中国整体而言，如果只考虑农业生产，中国是虚拟水贸易的流入国。但如果考虑工业耗水，中国则向外出口虚拟水资源。而黄河作为水资源高度稀缺的流域，更需要考虑两者之间的权衡，因此采用该比例作为指标能够简单、直接、有效地反映用水 priority 的变化。
     % TODO 这里要补充一些材料 Li 2020，虚拟水贸易，水粮食能源的联结
     In this study, we consider water for livestock, water for rural or urban residents and water for agriculture as provisioning water. Correspondingly, non-provisioning water is often industrial water, mainly energy water. Extensive studies have shown that there is a wide connection between water, food and energy, which is a manifestation of water supply tendency, in which provisioning water is often the key to support the production of agricultural products, while non-provisioning water is more involved in industrial and other social processes. For China as a whole, if only agricultural production is considered, China is the recipient country of virtual water trade. But if industrial consumption is taken into account, China is exporting virtual water. However, as a river basin with high degree of water resource scarcity, the trade-off between the two has always been treated with greater value; thus, the adoption of this ratio as an indicator can simply, directly and effectively reflect the change of priority with water.
 
-\subsection*{Configuration: Allocation Entropy Metric}
+\subsection*{Configuration: Configuration Entropy Metric}
     %* 哪里利用水资源？  
     Where to use water resources? 
     % * 设计了一个熵指标
-    % 水资源的分配一直是难题，需要在上下游之间、不同用水部门之间进行权衡，但目前还缺少相关的指标进行量化。这里我们设计了一个“分配熵指标”，能够把水资源分配的格局（倾向于平均分配还是更加侧重某一区域）简单直接的表达出来。我们模仿了物理学中信息熵的思想，当信息（这里是水资源）的分配越趋于平均时，其熵在增加，当分配更倾向于某一区域时，该区域获得发展的确定性在增加，导致总体的熵减少。
-    %! 这里的表述需要好好思考一下
-    The allocation of water resources has always been a difficult problem, requiring trade-offs between upstream and downstream and between different water sectors, but there is still a lack of relevant indicators to quantify. Here we have designed a ``distribution entropy index'', which can simply and directly express the configuration of water allocation (which tends to be more evenly distributed or more focused on a certain region). We imitate the idea of information entropy in physics. When the distribution of information (here is water resource) is more equal, its entropy increases; when the distribution is more inclined to a certain region, the certainty of development in that region increases, resulting in the overall entropy decrease.
+    % 水资源的分配一直是难题，需要在上下游之间、不同用水部门之间进行权衡，但目前还缺少相关的指标进行量化。
+    The configuration of water resources has always been a difficult problem, requiring trade-offs between upstream and downstream and even different water sectors. However, there is still a lack of comprehensive indicators to quantify. 
+    % 这里我们设计了一个“分配熵指标”，能够把水资源分配的格局（倾向于平均分配还是更加侧重某一区域）简单直接的表达出来。
+    Here we designed a ``Configuration Entropy Metric (CEM)'', which can simply and directly express the configuration of water allocation (which tends to be more evenly distributed or more focused on a certain region and sector). 
+    % 我们模仿了物理学中信息熵的思想，当信息（这里是水资源）的分配越趋于平均时，其熵在增加，当分配更倾向于某一区域时，该区域获得发展的确定性在增加，导致总体的熵减少。
+    We imitate the idea of information entropy in physics --When the distribution of information (here is water resource) is more equal, its entropy increases.
     %* 这里需不需要一张图表示？
     % 该指标将不同区域（SR, UR, MR, DR）和不同部门（农业、工业、服务业、人居）消耗的水资源 Water Use (WU) 视做观察的结果，计算完全平均分配水资源时候的水资源分配熵作为最大值，再计算实际水资源分配最大熵与实际熵的比值，以表示水资源分配的格局多大程度上偏离平均分配。
-    The indicators will be different areas (SR, UR, MR, DR) and different departments (agriculture, industry, service industry, human settlements) of Water consumption of Water Use (WU) as observations, calculation completely when the average allocation of Water resources allocation of Water resources as the maximum entropy, and the actual Water distribution of the ratio of the maximum entropy and the actual entropy, to show the configuration of Water resources allocation how much deviation from the average allocation, i.e.:
+    The CEM is a metrics for different regions (SR, UR, MR, DR) and different sectors (agriculture, industry, domestic and services) in configurations of Water Use (WU), calculated by:
+
+    $$ CEM = \sum_{i=1}^n -log(p_{i}) * p_{i} $$
+
+    Where $i$ represents the unit (a region or a sector) in configuration of water utilization, $p_i$ represents the proportion of water used by the units.
+    For different regions, when water resources are completely evenly used, (i.e. for any region $i$, $p_i = 1/n $), the maximum value of CEM is:
+
+    $$ CEM_{max} = \sum_{i=1}^n -log(p_{i}) * p_{i} = - log(\frac{1}{n}) $$
+
+    $I_C$, an indicator to measure the configuration dimensions of water resources utilization, is composed of three parts:
+
+    $$ I_C = \frac{CEM_{r}*CEM_{s}}{CEM_{rs}}$$
     
-    $$ ratio = \frac{Entropy}{Entropy_{max}} $$
-	where $Entropy$ and $Entropy_{max}$ are entropy and maximum entropy of water distributions, respectively. They can be calculated by:
-	$$ Entropy = \sum_{i=1}^n \sum_{j=1}^m -log(p_{ij}) * p_{ij} $$
-	$$ Entropy_{max} = n * \sum_{j=1}^m -\frac{p_j}{n} * log(\frac{p_j}{n}) $$ 
-    where $p_j$ and $p_ij$ are proportions of water use in sector $j$ and region $i$:
-	$$ p_j = \frac{\sum_{i=1}^n WU_j}{\sum_{i=1}^n WU} $$
-	$$ p_{ij} = \frac{WU_{ij}} {\sum_{i=1}^n \sum_{j=1}^m WU_{ij}} $$
-	where $n$ is the total number of regions ($n=4$ here, see supplementary Methods. S1) and $m$ is the total number of sectors ($m=4$ here, see supplementary Methods. S2).
+    \begin{itemize}
+        \item Configuration between regions $CEM_r$:
+            $$ CEM_r = \sum_{i=1}^4 -log(p_{i}) * p_{i} $$
+            where $p_i$ is the proportion of region $i$ in water resource usage ($WU_i$), in the total water resource consumption in all regions ($i=1$ to $4$ represents SR, UR, MR, or, DR respectively), i.e.:
+            $$ p_i = \frac{WU_i}{\sum_{i=1}^4 WU_i} $$
+        \item Configuration between sectors $CEM_s$:
+            $$ CEM_s = \sum_{j=1}^3 -log(p_{j}) * p_{j} $$ 
+            where $p_j$ is the proportion of sector $j$ in water resources usage ($WU_j$), in the total water consumption in all sectors ($j=1$ to $3$ represents agriculture, industry and domestic \& services respectively), i.e.:
+            $$ p_j = \frac{WU_j}{\sum_{j=1}^3 WU_j} $$
+        \item Division of sectors' function between regions $CEM_{rs}$
+            $$ CEM_{rs} = \frac{1}{3} * \sum_{j=1}^3 \sum_{i=1}^4 -log(p_{ij} * p_{ij})$$
+            where $p_{ij}$ refers water use proportion of region $i$ in the sector $j$, in the total water consumptions of all regions in this sector, i.e.: 
+            $$ p_{ij} = \frac{WU_ij}{\sum_{i=1}^4 WU_ij} $$
+    \end{itemize}
 
     % 上述指标同时考虑了地区之间的分配和行业之间的分配，但随着流域发展，两者的趋势是有差异的。对于位于同一个国家内的流域，区域之间通过开采水资源获取发展的机会是相等的，实际的水资源使用更多取决于自身的经济实力，因此考虑不受实际经济制约的理想情况，四个区域之间的水资源应该被公平（平均）分配的（熵增）。但同时，由于地理差异和部门分工的广泛存在，不同的区域有其比较优势，是制约其理论上将水资源分配于哪个用水行业的关键因素，因此其特定区域的部门之间水资源分配在理想情况下将总体呈现差异增加（熵减）的趋势。同时，部门分工也将随着比较优势出现，让不同区域都相较于流域的平均水平有其各自的优势部门（相较于平均熵）。
     % TODO 这里一定要想一下，怎么能给人讲的更明白
-    The above indicators take into account the distribution between regions and between industries, but with the development of the basin, the trend of the two is different. For river basin is located in the same country, from the exploitation of water resources for development between regional opportunities are equal, the actual use of water resources depends more on their own economic strength, so consider don't ideal is conditioned by the actual economic situation, between the four areas of water resources should be fair (on average) distribution (entropy). But at the same time, due to the wide existence of geographical differences and division of labour, different regions have their comparative advantages, which is the key factor restricting which water resources are allocated to in the water industry theoretically. Therefore, the distribution of water resources among departments in a specific region will show an overall trend of increasing differences (entropy reduction) in an ideal situation. At the same time, the division of labour will emerge along with the comparative advantage, so that different regions have their own advantageous departments (compared with the average level of the river basin).
+    The indicator $I_C$ (Configuration of water utilization), therefore, not only take into account the distribution between different regions and industries, but also considers the complicated professional division with the development of society. 
 
-% 最后，我们将三个维度各自的指标在标准化后等权重考虑，组成了 Water Utility Regime Index。
-Finally, we consider the indexes of the three dimensions in the same weight after standardization to form the Water Utility Regime Index.
 
-% TODO 这里补充 SI Appendix Methods S5：简要介绍黄河的管理措施变化
-
+\newpage
 \section*{Sensitive analysis}
 % 一个对断点检测方法普遍的批评是可以通过调整方法的使用来操纵结果，因此我们对断点识别的过程进行了敏感性分析，以证明我们的结果是鲁棒性的。
 A common criticism of breakpoint detection methods is that the results can be manipulated by adjusting the use of the methods, so we conducted a sensitivity analysis of the breakpoint recognition process to demonstrate that our results are robust. 
@@ -202,9 +223,9 @@ Firstly, we performed three different normalization methods in construction of I
 
 \begin{itemize}
     \item Min-max normalization:
-        $$ normalized(X) = (X - X_{min}) / (X_{max} - X_{min}) $$
+        $$ normalized(X) = \frac{X - X_{min}}{X_{max} - X_{min}} $$
     \item Mean-max normalization:
-        $$ normalized(X) = (X - X_{mean}) / (X_{max} - X_{min}) $$
+        $$ normalized(X) = \frac{X - X_{mean}}{X_{max} - X_{min}} $$
     \item Z-score normalization:
         $$ normalized(X) = \frac{X-X_{mean}}{X_{std}} $$ 
 \end{itemize}
@@ -364,7 +385,7 @@ Taken together, the results of three periods in this study with the two breakpoi
 	\label{fig:traps}
 \end{figure}
 
-补充图片10：地下水
+
 \begin{figure}
     \centering
     \includegraphics[width=0.95\textwidth]{../../figures/sup/sensitivity.pdf}
