@@ -194,6 +194,32 @@ Finally, we consider the indexes of the three dimensions in the same weight afte
 
 % TODO 这里补充 SI Appendix Methods S5：简要介绍黄河的管理措施变化
 
+\section*{Sensitive analysis}
+% 一个对断点检测方法普遍的批评是可以通过调整方法的使用来操纵结果，因此我们对断点识别的过程进行了敏感性分析，以证明我们的结果是鲁棒性的。
+A common criticism of breakpoint detection methods is that the results can be manipulated by adjusting the use of the methods, so we conducted a sensitivity analysis of the breakpoint recognition process to demonstrate that our results are robust. 
+
+Firstly, we performed three different normalization methods in construction of IWRU for breakpoint detection:
+
+\begin{itemize}
+    \item Min-max normalization:
+        $$ normalized(X) = (X - X_{min}) / (X_{max} - X_{min}) $$
+    \item Mean-max normalization:
+        $$ normalized(X) = (X - X_{mean}) / (X_{max} - X_{min}) $$
+    \item Z-score normalization:
+        $$ normalized(X) = \frac{X-X_{mean}}{X_{std}} $$ 
+\end{itemize}
+
+Where $X$ is a time series and $X_{mean}$, $X_{std}$, $X_{min}$, $X_{max}$ are mean, standard deviation, minimum, maximum of it.
+% 无论我们使用上述哪种标准化方法，将三个维度的指标合成为IWRU，我们对IWRU的断点检测结果都相同。
+No matter which of the above standardized methods we use in combining the indicators of the three dimensions, and our detection results for IWRU breakpoints are the same.
+
+Another place where there is room for manipulation is the choice of significance threshold (i.e. threshold of the p-value) in the Pettitt Change points detection method. Here, we test 1000 possible p-values between $10^{-6}$ and $0.01$, and most of the results give the same detection in breakpoints. 
+It has not given another breakpoint before the threshold is near to $10^{-2}$ (see \textit{SI Appendix} Fig. S12: A). 
+% 不仅如此，当三个断点被检测出时，之前的两个断点仍然存在，且新增加的断点带来阶段划分的趋势差异并不明显
+Not only that, when three breakpoints are detected, the previous two breakpoints still exist (1978 and 1994), and the trend difference of the new breakpoints is not obvious (see \textit{SI Appendix} Fig. S12: B and C).
+
+Taken together, the results of three periods in this study with the two breakpoints detected (1978 and 1994) are robust.
+
 % tag 附录图
 
 %%% Each figure should be on its own page
@@ -327,6 +353,7 @@ Finally, we consider the indexes of the three dimensions in the same weight afte
 % \end{figure}
 
 
+% 补充图片 11 全球案例
 \begin{figure}%[htbp]
 	\centering
 	\includegraphics[width=\linewidth]{../../figures/main/map.pdf}
@@ -337,6 +364,17 @@ Finally, we consider the indexes of the three dimensions in the same weight afte
 	\label{fig:traps}
 \end{figure}
 
+补充图片10：地下水
+\begin{figure}
+    \centering
+    \includegraphics[width=0.95\textwidth]{../../figures/sup/sensitivity.pdf}
+    \caption{
+        Sensitivity analysis of the threshold of p-values. 
+        \textbf{A.} number of breakpoints in different p-values.
+        \textbf{B.} A typical result of two breakpoints.
+        \textbf{C.} A typical result of three breakpoints.
+    }
+\end{figure}
 
 
 %% 表格
