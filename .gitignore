@@ -387,3 +387,7 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+# manuscripts
+tex/main/manuscript.pdf
+tex/sup/supplementary_information.pdf
