@@ -17,8 +17,8 @@
 \author[a, b]{Shuang Song}  % 宋爽，一作
 \author[a, b, 1]{Shuai Wang}  % 王老师，通讯
 \author[c, d]{Xutong Wu}  % 武旭同
-\author[a, b]{Bojie Fu}  % 傅老师
 \author[e]{Yongping Wei} % 尉老师
+\author[a, b]{Bojie Fu}  % 傅老师
 
 % 机构列表
 \affil[a]{ % 北师大地表国重
@@ -90,7 +90,7 @@
 
 % 关键词，三到五个
 % At least three keywords are required at submission. Please provide three to five keywords, separated by the pipe symbol.
-\keywords{Regime shifts $|$ Water use $|$ Water governance $|$ Governance challenges $|$ River basins} 
+\keywords{Regime shifts $|$ Water use $|$ Water governance $|$ Socio-hydrology $|$ Sustainability} 
 
 %tag 摘要
 % 为了
@@ -99,15 +99,15 @@
 	% 为了持续的社会经济发展，人类治理了大型河流，并在世界范围内引发了一系列流域尺度的稳态转换。
 	For water uses in sustaining socio-economic development, human have governed large rivers and triggered various regime shifts at a basin scale all around the world. 
 	% 由于水治理制度决定谁、何时和如何获得水，因此确定其过渡对于指导有效和可持续的用水至关重要。
-	Since water governance regime decides who gets what water, when and how, identification for its changes is critical to guiding efficient and sustainable water uses.
+	Since water governance regime decides who gets what water, when and how much, identification for its changes is critical to guiding efficient and sustainable water uses.
 	% 在这里，考虑到水治理的三个主要维度(压力、供应和分配)，我们开发了一个流域尺度上的综合水治理指数(IWGI)，以检测制度的变化。
-	Here, considering three main dimensions of water governance (stress, provision and allocation), we develop an Integrated Water Governance Index (IWGI) at a basin scale to detect regime shifts.
+	Here, considering three main dimensions of water governance (storage, provision and allocation), we develop an Integrated Water Governance Index (IWGI) at a basin scale to detect regime shifts.
 	% 将该指数应用于中国黄河流域，可以看出，在过去半个多世纪中，有三个政权的转变是由经济增长、管理和效率提高引起的。  
-	By applying this index to the Yellow River Basin, China, it suggests there were two regimes shifts of water governance throughout half a century, which were caused by changes of environment, economy and policy.
+	By applying this index to the Yellow River Basin, China, it suggests there were two regimes shifts of water governance throughout half a century, which were caused by environmental, economic social and political changes.
 	% 在此基础上，我们总结了一个与水社会循环相对应的一般制度变迁模式。
-	Based on the results, we summarized a widespread regime transition schema, corresponding with trajectories of water uses towards hydro-social cycle.
+	Based on these, we summarized a widespread regime transition schema, corresponding with trajectories of water uses towards hydro-social cycle.
 	% 由于资源挑战和结构挑战主要困扰不同制度下的水治理，这一过渡模式可以作为协调大流域治理的有益指导。
-	Since resource challenges and structural challenges mainly bother water governance within different regimes, this schema can be a useful guideline for governing big river basins in a coordinated way.
+	Since resources and structural challenges of water governance mainly occurred at different stages of transition, this schema can be a useful guideline for governing big river basins in a coordinated way.
 \end{abstract}
 
 
@@ -124,62 +124,65 @@
 
 \label{introduction-section-1}
 % 水资源在人类世的重要性，是支持人类社会发展的基础。
-\dropcap{W}ater, at “the centre of the planetary drama of the Anthropocene”, is not only essential for myriad Earth system processes, but also supporting development of human societies in various aspects. 
+\dropcap{W}ater, at “the centre of the planetary drama of the Anthropocene”, is not only essential for Earth system processes, but also supporting development of human societies. 
 %* add references
 % 然而，根据人类用水的需求，人类的改造对自然水循环产生了深远的影响，并将其发展轨迹逐步推向了水社会循环。
-Because of needs for water use, human's modification has profoundly influenced the natural water cycle and led the trajectory toward hydro-social cycle stage by stage
+Because of relying on water use, human activities have profoundly modified the natural water cycle and led the trajectory towards a hydro-social water cycle, stage by stage
 \cite{gleesonIlluminatingWaterCycle2020,cummingLinkingEconomicGrowth2018}.
 % 面对人类世世的重大转变，世界许多大河流域，也是经济和文明的热点地区，迫切需要成功的治理以实现可持续发展
 Facing this major transformation in the Anthropocene, many of the world's big river basins, also hot spots of economy and civilization, are urgently in need of successful governance for sustainable water use
 \cite{bestAnthropogenicStressesWorld2019}. 
-% 由于水的治理需要对人类社会和水的使用之间的复杂关系有深刻的理解，因此在流域尺度上，识别由向水-社会水循环的转变所引起的变化是至关重要的。
-Since water governance requires deep understanding of the complex relationships between human societies and water use, it is crucial to identify its changes induced by the transformation towards hydro-social water cycle, at a basin scales.
+% 作为地球系统治理框架的一个组成部分，水治理需要对人类社会和水资源利用之间的复杂关系有深刻的理解。
+As an integral part of a proposed Earth system governance framework, water governance requires deep understanding of the complex relationships between human societies and water use.
+% Biermann et al., 2012.
+% 因此在流域尺度上，识别由向水-社会水循环的转变所引起的变化是至关重要的。
+Therefore, it is crucial to identify changes of water governance induced by the transformation towards hydro-social water cycle, at a basin scales.
 
 \label{introduction-section-2}
+% 缺乏治理就是缺乏可持续性
+On the trajectory of development, missing governance means missing sustainability.
+% 根据联合国开发计划署(UNDP)的说法，水管理决定了用水的三个关键方面:“有多少水可供使用?、“如何平衡用水服务?”“以及‘如何平等有效地分配水资源?’”
+According to United Nations Development Programme (UNDP), three key dimensions of water use are decided by a water governance regime directly: ``How much water can be used? (storage)'', ``How to balances different water use services? (provision)'' and ``How to allocate water equally and efficiently? (allocation)''.
 % Regime 和 Regime shift 的定义。
 Regime is a stable state of system’s structure and function, of which large and persistent changes may lead to substantive impacts on the outcomes of system with widespread cascading effects, defined as regime shifts 
 \cite{rochaCascadingRegimeShifts2018,schefferCatastrophicRegimeShifts2003, schefferCatastrophicShiftsEcosystems2001}.
-% 因此，识别水治理的制度变迁对于快速变化的流域具有重要意义，可以作为水利用的系统转变的信号，并给可持续发展带来新的挑战。
-Therefore, identifying regime shifts of water governance is important for fast-changing river basins, since it can be a signal of substantive change in water use and lead to new challenges in sustainability at a basin scale.
-% 根据联合国开发计划署(UNDP)的说法，水管理决定了用水的三个关键方面:“有多少水可供使用?、“如何平衡用水服务?”“以及‘如何平等有效地分配水资源?’”
-According to United Nations Development Programme (UNDP), three key aspects of water use are decided by water governance: ``How to meet scarcity of water use? (stress of water use)'', ``How to balances different water use services? (provision of water use)'' and ``How to allocate water equally and efficiently? (allocation of water use)''.
-% 这三个问题的答案取决于不同水治理制度下的环境、经济、社会和政治形势。
-Answers of the three questions depend on environmental, economic, social and political situation within different water governance regimes. 
+% 因此，确定关于水治理的制度变化是重要的，它标志着水资源利用的实质性变化，并导致可持续性方面的新的治理挑战。
+Identification of regime shifts regarding water governance, therefore, is important as a signal of substantive change in water use and lead to new governance challenges in sustainability.
+% 随着环境、经济、社会和政策情况。
+Changed with environmental, economic, social and political situation, the three dimensions may compose various water governance regimes. 
 % 首先，受环境恶化和经济发展用水的影响，水资源短缺会增加社会的压力，但水库建设等管理政策有助于缓解压力。
-Firstly, effected by environment deteriorate and water uses for economic development, water scarcity can increase stress on society, but management policies such as construction of reservoirs are helpful to relief the stresses.
+Firstly, effected by environment deteriorate and demands of further economic development, maintaining storage for societies can face stress because of water scarcity, but governance policies (such as construction of reservoirs for storage) are helpful to relief
 \cite{postelHumanAppropriationRenewable1996, greveGlobalAssessmentWater2018, qinFlexibilityIntensityGlobal2019}.
 % 其次，在供应用水(如家庭用水和粮食生产用水)和非供应用水(如工业生产或能源用水)之间存在权衡，这需要由治理制度来平衡。
 Secondly, there is trade-off between provisioning water use (such as domestic use and food production uses) and non-provisioning water (such as uses for industrial production or energy), which in need of considerations through water governance
 \cite{liuWaterScarcityAssessments2017, florkeWaterCompetitionCities2018}.
 % 第三，由于配置是流域关注的问题，它不仅受到区域环境基础的影响，而且还受到区域经济比较优势的影响，而经济比较优势可能受到社会发展和政策的影响。
-Thirdly, since allocation is basins' concerns, it not only influenced by regional environmental foundations, but also changed by regions' economic comparative advantages, which may effected by social development and policies.
+Thirdly, since allocation is a concern of the whole basin, it not only influenced by regional environmental foundations, but also changed by regions' economic comparative advantages, which is easily changed by social development and policies.
 % 总的来说，用水治理决定了与用水的“压力”、“供给”和“分配”，而三者在用水转向社会-水循环的过程中都发生着不断的变化
-In general, water governance determines the ``stresses'', ``provision'' and ``allocation'' of water use, which all change constantly in the transformation towards the hydro-social water cycle because of changes environmental, economic, social and political situation Figure~\ref{fig:framework}.
-% 因此，通过识别这种变化的稳态转化对理解是很有帮助的。
-Therefore, identification of regime shifts for water governance is critical to understand the complex changes of relationships between human societies and water use.
+Taken together, along with the transformation towards a human-dominated hydro-social water cycle, water governance regimes determined by three changing dimensions (storage, provision and allocation), and it is crucial to identify their shifts in a simple but comprehensive way for basins' sustainability (Figure~\ref{fig:framework}).
 
+\label{introduction-section-3}
 % 黄河流域(YRB，见\textit{ Appendix}方法S1)，在中国经历了最激烈的水资源开发和最剧烈的管理制度变化。
-The Yellow River Basin (YRB, see \textit{Appendix} Methods S1) had experienced the most intense water exploitation and the most dramatic shifts of management regime in China. 
-% 从古至今，黄河一直为水治理带来了异乎寻常的挑战
-Since ancient times, YRB had brought extraordinary challenges to water governance.
+The Yellow River Basin (YRB, see \textit{Appendix} Methods S1 for details) had experienced the most intense water use and dramatic shifts of regime in China, with extraordinary challenges to water governance since ancient times.
 % 对1960年以前的中国，黄河巨大的含沙量不仅给YRB带来了洪泛灾害，更为利水带来巨大困难。
-Before 1960, the huge sediment loads of the Yellow River in China not only brought flood disasters, but also brought great difficulties to water use of YRB. 
+Half century ago, the huge sediment loads of the Yellow River in China not only brought disasters, but also made it difficult for water use. 
 % 随着水保措施、水库调水调沙、修堤等治理措施的落实才得到了有效遏制。
-With the implementation of governance measures such as conservation policies, regulation reservoirs, and levees constructions, these issues were effectively contained.
+Since 1960s, with implementations of conservation policies, regulation reservoirs, and levees constructions, these issues were effectively contained.
 % 但随之而来的是越来越严重的断流，为水治理带来了新的挑战。 
-However, more and more serious drying up of the Yellow River brings new challenges to governance and promoted a range of related policies to deal with.
+However, serious drying up of the Yellow River led new challenges to governance and promoted a range of related policies to deal with.
 % 如今，黄河流域仍面临严峻的治理挑战，因为区域的用水需求仍很难被全盘满足，而必须做出权衡。
-Today, the Yellow River basin still faces serious governance challenges, as regional water demands are still difficult to be fully met and various trade-offs must be involved.
+Today, as water demands are still difficult to be completely met and various trade-offs must be involved between regions and sectors, there is still a long way towards successful water governance.
 % 总之，随着人类影响逐步加大，为了应对层出不穷的治理挑战，黄河流域水治理发生的迅猛转变堪称世界之最。
-All in all, the transformation of the Yellow River basin has been the most rapid in the world in response to the endless governance challenges brought by the increasing human influence.
+All in all, the transformation of the YRB has been the most rapid in the world in responses to the endless governance challenges induced by environmental, economic, social or political factors.
 % 因此如果能理解黄河水治理稳态的转换过程，其模式能为世界大河流域用水的可持续提供见解。
-Therefore, identifying the regime shifts of water governance for YRB can provide key insights for the sustainable water use governance in the world's great river basins.
+Therefore, identifying the regime shifts with challenges regarding water governance for YRB can provide insights for the world's fast-changing big river basins in their sustainable development.
 
+\label{introduction-section-3}
 % tag 引言最后一段
 % 这里我们整合了三个方向，提出了描绘流域人水关系的指数
-Here, by integrating three above mentioned key questions in water governance, we develop an Integrated Water Governance Index (IWGI) at a basin scale to indicate changes of basin's water governance (Figure~\ref{fig:framework}).
+Here, by integrating three above mentioned key dimensions of water governance, we develop an Integrated Water Governance Index (IWGI) at a basin scale to indicate changes of basin's water governance (Figure~\ref{fig:framework}).
 % 使用案例研究
-Then, by applying this index to the YRB, we analysed the regimes shifts of water governance and their main causes, in this typical basin of rapidly transforming.
+Then, by applying this index to the YRB, we analysed the regimes shifts of water governance and their main causes, in this typical basin of rapidly changes.
 % 最后总结出一般性框架
 Finally, we summarized a general regime transition schema, echoing to the different challenges in water governance, which can be a useful guideline for basins to develop in a coordinated way.
 
