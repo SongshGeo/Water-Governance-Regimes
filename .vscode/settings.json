@@ -1,5 +1,5 @@
 {
-    "python.pythonPath": "D:\\Programs\\anaconda38\\python.exe",
+    "python.pythonPath": "/Users/songshgeo/opt/anaconda3/bin/python",
     "ltex.ignoreRuleInSentence": [
         {
             "rule": "UPPERCASE_SENTENCE_START",
