@@ -219,8 +219,7 @@ Finally, a general regime transition schema is summarized, which can be a practi
 	\includegraphics[width=\linewidth]{../../figures/main/index.pdf}
 	\caption{Changes of the IWGI index. 
 	\textbf{A,} Change points detection. With change points in 1978 and 1994, the IWGI have three periods in changing trend.
-	\textbf{B,} Changing slopes of each period.
-	\textbf{C,} Contributions of each dimension to the changes of IWGI within three periods. Supply, purpose and allocation are the main positive contributor of P1, P2 and P3, respectively.
+	\textbf{B,} Contributions of each dimension to the changes of IWGI within three periods. Supply, purpose and allocation are the main positive contributor of P1, P2 and P3, respectively.
 	}
 	\label{fig:IWGI}
 \end{figure}
@@ -401,39 +400,40 @@ Based on a deeper understanding of governance regime transition, we can create f
 
 %tag 研究方法
 \matmethods{
-Here, we constructed the Integrated Water Resources governance (IWGI) Index which consists of three dimensions and identified the changes periods of the index over time by change points detection. 
+Here, we constructed the Integrated Water Governance Index (IWGI) which consists of three dimensions (supply, purpose, allocation, see Figure~\ref{fig:framework}) and identified the changes periods of the index over time by change points detection. 
 Each dimension is reflected by an independent indicator after normalization, and water governance regime were characterized by combination of impacts of each dimension in periods.
-In addition, the contribution to changes of IWGI index along with each main indicators were decomposed and calculated separately for each regime (i.e. period). 
+In addition, the contribution to changes of IWGI index along with each main indicators were decomposed and calculated separately for each regime period. 
 	
-	\subsection*{Integrated Water Resources governance (IWGI) Index}
+	\subsection*{Integrated Water Governance (IWGI)}
 	% 我们认为水资源利用制度，与水资源利用的三个维度紧密相关：
-	Water resources governance system is closely related to the social developments in three dimensions below (see \textit{SI Appendix} Methods S4 for details):
+	Water resources governance system is closely related to the transformation towards hydro-social water cycle in three dimensions below (see \textit{SI Appendix} Methods S4 for details)
+	\cite{steffen2018,abbott2019,levia2020}:
 	
 	% - 社会的发展通常伴随着用水向社会经济系统倾斜，用水方式优先向收益更高的非供给性方式倾斜：
 	\begin{itemize}
-		\item Social development is usually accompanied by a change of purpose in water use towards social and economic systems because of higher returns:
+		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
+		\item The socio-economic dominance may lead to further demands of water supply (S) because of increasing water withdrawals. However, an effective water governance may boost supply capacities to meet water demands by technical solutions in the process of development along with the transformative trajectory, means:
+		$$ Dev \propto S^{-1} $$
+		\item The transformation is usually accompanied by a tilt of purpose in water governance towards socio-economic services (usually non-provisioning purposes), because of higher returns:
 		$$ Dev. \propto P $$
 		% - 社会发展通常伴随着更具结构性的水资源配置，如区域部门之间的分工合作，以及区域的统筹配置：
-		\item Social development usually lead to more complex structure in allocation of water resources, which is a result of division and cooperation between regions and sectors for developing:
+		\item The transformation usually lead to more complicated structure in water allocation, which is mainly a result of division and cooperation between regions and sectors because of environmental context and economic comparative advantages:
 		$$ Dev \propto A $$ 
-		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
-		\item Further social development can only be achieved by effectively alleviating the water resource stresses generated in the process of development through technological means:
-		$$ Dev \propto S^{-1} $$
 	\end{itemize}
 	
 	% 将三者合一起，即：
-	We combine the above three dimensions for an integrated index, remaining their positive or negative relationship with social development: 
+	We combine the above three dimensions for an integrated index, remaining their positive or negative relationship with the transformation towards hydro-social water cycle: 
 	
 	$$ Dev. \propto P*A*S^{-1}$$
 
 	% 在上述假设的基础上，我们要构建流域综合耦合指数(Integrated Water Resources governance, IWGI)，使 IWGI 有效表征与用水相关的三个维度。首先为每个维度选择一个合适的指示因子（indicator, $I_x$, 其中$x=P, C or S$）。将上式进行自然对数转换，从而让三个维度之间变成加减关系：
-	To effectively represent the three dimensions, we select an appropriate indicator ($I_x$, $x=P$, $C$ or $S$ corresponding to purpose, allocation and Stress respectively) for each dimension. Then, the above equation is transformed into a natural logarithm to facilitate calculation:
+	To effectively represent the three dimensions, we select an appropriate indicator ($I_x$, $x=S$, $P$ or $A$ corresponding to supply, purpose, and allocation respectively) for each dimension. Then, the above equation is transformed into a natural logarithm to facilitate calculation:
 
-	$$ Dev. \propto ln(I_P) + ln(I_A) - ln(I_S) $$
+	$$ Dev. \propto ln(I_S) + ln(I_P) - ln(I_A) $$
 
-	Assuming they have equal weights, the Integrated Water Resources governance (IWGI) Index:
+	Assuming they have equal weights, the Integrated Water Governance Index (IWGI):
 
-	$$ IWGI = I'_A + I'_P - I'_S $$
+	$$ IWGI = I'_S + I'_P - I'_A $$
 
 	where $I'_x$ is a normalization of log-transformed indicator $I_x$ for a certain dimension:
 
@@ -445,14 +445,14 @@ In addition, the contribution to changes of IWGI index along with each main indi
 	$$ normalize(X) = (X - X_{min}) / (X_{max} - X_{min}) $$
 
 	\subsubsection*{Indicator of Stress}
-	We refer to the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the indicator in a certain region $i$ \cite{qin2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, indicator of stress $I_S$ is the average stress of all regions' SFV-index: 
+	We refer to the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water supply capacities ($SFV_i$) as the indicator in a certain region $i$ \cite{qin2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, indicator of supply capacity $I_S$ is the average of all regions' SFV-index: 
 
 	$$ I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i} $$
 	
 	Where $SFV_i$ is the SFV-index for region $i$, and $i=1$ to $4$ refers SR, UR, MR, and DR (see \textit{SI Appendix} Methods S1 Definition of study area).
 
 	\subsubsection*{Indicator of purpose}
-	To purpose $I_P$, we use Non-provisioning purpose Shares (NPS) of water use as an indicator. While provisioning-purpose water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, the non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. Then, we can calculate the NPS by:
+	To purpose $I_P$, we use Non-provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, the non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. Then, we can calculate the NPS by:
 
 	$$ NPS_{i} = \frac{WU_{non-pro, i}}{WU_{pro, i} + WU_{non-pro, i}} $$
 
