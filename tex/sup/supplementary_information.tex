@@ -3,9 +3,9 @@
 
 \templatetype{pnassupportinginfo}
 
-\title{Regime transition identification for water utilization in river basin developments}
-\author{Shuang Song, Shuai Wang, Xutong Wu, Yongping Wei, Bojie Fu (complete author list)}
-\correspondingauthor{Shuai Wang.\\E-mail: shuaiwang@bnu.edu.cn}
+\title{Identifying regime transitions for water governance at a basin scale}
+\author{Shuang Song, Shuai Wang, Xutong Wu, Yongping Wei, Graeme S. Cumming, Bojie Fu (complete author list)}
+\correspondingauthor{Bojie Fu.\\E-mail: fubj@bnu.edu.cn}
 
 \begin{document}
 
@@ -15,7 +15,14 @@
 \maketitle
 
 %% Adds the main heading for the SI text. Comment out this line if you do not have any supporting information text.
-\SItext{This supplementary document consists of 5 \textit{Methods} sections, 9 \textit{SI Appendix} figures and 2 \textit{SI Appendix} tables. Firstly, we introduced our study area, the Yellow River Basin, and its subdivisions in the section Methods S1. Then, we give a detailed description of used datasets and analysis their uncertainties in the section Methods S2. Further, we introduced how to harmonized different datasets with various spatial and temporal scales in Methods S3. Then, the indicators corresponding to the IWRU are introduced in the section Methods S4. Finally, we proposed a sensitivity analysis in the section Methods S5, to test the robustness of our results.}
+\SItext{This supplementary document consists of 5 \textit{Methods} sections, 9 \textit{SI Appendix} figures and 2 \textit{SI Appendix} tables. 
+% 在方法S1部分，我们介绍了我们的研究区域——黄河流域及其区域划分。
+In the section Methods S1, we introduced our study area, the Yellow River Basin, and its subdivisions of regions. 
+% 在Methods S2部分，我们给出了使用的数据集的详细描述和分析它们的不确定性。
+In the section Methods S2, we give a detailed description of used datasets and analysis their uncertainties. 
+For the section Methods S3, we introduced how to harmonize different datasets with various spatial and temporal scales. 
+Then, the indicators corresponding to the IWRU are introduced in the section Methods S4. 
+Finally, we proposed sensitivity analysis in the section Methods S5, to test the robustness of our results.}
 
 
 % \subsection*{Brief description of Supplementary Information contents: }
@@ -26,22 +33,32 @@
 \section*{Methods S1. Definition of study area}
 
 \subsection*{Region divisions of Yellow River Basin}
-
+% 研究区为黄河流域(YRB，图S1-A)，是中国水资源开发最强烈、管理体制变化最剧烈的区域。
 The study area is the Yellow River Basin (YRB, see Fig. S1-A), which had experienced the most intense water exploitation and the most dramatic shifts of management regime in China. 
-According to the Yellow River Conservancy Commission (YRCC), an administrative government directly under the Ministry of Water Resources at the basin level, the upper, middle and lower reaches of the Yellow River can be distinguished by the characteristic of river. 
+% 根据黄河水利委员会(水利部下属的流域一级行政政府)的研究，黄河的上、中、下游可由河流特征来区分。
+According to the Yellow River Conservancy Commission (YRCC), an administrative government directly under the Ministry of Water Resources at the basin level, the upper, middle and lower reaches of the Yellow River can be distinguished by the physics characteristic of river. 
+% 但也有一种方案认为上游仅指人为干扰少、蓄水量大的河源区。
 However, there is another scheme suggesting that the upstream only refers to river source areas with little human disturbance and high water retention capacity.
-% TODO 这里补充参考文献，黄河上游的划分争议 
-Anyhow, since the socio-economic and natural conditions were both considered in this study, we integrated the two schemes above and divided the Yellow River Basin into four regions, which can be distinguished by three important hydrological control stations (see Fig. S1-B). 
+% 无论如何，由于本研究同时考虑了社会经济条件和自然条件，我们将上述两种方案结合起来，将黄河流域划分为四个区域，并以三个重要的水文控制站加以区分(见图S1-B)。
+Since the socio-economic and natural conditions were both considered in this study, we integrated the two schemes above and divided the Yellow River Basin into four regions, which can be distinguished by three important hydrological control stations (see Fig. S1-B). 
+% 之前的研究也表明，当考虑流域的社会用水和自然条件时，这样的划分是有效的，因为区域之间具有很强的异质性(见图S1-C)。
 Previous studies have also shown that such a division is valid when both social water use and the natural conditions of the basin are considered, as the regions exhibit strong heterogeneity among themselves (see Fig. S1-C) \cite{wangYellowRiverWater2019}:
 
 \begin{itemize}
-    \item \textbf{Source Region (SR):} Over 50\% of natural runoff was produced in this region. The most ecology function here is water conservation, as sparsely populated and less economically developed.
+    \item \textbf{Source Region (SR):} Over 50\% of natural runoff was produced in this region. The most ecology function here is water yield, as sparsely populated and less economically developed.
     \item \textbf{Upper Region (UR):} With the highest per capita irrigated land area, there are numbers of large irrigation lands in this region. However, because of backward production methods, efficiency of irrigation are used to be very low.
     \item \textbf{Middle Region (MR):} Crossing Loess Plateau, famous rich-sand area, Yellow River loads most of its sediments here with the highest soil erosion risk. To reverse this situation, the grain for green project changed the water utilization here strikingly.
     \item \textbf{Lower Region (LR):} With dense population and the traditional agricultural trajectory, lower region used to be the largest water use region. However, as the industrial transformation going, proportion of agriculture keeps decreasing, but LR is still the largest water use region in each aspect.
 \end{itemize}
 
-In general, there are inter-regional differences in the economic layout, distribution of water resources, distribution of water consumption, and population distribution of the Yellow River Basin (see Fig. S2). On the basis of these fundamental differences, social development and watershed management continue to influence and reshape their changes, making the Yellow River Basin the world's most intimately connected and dramatically changing large river basin. Specially, Water resources make an irreplaceable contribution to the development of society in the YRB. Each sector of economic development highly depended on water resources, since the most water use patterns are positively correlated with the region's key economic indicators (see Fig. S3). Thus, as a case study for analysing the evolution of the human-water relationship, it possesses typicality.
+% 总体来看，黄河流域在经济布局、水资源分布、用水量分布、人口分布等方面存在明显的区域差异(图S2)。
+In general, there are obvious inter-regional differences in the economic layout, distribution of water resources, distribution of water consumption, and population distribution of the Yellow River Basin (see Fig. S2). 
+% 在这些根本差异的基础上，社会发展和流域管理继续影响和重塑它们的变化，使黄河流域成为世界上联系最密切、变化最剧烈的大流域。
+On the basis of these fundamental differences, social development and watershed management continue to influence and reshape their changes, making the Yellow River Basin the world's most intimately connected and dramatically changing large river basin. 
+% 特别是水资源对长江流域的社会发展做出了不可替代的贡献。
+Specially, Water resources make an irreplaceable contribution to the development of society in the YRB. 
+% 因此，作为分析人水关系演变的个案研究，具有典型性。
+Thus, as a case study for analysing the evolution of the human-water relationship, the YRB possesses typicality.
 
 % Secondly, their relationships have noticeably changed over the study period. In particular, the major water-consuming sectors have undergone particularly dramatic changes (see Fig. S3-B). 
 
@@ -51,24 +68,28 @@ In general, there are inter-regional differences in the economic layout, distrib
 \subsection*{Changes brought from human activities on the YRB}
 Humans are constantly modifying the water cycle processes in the watersheds as society develops.
 \begin{itemize}
+    % 首先，长江三角洲自古以来就受到人类活动的强烈干预，近60年来变化最为剧烈。近60年来，在人类活动的影响下，黄河地表径流、输沙和人类用水格局均经历了多次变迁
     \item Firstly, the YRB has been subject to strong intervention by human activities since ancient times, while the last 60 years have seen the most dramatic changes. Under human influence, the Yellow River's surface runoff, sediment transport, and human water consumption patterns have all undergone multiple regime shifts in the last 60 years
-    % \cite{}.
-    % TODO 这里增加参考文献，黄河近六十年的变化 
-    \item Secondly, landscapes in the YRB have significantly altered by human activities, which can both change the natural and the social water cycle. For an example, “grain for green” project has produced a significant change of landscapes in the middle region (MR) of YRB. With the addition forest in an erosion-prone area, water use patterns in the area and surface runoff patterns in the middle and lower reaches have been radically altered.
-    % TODO 这里增加参考文献  景观的变化 \cite{}
-    \item Thirdly, a series of management practices have promoted in order to govern the YRB. Since the establishment of the Yellow River Water Conservancy Commission in XX, the agency has continued to reform and expand, eventually forming a basin management agency with unified coordination, scheduling and regulatory functions. Since the promulgation of the Water Law in xxx, the Ministry of Water Resources, the YRCC and other relevant agencies have issued a series of policies to carry out comprehensive river basin management under the guidance of national laws (see \textit{SI Appendix} Table S2).
+    \cite{wu2020,wangReducedsedimenttransport2016}.
+    % 第二，人类活动对长江流域的景观产生了重大影响，这不仅改变了自然水循环，也改变了社会水循环。例如，“退耕还林”工程使长江铁路中部地区的景观发生了重大变化。随着易受侵蚀地区森林的增加，该地区的水利用模式和中下游的地表径流模式已发生根本改变。
+    \item Secondly, landscapes in the YRB have significantly altered by human activities, which can both change the natural and the social water cycle. For an example, ``grain for green'' project has produced a significant change of landscapes in the Middle Region (MR) of the YRB. With the addition forest in an erosion-prone area, water use patterns in the area and surface runoff patterns in the middle and lower reaches have been radically altered 
+    \cite{wu2020}.
+    \item Thirdly, a series of management practices have promoted in order to manage the YRB. Since the establishment of the Yellow River Water Conservancy Commission, the agency has continued to reform and expand, eventually forming a basin management agency with unified coordination, scheduling and regulatory functions \cite{yellowriverconservancycommissionYellowRiverBasin2013}. 
+    As results, the Ministry of Water Resources, the YRCC and other relevant agencies have issued a series of policies to carry out comprehensive river basin management under the guidance of national laws (see \textit{SI Appendix} Table S2).
 \end{itemize}
-Historic and recent river basin management practices have strong impacts on water utilization.
+% Historic and recent river basin management practices have strong impacts on water utilization.
 
 \subsection*{Historical Social transformations within the YRB}
 
 We list four main water-governance-related social transformations in Fig 5D of the main text, here are explanations: 
 
 \begin{itemize}
-    \item \textbf{The Ethos of Conquering Nature (since 1958)} Conquering the natural movement, although the Yellow River basin was poor and backward at that time, a collective spirit of 'man can conquer nature' was formed. In addition to the construction of large-scale water conservancy projects represented by the Yellow River 'The Hongqi Channel', dramatic changes such as the' Great Leap Forward' movement and ``Large-scale production'' movement were also formed in this transformation. 
+    \item \textbf{The Ethos of Conquering Nature (since 1958)} Conquering the natural movement, although the Yellow River basin was poor and backward at that time, a collective spirit of ``man can conquer nature'' was formed. In addition to the construction of large-scale water conservancy projects represented by the Yellow River ``The Hong Qi Channel'', dramatic changes such as the ``Great Leap Forward'' movement and ``Large-scale production'' movement were also formed in this transformation. 
     \item \textbf{The Reform and Opening-up (since 1978).} Before the reform and opening up, the allocation of resources and production activities throughout China, including the Yellow River Basin, were led by the state. At this time, the market gradually began to dominate. 
     \item \textbf{The 87 Water Diversion Scheme (since 1987).} Before the water diversion Scheme, all local sectors had unlimited access to water resources. However, after the water diversion scheme was proposed, the Yellow River Basin formed social rules to control water use indicators from top to bottom, from the province to the urban area to all departments. 
-    \item \textbf{Environmental Regulation (since 2003).} Environmental issues, including water governance, have become a key KPI for local officials in China since a new leader took office in 2003 with an emphasis on environmental issues. 
+    % 自2003年新一届领导人上任以来，包括水治理在内的环境问题已成为中国地方官员的关键考核指标。
+    \item \textbf{Environmental Regulation (since 2003).} Environmental issues, including water governance, have become key indicators for local officials in China since a new leader took office in 2003 with an emphasis on environmental issues 
+    \cite{heWateringEnvironmentalRegulation2020}. 
 \end{itemize}
 
 
@@ -80,41 +101,48 @@ We list four main water-governance-related social transformations in Fig 5D of t
 Multiple types of dataset were used in this study (see Table S1). 
 \subsection*{Statistical datasets}
 % 使用了GDP数据，年鉴数据，还有从第二次水资源调查提取的数据
-For statistics, we used GDP data, water resources uses data extracted from the 2nd National Water Resources Assessment Program \cite{zhouDecelerationChinaHuman2020} and statistical yearbook data of YRB. GDP data from the China Macro data in the Wind database, which firstly aggregated from annual reports of the provinces. Water resources use dataset was published by Zhou et al. \cite{zhouDecelerationChinaHuman2020}, which records water utilization in different sectors along with social-economic situations in perfects level. This dataset was mainly extracted by 2nd National Water Resources Assessment Program launched in 2002, led by the National Development and Reform Commission and the Ministry of Water Resources (see ref (1) and \url{http://www.mwr.gov.cn/english/publs/} for more details). Since then, the statistics from the survey using the same criteria have been supplemented and harmonized to the 2013 administrative divisions. 
-%TODO xx 这里把每个数据的子类介绍清楚
-The data covers a total of subcategories of water use under four broad categories: agriculture, industry, urban and rural, but does not distinguish between surface water and groundwater. There is uncertainty at the county scale for each disaggregated water use sector, but because the data are corrected for statistical information using the water balance method, the data are adequate for the regional scale and the four broad water use categories used in this study.
-Finally, in order to make a simple distinction between the proportion of surface water and groundwater extraction where needed, we use basin-scale water resources annual reporting data. Yearbook data of YRB documenting surface water resources and groundwater resource extraction in each watershed and province. 
+For statistics, we used GDP data, water resources uses data extracted from the 2nd National Water Resources Assessment Program \cite{zhouDecelerationChinaHuman2020} and statistical yearbook data of YRB \url{http://www.yrcc.gov.cn/other/hhgb/}. 
+GDP data from the China Macro data in the Wind database, which firstly aggregated from annual reports of the provinces. Water resources use dataset was published by Zhou et al. \cite{zhouDecelerationChinaHuman2020}, which records water utilization in different sectors along with social-economic situations in perfects level. This dataset was mainly extracted by 2nd National Water Resources Assessment Program launched in 2002, led by the National Development and Reform Commission and the Ministry of Water Resources (see ref (1) and \url{http://www.mwr.gov.cn/english/publs/} for more details). Since then, the statistics from the survey using the same criteria have been supplemented and harmonized to the 2013 administrative divisions. 
+
+The data covers a total of subcategories of water use under four broad categories: agriculture (IRR), industry (IND), urban (URB) and rural (RUR) water uses (see Zhou et al., for details \cite{zhouDecelerationChinahuman2020}). There is uncertainty at the county scale for each disaggregated water use sector, but because the data are corrected for statistical information using the water balance method, the data are adequate for the regional scale used in this study.
+
+Finally, in order to make a simple distinction the proportion of surface water and groundwater uses, we calculate a basin-scale ratio between the two types of water use, by yearbook data. 
 
 
 \subsection*{Hydrological datasets}
-For hydrological datasets, reservoirs data and a measured runoff data were used in this study.
-The reservoir dataset were collected by Wang et al. \cite{wangYellowRiverWater2019}, which introduced includes the major new reservoirs built in the Yellow River Basin since 1949. Of these, we consider the reservoirs marked as pivot projects by the YRCC to be more important, as they are directly involved in water resources management in the basin (\url{http://www.yrcc.gov.cn/hhyl/sngc/}). Annual runoff data derived from hydrological station measurements.
+Reservoirs data and a measured runoff data were used in this study.
+% 水库数据集由Wang et al. 收集，其中介绍了1949年以来黄河流域新建的主要水库。
+The reservoir dataset were collected by Wang et al. \cite{wangYellowRiverWater2019}, which introduced includes the major new reservoirs built in the Yellow River Basin since 1949. 
+% 其中，我们认为枢纽水库更为重要，因为它们直接参与流域水资源管理(由YRCC定义，见\url{http://www.yrcc.gov.cn/hhyl/sngc/})。
+Of these, we consider the hub-reservoirs to be more important, as they are directly involved in water resources management in the basin (defined by YRCC, see \url{http://www.yrcc.gov.cn/hhyl/sngc/}). 
+% 年径流数据来源于水文站的测量。
+Annual runoff data derived from hydrological station measurements.
 
 \subsection*{Political datasets}
 %对于政策数据集，我们选取了《黄河流域综合规划》中流域级部门（如黄河水利委员会）级以上（如国家部委）颁布施行的与黄河流域有关的法律政策。此外，我们还从《黄河水利委员会组织沿革》一书中获取的黄河水利委员会作为黄河流域级管理单位的组织沿革情况，以反映流域级管理举措的实施情况。
-For the policy data set, we select the laws and policies related to the Yellow River basin promulgated and implemented by departments at and above the river Basin level (such as Yellow River Conservancy Commission) in the Comprehensive Planning for the Yellow River Basin (such as national ministries and commissions) \cite{yellowriverconservancycommissionYellowRiverBasin2013}. In addition, we also obtain the organizational evolution of the Yellow River Water Conservancy Commission as a watershed management unit from the book Organizational Evolution of the Yellow River Water Conservancy Commission to reflect the implementation of watershed management measures \cite{yellowriverarchivesOrganizationalHistoryYellow2004}.
+For the policy data set, we list the laws and policies related to the Yellow River basin promulgated and implemented by departments at (such as YRCC) and above (such as national institutions) the Basin's level  \cite{yellowriverconservancycommissionYellowRiverBasin2013}. 
+% In addition, we also obtain the organizational evolution of the Yellow River Water Conservancy Commission as a watershed management unit from the book Organizational Evolution of the Yellow River Water Conservancy Commission to reflect the implementation of watershed management measures \cite{yellowriverarchivesOrganizationalHistoryYellow2004}.
 
 
 % tag 数据处理
 \newpage
 \section*{Methods S3. Harmonization of datasets}
-% TODO 这里要强调省级数据和县级数据在不确定性上的差异
 % 由于我们的数据集来源广泛，且具有不同的空间尺度，我们需要在区域尺度（SR，UR，MR和DR）上对数据进行调和，根据数据的空间尺度有不同的处理方式。
-Due to the wide sources of our data set and the different spatial scales, we need to reconcile the data on the regional scale (SR, UR, MR and DR), and have different processing methods according to the spatial scale of the data.
+Due to the wide sources of our data set and the different spatial scales, we need to reconcile the datasets into the regional scale (SR, UR, MR and DR).
 \begin{itemize}
-    \item 1. Watersheds:
+    \item 1. Datasets at watersheds scales:
     % 由于流域的分区由水文分区决定，所以水文年报数据和实测径流量数据都能直接根据其对应的水文站直接划分。
-        Due to the fact that the subdivision of a basin is determined by hydrological subdivision, hydrological annual data and measured runoff data can be directly divided according to their corresponding hydrological stations.
-    \item 2. Perfects:
+        Due to the fact that the subdivision of a basin is determined by hydrological subdivision, hydrological annual data and measured runoff data can be directly divided according to their corresponding hydrological stations (see Figure S1 A and B).
+    \item 2. Perfecture:
     % 在市县尺度下，我们分别计算了市县在不同流域分区中所占的面积，选取其中最大的区域，如果该面积占该县面积的95%以上，则认为该市属于该区域，即：
-        At the scale of cities and counties, we respectively calculate the area occupied by cities and counties in different watershed districts, and select the largest region. If this area accounts for more than 95\% of the area of the county, the city is considered to belong to this region, that is:
+        At the scale of perfecture, we calculate the area of each perfecture belongs to different regions respectively and select the largest one. If this area accounts for more than 95\% of the area of the county, the city is considered to belong to this region, that is:
         $$ S_{ij} = MAX(S_ij / S_i)$$
-        where $i$ refers a certain perfect and $j$ refers a region within YRB, i.e. SR, UR, MR, or DR. $S_i$ refers the area of perfect $i$, and $S_{ij}$ refers intersecting area between perfect $i$ and region $j$.
-        We define perfect $i$ belongs to region $j$ if their intersecting area over 95\% of $S_i$, i.e.:
+        where $i$ refers a certain perfecture and $j$ refers a region within YRB, i.e. SR, UR, MR, or DR. $S_i$ refers the area of perfect $i$, and $S_{ij}$ refers intersecting area between perfect $i$ and region $j$.
+        We define perfecture $i$ belongs to region $j$ if their intersecting area $S_{ij}$ over 95\% of $S_i$, i.e.:
         $$ MAX(S_{ij}) > 0.95 * S_i $$
     \item 3. Province:
     % 在省域尺度的数据（即不同行业的GDP数据）更多用以定性描述，且不与县域尺度数据进行横向比例，因此数据的精度不再重要。我们采用了粗略的处理。即，根据不同区域包含的主要省份，判断该省的数据被融合进哪个区域。参考传统划分惯例，我们进行的划分是：
-    Data at the provincial scale (i.e., GDP data of different industries) are more used for qualitative description, and do not carry out horizontal proportion with data at the county scale, so the accuracy of the data is no longer important. We have adopted a rough treatment. That is, according to the major provinces contained in different regions, determine which region the data of that province is merged into. Referring to the traditional division practice, we made the following division:
+    Data at the provincial scale (i.e., GDP data of different industries) are more used for qualitative description, so it is not important and necessary for down-scaling. Thus, according to the major provinces contained in different regions, we determine which region the data of that province is merged into by referring to the traditional division practice:
     \begin{itemize}
         \item SR: Qinghai Gansu and Sichuan,
         \item UR: Ningxia and Neimeng,
@@ -124,23 +152,24 @@ Due to the wide sources of our data set and the different spatial scales, we nee
 \end{itemize}
 
 % 最后，当我们处理位置点数据（如水库修建位置数据时），根据其所在位置判断其所属省份，再按照省尺度的区域归类方式进行处理。经过上述处理，所有的数据都能很好的在区域尺度得到协调。
-Finally, when we process the location data (such as the location data of reservoir construction), we judge the province it belongs to according to its location, and then process it according to the regional classification method on the provincial scale. After the above processing, all the data can be well coordinated at the regional scale.
+Finally, when we process the location data (i.e., the location data of reservoir), we judge the province it belongs to according to its location, and then process it as provincial scale. 
+
+After the above processing, all the data can be well coordinated at the regional scale.
 
 \newpage
 % 指数介绍
 \section*{Methods S4. Indicators of IWRU}
 % 水资源利用稳态指数考虑了流域尺度内人类利用水资源时最主要的三个维度，分别对应了 “有多少水”，“怎么用”和“给谁用”三个问题。
-The Integrated Water Resources Utilization (IWRU) index of water resources utilization considers the three basic dimensions of human utilization of water resources at the watershed scale, corresponding to the three questions of ``how much water'', ``how to use'' and ``for whom, for where'' respectively. 
-% TODO 这里需要增加参考文献，证明这三个维度是最重要的。
-% 无论如何，为了让这些维度能够被量化，我们寻找或发明了共计三个度量指标来对应指示其变化趋势：
-In order for these dimensions to be quantified, we found or invented a total of three metrics corresponding to the trend indicating their change: SFV Index, Non-provisioning Share and Configuration Entropy Metric.
+The Integrated Water Resources Utilization (IWRU) index of water resources utilization considers the three basic dimensions of human utilization of water resources at the watershed scale, corresponding to the three questions of ``how much water'', ``how to use'' and ``for whom, for where'' respectively (see Figure 1 in the main text). 
+% 为了对这些维度进行量化，我们发现或发明了三个与指示其变化趋势相对应的指标:SFV指数、非供应共享和配置熵指标。
+In order for these dimensions to be quantified, we used a total of three sub-indicators corresponding to the trend indicating their change: SFV Index, Non-provisioning Share and Allocation Entropy Metric.
 
-\subsection*{Supply: SFV-index}
+\subsection*{Indicator of supply: SFV-index}
 	%* 提出了很多的指标度量水压力，如水资源压力指数，水资源xxx等
-	There is how much water can be used in a certain basin? How many stresses has societies put on the water resources of the basin? Answering these questions are crucial for water utilization. Various metrics, therefore, proposed for water stress (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index), where the aspect of human impact are increasingly valued.
-	%* 其中SFV指数比较有用
-    Among of them, by taking changes of water flexibility and variability into account,	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid metric of temporal changes in water stresses \cite{qinFlexibilityIntensityGlobal2019}.
-    %* 该指标从人类开发利用水资源的角度，考虑了影响人类感知水资源压力的三个方面：水资源的总量、水资源变异性、人类利用水资源的灵活性。
+	How much water can be supplied in a basin? 
+    Various metrics, therefore, proposed for description of stresses on water supply (e.g. water scarcity, water stresses index, scarcity-flexibility-variability index) 
+    \cite{qinFlexibilityintensityglobal2019,bestAnthropogenicstressesworld2019,florke2018}.
+    Among of them, by taking changes of water flexibility and variability into account,	the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid metric of temporal changes in water stresses \cite{qinFlexibilityintensityglobal2019}.
     
 	To apply this method, we need to combine three metrics following: 
 	
@@ -167,61 +196,57 @@ In order for these dimensions to be quantified, we found or invented a total of 
     How to use water resources?
     % 这里是一段关于虚拟水的介绍 
     % There has been put forward the virtual water theory by considering the water consumption in consumer goods, and found that the supply of water resources as food and consumption provisions is the main use of water resources, and can flow with trade. However, with the change of water resource utilization mode, the water footprint research on the basis of water footprint further generalizes the concept of water-related provisions and services. 
-    Today, the world's non-provisioning form of water supply to human beings are increasing more than 20 times faster growth, including industry, services and other ways, the human society is transformed from ``consumption of water'' to ``make use of water''.
-    % TODO 这里要补充一些材料
-    % *这里我们使用非用于供给性的水资源量所占的比例作为指标，即:
+    % Today, the world's non-provisioning form of water supply to human beings are increasing more than 20 times faster growth, including industry, services and other ways, the human society is transformed from ``consumption of water'' to ``make use of water''.
     Here, we use Non-Provisioning Shares (NPS) of used water resources as a metric to indicate priority of water utility:
     $$ NPS_{i} = \frac{WU_{non-pro, i}}{WU_{pro, i} + WU_{non-pro, i}} $$
     Where $i$ refers a certain region, or the whole basin, i.e:
 	$I_P$ = $NPS_{basin}$
     %* 直接用水和非直接用水
     % 在本研究中，我们将牲畜用水、农村或城市的居民用水、农业用水认为是供给型用水。对应的，非供给性用水常常是工业用水，其中以能源用水为主。根据广泛的研究表明，水-粮食-能源之间存在广泛的联结，是水资源供应倾向性的一种体现，其中供给性用水常常是能够作为支持农产品生产的关键，而非供给水则更多参与了工业等社会过程。对中国整体而言，如果只考虑农业生产，中国是虚拟水贸易的流入国。但如果考虑工业耗水，中国则向外出口虚拟水资源。而黄河作为水资源高度稀缺的流域，更需要考虑两者之间的权衡，因此采用该比例作为指标能够简单、直接、有效地反映用水 priority 的变化。
-    % TODO 这里要补充一些材料 Li 2020，虚拟水贸易，水粮食能源的联结
-    In this study, we consider water for livestock, water for rural or urban residents and water for agriculture as provisioning water. Correspondingly, non-provisioning water is often industrial water, mainly energy water. Extensive studies have shown that there is a wide connection between water, food and energy, which is a manifestation of water supply tendency, in which provisioning water is often the key to support the production of agricultural products, while non-provisioning water is more involved in industrial and other social processes. For China as a whole, if only agricultural production is considered, China is the recipient country of virtual water trade. But if industrial consumption is taken into account, China is exporting virtual water. However, as a river basin with high degree of water resource scarcity, the trade-off between the two has always been treated with greater value; thus, the adoption of this ratio as an indicator can simply, directly and effectively reflect the change of priority with water.
+    In this study, we consider water for livestock, water for rural or urban residents and water for agriculture as provisioning water. Correspondingly, non-provisioning water is often industrial water, mainly energy water. Extensive studies have shown that there is a wide connection between water, food and energy, which is a manifestation of water supply tendency, in which provisioning water is often the key to support the production of agricultural products, while non-provisioning water is more involved in industrial and other social processes. 
+    % For China as a whole, if only agricultural production is considered, China is the recipient country of virtual water trade. But if industrial consumption is taken into account, China is exporting virtual water. However, as a river basin with high degree of water resource scarcity, the trade-off between the two has always been treated with greater value; thus, the adoption of this ratio as an indicator can simply, directly and effectively reflect the change of priority with water.
 
 \subsection*{Allocation: Allocation Entropy Metric}
     %* 哪里利用水资源？  
     Where to use water resources? 
-    % * 设计了一个熵指标
     % 水资源的分配一直是难题，需要在上下游之间、不同用水部门之间进行权衡，但目前还缺少相关的指标进行量化。
-    The configuration of water resources has always been a difficult problem, requiring trade-offs between upstream and downstream and even different water sectors. However, there is still a lack of comprehensive indicators to quantify. 
+    % The allocation of water resources has always been a difficult problem, requiring trade-offs between upstream and downstream and even different water sectors. However, there is still a lack of comprehensive indicators to quantify. 
     % 这里我们设计了一个“分配熵指标”，能够把水资源分配的格局（倾向于平均分配还是更加侧重某一区域）简单直接的表达出来。
-    Here we designed a ``Configuration Entropy Metric (CEM)'', which can simply and directly express the configuration of water allocation (which tends to be more evenly distributed or more focused on a certain region and sector). 
+    Here we designed a ``Allocation Entropy Metric (AEM)'', which can simply and directly express the configuration of water allocation (which tends to be more evenly distributed or more focused on a certain region and sector). 
     % 我们模仿了物理学中信息熵的思想，当信息（这里是水资源）的分配越趋于平均时，其熵在增加，当分配更倾向于某一区域时，该区域获得发展的确定性在增加，导致总体的熵减少。
     We imitate the idea of information entropy in physics --When the distribution of information (here is water resource) is more equal, its entropy increases.
-    %* 这里需不需要一张图表示？
     % 该指标将不同区域（SR, UR, MR, DR）和不同部门（农业、工业、服务业、人居）消耗的水资源 Water Use (WU) 视做观察的结果，计算完全平均分配水资源时候的水资源分配熵作为最大值，再计算实际水资源分配最大熵与实际熵的比值，以表示水资源分配的格局多大程度上偏离平均分配。
-    The CEM is a metrics for different regions (SR, UR, MR, DR) and different sectors (agriculture, industry, domestic and services) in configurations of Water Use (WU), calculated by:
+    The AEM is a metrics for different regions (SR, UR, MR, DR) or different sectors (agriculture, industry, domestic and services) in allocation of Water Use (WU), calculated by:
 
-    $$ CEM = \sum_{i=1}^n -log(p_{i}) * p_{i} $$
+    $$ AEM = \sum_{i=1}^n -log(p_{i}) * p_{i} $$
 
     Where $i$ represents the unit (a region or a sector) in configuration of water utilization, $p_i$ represents the proportion of water used by the units.
-    For different regions, when water resources are completely evenly used, (i.e. for any region $i$, $p_i = 1/n $), the maximum value of CEM is:
+    For different regions, when water resources are completely evenly used, (i.e. for any region $i$, $p_i = 1/n $), the maximum value of AEM is:
 
-    $$ CEM_{max} = \sum_{i=1}^n -log(p_{i}) * p_{i} = - log(\frac{1}{n}) $$
+    $$ AEM_{max} = \sum_{i=1}^n -log(p_{i}) * p_{i} = - log(\frac{1}{n}) $$
 
     $I_C$, an indicator to measure the configuration dimensions of water resources utilization, is composed of three parts:
 
-    $$ I_C = \frac{CEM_{r}*CEM_{s}}{CEM_{rs}}$$
+    $$ I_C = \frac{AEM_{r}*AEM_{s}}{AEM_{rs}}$$
     
     \begin{itemize}
-        \item Configuration between regions $CEM_r$:
-            $$ CEM_r = \sum_{i=1}^4 -log(p_{i}) * p_{i} $$
+        \item Allocation between regions $AEM_r$:
+            $$ AEM_r = \sum_{i=1}^4 -log(p_{i}) * p_{i} $$
             where $p_i$ is the proportion of region $i$ in water resource usage ($WU_i$), in the total water resource consumption in all regions ($i=1$ to $4$ represents SR, UR, MR, or, DR respectively), i.e.:
             $$ p_i = \frac{WU_i}{\sum_{i=1}^4 WU_i} $$
-        \item Configuration between sectors $CEM_s$:
-            $$ CEM_s = \sum_{j=1}^3 -log(p_{j}) * p_{j} $$ 
+        \item Allocation between sectors $AEM_s$:
+            $$ AEM_s = \sum_{j=1}^3 -log(p_{j}) * p_{j} $$ 
             where $p_j$ is the proportion of sector $j$ in water resources usage ($WU_j$), in the total water consumption in all sectors ($j=1$ to $3$ represents agriculture, industry and domestic \& services respectively), i.e.:
             $$ p_j = \frac{WU_j}{\sum_{j=1}^3 WU_j} $$
-        \item Division of sectors' function between regions $CEM_{rs}$
-            $$ CEM_{rs} = \frac{1}{3} * \sum_{j=1}^3 \sum_{i=1}^4 -log(p_{ij} * p_{ij})$$
+        \item Division of sectors' function between regions $AEM_{rs}$
+            $$ AEM_{rs} = \frac{1}{3} * \sum_{j=1}^3 \sum_{i=1}^4 -log(p_{ij} * p_{ij})$$
             where $p_{ij}$ refers water use proportion of region $i$ in the sector $j$, in the total water consumptions of all regions in this sector, i.e.: 
             $$ p_{ij} = \frac{WU_ij}{\sum_{i=1}^4 WU_ij} $$
     \end{itemize}
 
     % 上述指标同时考虑了地区之间的分配和行业之间的分配，但随着流域发展，两者的趋势是有差异的。对于位于同一个国家内的流域，区域之间通过开采水资源获取发展的机会是相等的，实际的水资源使用更多取决于自身的经济实力，因此考虑不受实际经济制约的理想情况，四个区域之间的水资源应该被公平（平均）分配的（熵增）。但同时，由于地理差异和部门分工的广泛存在，不同的区域有其比较优势，是制约其理论上将水资源分配于哪个用水行业的关键因素，因此其特定区域的部门之间水资源分配在理想情况下将总体呈现差异增加（熵减）的趋势。同时，部门分工也将随着比较优势出现，让不同区域都相较于流域的平均水平有其各自的优势部门（相较于平均熵）。
     % TODO 这里一定要想一下，怎么能给人讲的更明白
-    The indicator $I_C$ (Configuration of water utilization), therefore, not only take into account the distribution between different regions and industries, but also considers the complicated professional division with the development of society. 
+    The indicator $I_C$ (Allocation of water utilization), therefore, not only take into account the distribution between different regions and industries, but also considers the complicated professional division with the development of society. 
 
 
 \newpage
@@ -265,7 +290,7 @@ Taken together, the results of three periods in this study with the two breakpoi
     \caption{
         The study area.
         \textbf{A.} Diagram of the YRB and the subdivision of the basin (SR: Source Region, UR: Upper Region, MR: Middle Region, DR: Downstream region).
-        \textbf{B.} Profile of main channel of the Yellow River.
+        \textbf{B.} Profile of main channel of the Yellow River. SR, UR, MR and DR are divided by main hydrological stations.
         \textbf{C.} Typical landscapes in different regions in the YRB.
     }
 \end{figure}
@@ -288,7 +313,13 @@ Taken together, the results of three periods in this study with the two breakpoi
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{../../figures/sup/sf_wu_sections_stackplot.jpg}
-    \caption{Proportions of total water use between the different sectors}
+    \caption{
+        Total water use of different sectors.
+        IND: Industrial water use;
+        IRR: Irrigation water use;
+        URB: Urban water use;
+        RUR: Rural water use;
+    }
 \end{figure}
 
 
@@ -298,7 +329,7 @@ Taken together, the results of three periods in this study with the two breakpoi
     \centering
     \includegraphics[width=0.6\textwidth]{../../figures/sup/saving_water.jpg}
     \caption{
-        Saving water irrigated area ratio in 2013.
+        Saving water irrigated area ratio in 2013 for each region. There were no saving water irrigated area in  the YRB in 1960s.
     }
 \end{figure}
 
@@ -347,7 +378,7 @@ Taken together, the results of three periods in this study with the two breakpoi
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{../../figures/sup/outages.pdf}
-    \caption{Runoff outages records, size of points indicates length of drying up river segments.}
+    \caption{Runoff drying-up records. Size of the circles indicates length of drying up river segments.}
 \end{figure}
 
 
@@ -356,7 +387,7 @@ Taken together, the results of three periods in this study with the two breakpoi
 \begin{figure}
     \centering
     \includegraphics[width=0.5\textwidth]{../../figures/sup/ternary.pdf}
-    \caption{Net contribution of agriculture, industry and services to GDP in different years.}
+    \caption{Net contribution of agriculture, industry and services to GDP of the whole YRB in different years.}
 \end{figure}
 
 
@@ -398,7 +429,7 @@ Taken together, the results of three periods in this study with the two breakpoi
     \includegraphics[width=0.95\textwidth]{../../figures/sup/sensitivity.pdf}
     \caption{
         Sensitivity analysis of the threshold of p-values. 
-        \textbf{A.} number of breakpoints in different p-values.
+        \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
         \textbf{B.} A typical result of two breakpoints.
         \textbf{C.} A typical result of three breakpoints.
     }
