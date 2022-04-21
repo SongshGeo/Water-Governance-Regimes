@@ -1,34 +1,34 @@
-The aim of this analysis was to develop a transparent and easily replicable approach to identifying water governance regimes and regime shifts; thus, it is not intended to provide a comprehensive model of social-ecological water dynamics. We constructed the Integrated Water Governance Index (IWGI) based on three dimensions (supply, purpose, allocation, see Figure 1) selected a priori and identified the changes in periods of the index over time using change point detection. Each dimension is reflected by an independent indicator after normalization, and water governance regimes were characterized by the combination of impacts along each dimension at different time periods. The contribution to changes of IWGI index along with each main indicator were also decomposed and calculated separately for each regime period. 
+The aim of this analysis was to develop a transparent and easily replicable approach to identifying water governance regimes and regime shifts; thus, it is not intended to provide a comprehensive model of social-ecological water dynamics. We constructed the Integrated Water Governance Index (IWGI) based on three dimensions (supply, purpose, allocation, see Figure 1) selected a priori and identified the changes in periods of the index over time using change point detection. Each dimension is reflected by an independent indicator after normalization, and water governance regimes were characterized by the combination of impacts along each dimension at different time periods. The contribution to changes of IWGI index along with each main indicator were also decomposed and calculated separately for each regime period.
 
 \subsection{Integrated Water Governance Index (IWGI)}
 
 Our Integrated Water Governance Index offers an accessible and operational way of measuring regime changes based on the transparent underlying assumptions that water resources governance system is closely related to a transformation towards a hydrosocial water cycle in the three dimensions below (see Figure 1 and SI 322 Appendix Methods S4 for details)
-\cite{abbottwatercycleAnthropocene2019,leviaHomogenizationterrestrialwater2020,steffenTrajectoriesEarthSystem2018}. 
+\cite{abbottwatercycleAnthropocene2019,leviaHomogenizationterrestrialwater2020,steffenTrajectoriesEarthSystem2018}.
 
 	% - 社会的发展通常伴随着用水向社会经济系统倾斜，用水方式优先向收益更高的非供给性方式倾斜：
 	\begin{itemize}
 		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
-		\item \textbf{Supply($S$)}: Socio-economic dominance may lead to further demands on the water supply because of increasing water withdrawals. However, since effective water governance may boost supply capacities to meet water demands by technical solutions in the process of development: 
+		\item \textbf{Supply($S$)}: Socio-economic dominance may lead to further demands on the water supply because of increasing water withdrawals. However, since effective water governance may boost supply capacities to meet water demands by technical solutions in the process of development:
 		\begin{equation}
 			Transformation \propto S^{-1}
 		\end{equation}
-		
+
 
 		\item \textbf{Priority($P$)}: Transformation is usually accompanied by a change of purpose in water governance towards socio-economic services (usually towards non-provisioning purposes), because of higher returns:
 		\begin{equation}
 			Transformation \propto P
 		\end{equation}
-		
+
 		% - 社会发展通常伴随着更具结构性的水资源配置，如区域部门之间的分工合作，以及区域的统筹配置：
 		\item \textbf{Allocation($A$)}: Transformation usually leads to more complicated structures in water allocation, as a result of division and cooperation between regions and sectors because of environmental context and economic comparative advantages:
 		\begin{equation}
-			Transformation \propto A 
+			Transformation \propto A
 		\end{equation}
 
 	\end{itemize}
-	
+
 	% 将三者合一起，即：
-	We combined these three dimensions into a single integrated index, keeping their positive or negative relationship with the transformation towards a hydrosocial water cycle: 
+	We combined these three dimensions into a single integrated index, keeping their positive or negative relationship with the transformation towards a hydrosocial water cycle:
 	\begin{equation}
 		Transformation \propto P*A*S^{-1}
 	\end{equation}
@@ -48,7 +48,7 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\begin{equation}
 		I'_x = normalize(ln(I_x))
 	\end{equation}
-	
+
 	\subsubsection*{Normalization}
 	We tested different normalization methods, and they made no difference in change points detection (see \textit{SI Appendix} Methods S5. Sensitivity analysis). We performed min-max normalization using the formulation below:
 	\begin{equation}
@@ -56,11 +56,11 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\end{equation}
 
 	\subsubsection*{Indicator of supply}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water supply capacities ($SFV_i$) as the indicator in a certain region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of supply capacity $I_S$ is the average of all regions' SFV-index: 
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water supply capacities ($SFV_i$) as the indicator in a certain region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of supply capacity $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
-	
+
 	Where $SFV_i$ is the SFV-index for region $i$, and $i=1$ to $4$ refers SR, UR, MR, and DR (see \textit{SI Appendix} Methods S1 Definition of study area).
 
 	\subsubsection*{Indicator of purpose}
@@ -82,14 +82,14 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\begin{equation}
 		I_C = \frac{AEM_{r}*AEM_{s}}{AEM_{rs}}
 	\end{equation}
-	
-	where $AEM_{r}$ and $AEM_{s}$ are Allocation Entropy Metric in different regions and different sectors. $AEM_{rs}$ describes differences between sectors in a certain region relative to the whole basin (see \textit{SI Appendix} Methods S4). 
+
+	where $AEM_{r}$ and $AEM_{s}$ are Allocation Entropy Metric in different regions and different sectors. $AEM_{rs}$ describes differences between sectors in a certain region relative to the whole basin (see \textit{SI Appendix} Methods S4).
 
 	\subsection{Change points detection}
 		% The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
 
-		With no assumptions about the distribution of the data, the Pettitt (1979) approach of change-point detection is commonly applied to detect a single change-point in hydrological time series with continuous data 
-        \cite{pettittNonParametricApproachChangePoint1979}. 
+		With no assumptions about the distribution of the data, the Pettitt (1979) approach of change-point detection is commonly applied to detect a single change-point in hydrological time series with continuous data
+        \cite{pettittNonParametricApproachChangePoint1979}.
 		It tests $H0$: The variables follow one or more distributions that have the same location parameter (no change), against the alternative: a change point exists. The non-parametric statistic is defined as:
 		\begin{equation}
 			K_t = max|U_{t, T}|
@@ -99,10 +99,10 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 		\begin{equation}
 			U_{t, T} = \sum_{i=1}^t\sum_{j=t+1}^T sgn(X_i - X_j)
 		\end{equation}
-	
+
 		The change-point of the series is located at $K_T$, provided that the statistic is significant. We used 0.001 as the threshold p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$.
 		Since this method can only return one significant change point, we repeated it until all significant change points were detected.
-	
+
 	% 计算贡献度
 	\subsection{Contribution decomposition}
 		We decomposed the amount of variation in each index at different periods in order to quantify the contribution of each influence to the index. Using the Integrated Water Resources governance (IWGI) Index as an example, its value is influenced by normalized indicators in three dimensions: stress ($I'_S$), purpose ($I'_P$) and allocation ($I'_C$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
@@ -112,9 +112,9 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 		&= \Delta I'_P + \Delta I'_C + (-\Delta I'_S)
 		\end{align}
 		Then, the contribution of dimension $x$ to IWGI's changes can be referred as:
-		\begin{equation}
-			Contribution_x = \frac{\Delta I'_x}{|\Delta IWGI|}
-		\end{equation}
+%		\begin{equation}
+%			Contribution_x = \frac{\Delta I'_x}{|\Delta IWGI|}
+%		\end{equation}
 
 		% Since $Contribution_x$ can be positive or negative, we used an absolute value to evaluate the contribution (in proportion) of a certain dimension in the all three dimensions to the changes:
 		% $$  Contribution_x\% = \frac{|\Delta I'_x|}{\sum_x |\Delta I'_x|} $$
