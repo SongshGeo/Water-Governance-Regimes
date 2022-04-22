@@ -2,25 +2,44 @@
 # - * - coding: utf-8 - * -
 # author: Shuang Song time: 2020/1/14
 # Email: SongshGeo@Gmail.com
-# project: 
+# project:
 
 import os
+
+import dbfread  # 加载dbfread包才能读取文件
 import pandas as pd
-import numpy as np
-from matplotlib import pyplot as plt
-import csv
 
 PROVINCES = [
-    '青海', '青海省', 'Qinghai',
-    '四川', '四川省', 'Sichuan',
-    '甘肃', '甘肃省', 'Gansu',
-    '宁夏', '宁夏回族自治区', 'Ningxia',
-    '内蒙', '内蒙古', '内蒙古自治区', 'Neimeng',
-    '陕西', '陕西省', 'Shanxi', 
-    '山西', '山西省', 'Shaanxi',
-    '河南', '河南省', 'Henan',
-    '山东', '山东省', 'Shandong'
-    '河北', '河北省', 'Hebei'
+    "青海",
+    "青海省",
+    "Qinghai",
+    "四川",
+    "四川省",
+    "Sichuan",
+    "甘肃",
+    "甘肃省",
+    "Gansu",
+    "宁夏",
+    "宁夏回族自治区",
+    "Ningxia",
+    "内蒙",
+    "内蒙古",
+    "内蒙古自治区",
+    "Neimeng",
+    "陕西",
+    "陕西省",
+    "Shanxi",
+    "山西",
+    "山西省",
+    "Shaanxi",
+    "河南",
+    "河南省",
+    "Henan",
+    "山东",
+    "山东省",
+    "Shandong" "河北",
+    "河北省",
+    "Hebei",
 ]
 
 
@@ -39,31 +58,30 @@ def get_region_by_province_name(name):
     return: 区域（源区上中下游，或返回空值）
     """
     if name in PROVINCES[:6]:
-        return 'SR'
+        return "SR"
     elif name in PROVINCES[6:16]:
-        return 'UR'
+        return "UR"
     elif name in PROVINCES[16:22]:
-        return 'MR'
+        return "MR"
     elif name in PROVINCES[22:]:
-        return 'DR'
+        return "DR"
     else:
         return None
 
 
 # 将dbf文件读取入pandas.DataFrame
-def pd_read_dbf(io, usecols=False):
+def pd_read_dbf(io, use_cols=False):
     """从文件系统中读取dbf文件并写入DataFrame
     io: 文件路径，
-    usecols: 使用的列"""
-    from dbfread import DBF  # 加载dbfreead包才能读取文件
-    if io.endswith('.dbf'):
-        table = DBF(io)
+    use_cols: 使用的列"""
+    if io.endswith(".dbf"):
+        table = dbfread.DBF(io)
     else:
         raise Exception("{} is not a dbf file.".format(io.split("/")[-1]))
     df = pd.DataFrame(table)
-    if usecols:
+    if use_cols:
         for col in df:
-            if col not in usecols:
+            if col not in use_cols:
                 df.drop(col, axis=1, inplace=True)
     return df
 
@@ -81,8 +99,8 @@ def dbf_data_list(folder_path):
 
 # 使用图片的比例来定位
 def get_position_by_ratio(ax, x_ratio, y_ratio):
-     x_min, x_max = ax.get_xlim()
-     y_min, y_max = ax.get_ylim()
-     x = (x_max-x_min) * x_ratio + x_min
-     y = (y_max-y_min) * y_ratio + y_min
-     return x, y
+    x_min, x_max = ax.get_xlim()
+    y_min, y_max = ax.get_ylim()
+    x = (x_max - x_min) * x_ratio + x_min
+    y = (y_max - y_min) * y_ratio + y_min
+    return x, y

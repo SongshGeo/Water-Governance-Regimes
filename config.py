@@ -9,10 +9,10 @@
 import logging
 import os
 
-ROOT = "/Users/songshgeo/Documents/Pycharm/YRB_NLP"
+ROOT = "/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020"
 REPORTS = os.path.join(ROOT, "analysis/reports")
 
-PROJECT_NAME = "NLProcessing_YRB_2021"
+PROJECT_NAME = "WGRegimes_YRB_2020"
 
 # BASIC logging settings.
 LOG_FORMAT = "%(asctime)s %(levelname)s %(filename)s %(message)s "
@@ -71,12 +71,13 @@ def set_logger(
 
     log.addHandler(file_handler)
     log.addHandler(cmd_handler)
-    log.info(f"{name} starts logging.")
     return log
 
 
 log = set_logger(PROJECT_NAME, file_level=FILE_LEVEL, cmd_level=CMD_LEVEL)
 
-# if __name__ == '__main__':
-#     logger = set_logger(PROJECT_NAME, reset=True, file_level="info", cmd_level="warn")
-#     log.info("LOG reset.")
+if __name__ == "__main__":
+    logger = set_logger(
+        PROJECT_NAME, reset=True, file_level="info", cmd_level="warn"
+    )
+    logger.info("LOG reset.")

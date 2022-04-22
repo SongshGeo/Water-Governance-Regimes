@@ -105,16 +105,16 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 
 	% 计算贡献度
 	\subsection{Contribution decomposition}
-		We decomposed the amount of variation in each index at different periods in order to quantify the contribution of each influence to the index. Using the Integrated Water Resources governance (IWGI) Index as an example, its value is influenced by normalized indicators in three dimensions: stress ($I'_S$), purpose ($I'_P$) and allocation ($I'_C$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
+		We decomposed the amount of variation in each index at different periods to quantify each influence's contribution to the index. Using the Integrated Water Resources governance (IWGI) Index as an example, its value is influenced by normalized indicators in three dimensions: stress ($I'_S$), purpose ($I'_P$) and allocation ($I'_C$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
 		\begin{align}
 		\Delta IWGI &= (I'_{P_{y_2}} + I'_{C_{y_2}} - I'_{S_{y_2}}) - (I'_{P_{y_1}} + I'_{C_{y_1}} - I'_{S_{y_1}}) \\
 		&= (I'_{P_{y_2}} - I'_{P_{y_1}}) + (I'_{C_{y_2}} - I'_{C_{y_1}}) + (I'_{S_{y_1}} - I'_{S_{y_2}}) \\
 		&= \Delta I'_P + \Delta I'_C + (-\Delta I'_S)
 		\end{align}
-		Then, the contribution of dimension $x$ to IWGI's changes can be referred as:
-%		\begin{equation}
-%			Contribution_x = \frac{\Delta I'_x}{|\Delta IWGI|}
-%		\end{equation}
+		Then, the contribution of dimension $x$ to IWGI's changes can be referred to as:
+		\begin{equation}
+			Contribution_x = \frac{\Delta I'_x}{\lvert \Delta IWGI \rvert}
+		\end{equation}
 
 		% Since $Contribution_x$ can be positive or negative, we used an absolute value to evaluate the contribution (in proportion) of a certain dimension in the all three dimensions to the changes:
 		% $$  Contribution_x\% = \frac{|\Delta I'_x|}{\sum_x |\Delta I'_x|} $$
