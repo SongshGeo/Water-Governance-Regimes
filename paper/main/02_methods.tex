@@ -1,59 +1,26 @@
-This analysis aimed to develop a transparent and easily replicable approach to identifying water governance regimes and regime shifts; thus, it is not intended to provide a comprehensive model of social-ecological water dynamics. First, we constructed the Integrated Water Governance Index (IWGI) based on three dimensions (Supply, Purpose, and Allocation, see Figure 1). Then, we identify the changes in the index's periods over time using change point detection. An independent indicator reflects each dimension after normalization, and water governance regimes were characterized by the combination of impacts along each dimension at different periods. Finally, we decomposed the contribution of each indicator to changes in the IWGI at each regime.
+This analysis aimed to develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three dimensions (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 by using change point detection methods. The normalized indicator for each dimension effects the IWGI by both changing trend and contributions.
 
 \subsection{Integrated Water Governance Index (IWGI)}
 
-Our Integrated Water Governance Index offers an accessible and operational way of measuring regime changes based on the transparent underlying assumptions that water resources governance system is closely related to a transformation towards a hydrosocial water cycle in the three dimensions below (see Figure 1 and SI 322 Appendix Methods S4 for details)
-\cite{abbottwatercycleAnthropocene2019,leviaHomogenizationterrestrialwater2020,steffenTrajectoriesEarthSystem2018}.
-
-	% - 社会的发展通常伴随着用水向社会经济系统倾斜，用水方式优先向收益更高的非供给性方式倾斜：
-	\begin{itemize}
-		%! Why ??? Explaination: why should development lead to balance among regions or meet the needs of different sectors.
-		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
-		\item \textbf{Stress ($S$)}: Socio-economic dominance may lead to further demands on the water supply because of increasing water withdrawals. However, since effective water governance may boost supply capacities to meet water demands through technical solutions in the process of development:
-		\begin{equation}
-			Transformation \propto S^{-1}
-		\end{equation}
-
-
-		\item \textbf{Purpose($P$)}: Transformation is usually accompanied by a change of purpose in water governance towards socio-economic services (usually towards non-provisioning purposes), because of higher returns:
-		\begin{equation}
-			Transformation \propto P
-		\end{equation}
-
-		% - 社会发展通常伴随着更具结构性的水资源配置，如区域部门之间的分工合作，以及区域的统筹配置：
-		\item \textbf{Allocation($A$)}: Transformation usually leads to more complicated structures in water allocation, as a result of division and cooperation between regions and sectors because of environmental context and economic comparative advantages:
-		\begin{equation}
-			Transformation \propto A
-		\end{equation}
-
-	\end{itemize}
-
 	% 将三者合一起，即：
-	We combined these three dimensions into a single integrated index, keeping their positive or negative relationship with the transformation towards a hydrosocial water cycle:
+	As shown in the framework Figure~\ref{fig:framework}, the IWGI combines the three core dimensions (Stress, Purpose, and Allocation) of water governance. Each dimension keeps two directions and we assumed the hydrosocial cycle aligns with one of them, respectively:
 	\begin{equation}
 		Transformation \propto S*P*A
 	\end{equation}
 
-	% 在上述假设的基础上，我们要构建流域综合耦合指数(Integrated Water Resources governance, IWGI)，使 IWGI 有效表征与用水相关的三个维度。首先为每个维度选择一个合适的指示因子（indicator, $I_x$, 其中$x=P, A or S$）。将上式进行自然对数转换，从而让三个维度之间变成加减关系：
-	To effectively represent the three dimensions, we selected an appropriate indicator ($I_x$, $x=S$, $P$ or $A$ corresponding to stress, purpose, and allocation respectively) for each dimension. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
+	To effectively quantify the dimensions, we selected an indicator ($I_x$, $x=S$, $P$ or $A$, corresponding to stress, purpose, and allocation respectively) for each dimension. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
 	\begin{equation}
 		Transformation \propto ln(I_S) + ln(I_P) + ln(I_A)
 	\end{equation}
 
-	Assuming they have equal weights, the Integrated Water Governance Index (IWGI) is:
+	Then, the Integrated Water Governance Index (IWGI) is average of the normalized indicators $I'_x$:
 	\begin{equation}
 		IWGI = I'_S + I'_P - I'_A
 	\end{equation}
 
-	where $I'_x$ is a normalization of log-transformed indicator $I_x$ for a certain dimension:
+	where:
 	\begin{equation}
-		I'_x = normalize(ln(I_x))
-	\end{equation}
-
-	\subsubsection*{Normalization}
-	We tested different normalization methods, and they made no difference in change points detection (see \textit{SI Appendix} Methods S5. Sensitivity analysis). We performed min-max normalization using the formulation below:
-	\begin{equation}
-		normalize(X) = (X - X_{min}) / (X_{max} - X_{min})
+		I'_x = (I_x - I_{x, min}) / (I_{x, max} - I_{x, min})
 	\end{equation}
 
 	\subsubsection*{Indicator of stress}
@@ -67,24 +34,19 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\subsubsection*{Indicator of purpose}
 	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
 	\begin{equation}
-		NPS_{i} = \frac{WU_{non-pro, i}}{WU_{pro, i} + WU_{non-pro, i}}
-	\end{equation}
-
-	Where $i$ refers a certain region, or the whole basin, i.e:
-	\begin{equation}
-		I_P = NPS_{basin}
+		NPS = \frac{WU_{pro}}{WU_{pro} + WU_{non-pro}}
 	\end{equation}
 
 	\subsubsection*{Indicator of allocations}
 	%$AEM$ 指标度量的是水资源配置“不均匀”的程度，类似于信息熵是对“混乱程度”的度量，即参与分配的各个单位之间，分配比例差距越大，则熵越小。
 	% 而我们的指标应反映随着社会发展，水资源配置在区域之间更加均衡（比例差距小）、整体满足不同用水部门的发展需求（比例差距减小）、但不同区域存在部门分工（比例差距增大）的趋势。
-	To describe allocations $I_A$, we designed an indicator based on information entropy, called Allocation Entropy Metric (AEM), AEM measures the degree of evenness of water allocation (see \textit{SI Appendix} Methods S4).
-	Our indicator $I_A$ was intended to reflect the idea that with the development of society, water resources allocation becomes more balanced among regions and generally meets the needs of different sectors, but different regions have a trend of division of labour among various sectors (with larger gaps):
+	To describe allocations $I_A$, we designed an indicator based on entropy, called Allocation Entropy Metric (AEM), which measures the degree of evenness in water allocation:
+
 	\begin{equation}
-		I_A = \frac{AEM_{r}*AEM_{s}}{AEM_{rs}}
+		I_A = CEM = \sum_{i=1}^N -log(p_{i}) * p_{i}
 	\end{equation}
 
-	where $AEM_{r}$ and $AEM_{s}$ are Allocation Entropy Metric in different regions and different sectors. $AEM_{rs}$ describes differences between sectors in a certain region relative to the whole basin (see \textit{SI Appendix} Methods S4).
+	where $p_{i}$ is the water proportion of region $i$ to the whole basin ($N$ regions in sum). The YRB is divided into 4 regions (i.e., $N = 4$) according to the natural and socio-economic backgrounds (see \textit{SI Appendix XX}).
 
 	\subsection{Change points detection}
 		% The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
@@ -113,18 +75,18 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 		We used $\alpha = 0.001$ as the threshold level of p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$.
 		Since this method can only return one significant change point, we divided the series into two at that point and analyzed seach series separately, until all significant change points were detected.
 
-	% 计算贡献度
-	\subsection{Contribution decomposition}
-		We decomposed the amount of variation in each index at different periods to quantify each influence's contribution to the index. Using the Integrated Water Governance Index (IWGI) as an example, its value is influenced by normalized indicators in three dimensions: stress ($I'_S$), purpose ($I'_P$) and allocation ($I'_A$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
-		\begin{align}
-		\Delta IWGI &= (I'_{P_{y_2}} + I'_{A_{y_2}} - I'_{S_{y_2}}) - (I'_{P_{y_1}} + I'_{A_{y_1}} - I'_{S_{y_1}}) \\
-		&= (I'_{P_{y_2}} - I'_{P_{y_1}}) + (I'_{A_{y_2}} - I'_{C_{y_1}}) + (I'_{S_{y_1}} - I'_{S_{y_2}}) \\
-		&= \Delta I'_P + \Delta I'_A + (-\Delta I'_S)
-		\end{align}
-		Then, the contribution of dimension $x$ to IWGI's changes can be referred to as:
-		\begin{equation}
-			Contribution_x = \frac{\Delta I'_x}{\lvert \Delta IWGI \rvert}
-		\end{equation}
+	% % 计算贡献度
+	% \subsection{Contribution decomposition}
+	% 	We decomposed the amount of variation in each index at different periods to quantify each influence's contribution to the index. Using the Integrated Water Governance Index (IWGI) as an example, its value is influenced by normalized indicators in three dimensions: stress ($I'_S$), purpose ($I'_P$) and allocation ($I'_A$). We can calculate their differences between two certain years ($y_2$ and $y_1$, $y_2 > y_1$) by:
+	% 	\begin{align}
+	% 	\Delta IWGI &= (I'_{P_{y_2}} + I'_{A_{y_2}} - I'_{S_{y_2}}) - (I'_{P_{y_1}} + I'_{A_{y_1}} - I'_{S_{y_1}}) \\
+	% 	&= (I'_{P_{y_2}} - I'_{P_{y_1}}) + (I'_{A_{y_2}} - I'_{C_{y_1}}) + (I'_{S_{y_1}} - I'_{S_{y_2}}) \\
+	% 	&= \Delta I'_P + \Delta I'_A + (-\Delta I'_S)
+	% 	\end{align}
+	% 	Then, the contribution of dimension $x$ to IWGI's changes can be referred to as:
+	% 	\begin{equation}
+	% 		Contribution_x = \frac{\Delta I'_x}{\lvert \Delta IWGI \rvert}
+	% 	\end{equation}
 
 		% Since $Contribution_x$ can be positive or negative, we used an absolute value to evaluate the contribution (in proportion) of a certain dimension in the all three dimensions to the changes:
 		% \begin{equation}
