@@ -9,7 +9,7 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\begin{itemize}
 		%! Why ??? Explaination: why should development lead to balance among regions or meet the needs of different sectors.
 		% - 可持续的社会发展应该通过技术手段有效缓解发展过程中产生的水资源压力，才能实现可持续发展：
-		\item \textbf{Supply($S$)}: Socio-economic dominance may lead to further demands on the water supply because of increasing water withdrawals. However, since effective water governance may boost supply capacities to meet water demands by technical solutions in the process of development:
+		\item \textbf{Stress ($S$)}: Socio-economic dominance may lead to further demands on the water supply because of increasing water withdrawals. However, since effective water governance may boost supply capacities to meet water demands through technical solutions in the process of development:
 		\begin{equation}
 			Transformation \propto S^{-1}
 		\end{equation}
@@ -35,7 +35,7 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 	\end{equation}
 
 	% 在上述假设的基础上，我们要构建流域综合耦合指数(Integrated Water Resources governance, IWGI)，使 IWGI 有效表征与用水相关的三个维度。首先为每个维度选择一个合适的指示因子（indicator, $I_x$, 其中$x=P, A or S$）。将上式进行自然对数转换，从而让三个维度之间变成加减关系：
-	To effectively represent the three dimensions, we selected an appropriate indicator ($I_x$, $x=S$, $P$ or $A$ corresponding to supply, purpose, and allocation respectively) for each dimension. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
+	To effectively represent the three dimensions, we selected an appropriate indicator ($I_x$, $x=S$, $P$ or $A$ corresponding to stress, purpose, and allocation respectively) for each dimension. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
 	\begin{equation}
 		Transformation \propto ln(I_S) + ln(I_P) + ln(I_A)
 	\end{equation}
@@ -56,8 +56,8 @@ Our Integrated Water Governance Index offers an accessible and operational way o
 		normalize(X) = (X - X_{min}) / (X_{max} - X_{min})
 	\end{equation}
 
-	\subsubsection*{Indicator of supply}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water supply capacities ($SFV_i$) as the indicator in a certain region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of supply capacity $I_S$ is the average of all regions' SFV-index:
+	\subsubsection*{Indicator of stress}
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the indicator in a particular region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
