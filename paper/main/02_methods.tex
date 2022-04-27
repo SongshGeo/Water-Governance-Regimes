@@ -1,19 +1,19 @@
-This analysis aimed to develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three dimensions (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 by using change point detection methods. The normalized indicator for each dimension effects the IWGI by both changing trend and contributions.
+To develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three dimensions (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 using change point detection methods. The normalized Indicator for each dimension affects the IWGI by changing trends and contributions.
 
 \subsection{Integrated Water Governance Index (IWGI)}
 
 	% 将三者合一起，即：
-	As shown in the framework Figure~\ref{fig:framework}, the IWGI combines the three core dimensions (Stress, Purpose, and Allocation) of water governance. Each dimension keeps two directions and we assumed the hydrosocial cycle aligns with one of them, respectively:
+	As shown in the framework Figure~\ref{fig:framework}, the IWGI combines the three core dimensions (Stress, Purpose, and Allocation) of water governance. Each dimension keeps two directions, and we assumed the hydrosocial cycle aligns with one of them, respectively:
 	\begin{equation}
 		Transformation \propto S*P*A
 	\end{equation}
 
-	To effectively quantify the dimensions, we selected an indicator ($I_x$, $x=S$, $P$ or $A$, corresponding to stress, purpose, and allocation respectively) for each dimension. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
+	We selected an indicator ($I_x$, $x=S$, $P$ or $A$, corresponding to stress, purpose, and allocation, respectively) to quantify the dimensions effectively. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
 	\begin{equation}
 		Transformation \propto ln(I_S) + ln(I_P) + ln(I_A)
 	\end{equation}
 
-	Then, the Integrated Water Governance Index (IWGI) is average of the normalized indicators $I'_x$:
+	Then, the Integrated Water Governance Index (IWGI) is the average of the normalized indicators $I'_x$:
 	\begin{equation}
 		IWGI = I'_S + I'_P - I'_A
 	\end{equation}
@@ -24,7 +24,7 @@ This analysis aimed to develop a comprehensive and straightforward approach to i
 	\end{equation}
 
 	\subsubsection*{Indicator of stress}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the indicator in a particular region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the Indicator in a particular region $i$ \cite{qinFlexibilityintensityglobal2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
@@ -32,7 +32,7 @@ This analysis aimed to develop a comprehensive and straightforward approach to i
 	Where $SFV_i$ is the SFV-index for region $i$, and $i=1$ to $4$ refers SR, UR, MR, and DR (see \textit{SI Appendix} Methods S1 Definition of study area).
 
 	\subsubsection*{Indicator of purpose}
-	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
+	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated, and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
 	\begin{equation}
 		NPS = \frac{WU_{pro}}{WU_{pro} + WU_{non-pro}}
 	\end{equation}
@@ -51,10 +51,9 @@ This analysis aimed to develop a comprehensive and straightforward approach to i
 	\subsection{Change points detection}
 		% The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
 
-		With no assumptions about the distribution of the data, the Pettitt (1979) approach of change-point detection is commonly applied to detect a single change-point in hydrological time series with continuous data
+		With no assumptions about the distribution of the data, we applied the Pettitt (1979) approach of change-point detection to detect a single change-point in hydrological time series with continuous data
         \cite{pettittNonParametricApproachChangePoint1979}.
-		It tests $H0$: The variables follow one or more distributions that have the same location parameter (no change), against the alternative: a change point exists. The non-parametric statistic is defined as:
-
+		It tests $H0$: The variables follow one or more distributions with the exact location parameter (no change) against the alternative: a change point exists.
 		Mathematically, when a sequence of random variables is divided into two segments represented by $\mathrm{x}_{1}, \mathrm{x}_{1}, \ldots, x_{t_{0}} \text{and} x_{t_{0}+1}, x_{t_{0}+2}, \ldots, x_{T}$, if each segment has a common distribution function, i.e., $F_1(x)$, $F_2(x)$ and $F_1(x) \neq F_2(x)$, then the change point is identified at $t_0$. To achieve the identification of change point, a statistical index $U_{t,T}$ is defined as follows:
 
 		\begin{equation}
@@ -72,8 +71,8 @@ This analysis aimed to develop a comprehensive and straightforward approach to i
 		\end{equation}
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
-		We used $\alpha = 0.001$ as the threshold level of p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$.
-		Since this method can only return one significant change point, we divided the series into two at that point and analyzed seach series separately, until all significant change points were detected.
+		We used $\alpha = 0.001$ as the threshold level of the p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$.
+		Since this method can only return one significant change point, we divided the series into two at that point and analyzed each series separately until all significant change points were detected.
 
 	% % 计算贡献度
 	% \subsection{Contribution decomposition}
