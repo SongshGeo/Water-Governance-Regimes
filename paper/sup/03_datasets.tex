@@ -1,0 +1,105 @@
+\subsection*{Descriptions}
+This study used multiple types of data (see Table~\ref{tab:datasets}): statistical datasets, hydrological datasets, and political datasets.
+
+\subsubsection*{Statistical datasets}
+% We used GDP data; water resources uses data extracted from the 2nd National Water Resources Assessment Program \cite{zhou2020} and statistical yearbooks \url{http://www.yrcc.gov.cn/other/hhgb/}.
+The water resources use dataset was published by Zhou et al. \cite{zhou2020}, which records water utilization in different sectors along with social-economic situations at the Prefectures level. 2nd National Water Resources Assessment Program mainly extracted this dataset launched in 2002, led by the National Development and Reform Commission and the Ministry of Water Resources (see ref (1) and \url{http://www.mwr.gov.cn/english/publs/} for more details). Since then, the statistics from the survey using the same criteria have been supplemented and harmonized with the 2013 administrative divisions.
+
+The data covers a total of subcategories of water use under four broad categories: agriculture (IRR), industry (IND), urban (URB) and rural (RUR) water use (see Zhou et al., for details \cite{zhou2020}).
+% There is uncertainty at the county scale for each disaggregated water use sector, but because the corrected data has been for statistical information using the water balance method, the data are adequate for the regional scale used in this study.
+
+\subsubsection*{Hydrological datasets}
+The reservoir dataset was collected by Wang et al. \cite{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Figure~\ref{fig:reservoirs}). YRCC labelled the regulation-oriented reservoirs among them, see \url{http://www.yrcc.gov.cn/hhyl/sngc/}). In addition, annual runoff data derived from hydrological station measurements are the same as the datasets used in \cite{wang2019c} and \cite{wang2016e}.
+
+\subsubsection*{Political datasets}
+The policy dataset collects laws and policies listed in the book \cite{yellowriverconservancycommission2013}, which are related to the Yellow River basin promulgated and implemented by departments at (such as YRCC) and above (such as national institutions) at the Basin's level (Table~\ref{tab:policies}).
+In addition, some are difficult to categorize; not a landmark, but numerous water governance practices in the YRB had been recorded in ``Yellow River Events'' by the YRCC; we collected them from \url{http://www.yrcc.gov.cn/hhyl/hhjs/}.
+
+\subsection*{Methods S3. Harmonization}
+Due to the wide sources of our data set and the different spatial scales, we need to harmonize them into a practical scale.
+\begin{itemize}
+    \item 1. Datasets at watersheds scales:
+        We directly divided the annual hydrological data and measured runoff data according to their watersheds' corresponding hydrological stations (see Figure~\ref{fig:YRB} A and B).
+    \item 2. Prefecture:
+        We calculate the area of each prefecture to determine whether they belong to a region, with the threshold of $95\%$:
+
+        \begin{equation}
+            S_{ij} = MAX(S_ij / S_i)
+        \end{equation}
+
+        Where $i$ refers to a specific prefecture and $j$ refers to a region within YRB, i.e. SR, UR, MR, or DR. $S_i$ refers to the area of perfect $i$, and $S_{ij}$ refers intersecting area between perfect $i$ and region $j$.
+        We define perfecture $i$ belongs to region $j$ if their intersecting area $S_{ij}$ over 95\% of $S_i$, i.e.:
+
+        \begin{equation}
+            MAX(S_{ij}) > 0.95 * S_i
+        \end{equation}
+    \item 3. Province:
+        According to the major provinces contained in different regions, we determine which region the data of that province is merged into by referring to the traditional division practice:
+    \begin{itemize}
+        \item SR: Qinghai Gansu and Sichuan,
+        \item UR: Ningxia and Inner Mongolia,
+        \item MR: Shanxi and Shaanxi,
+        \item DR: Shandong, Hebei and Henan.
+    \end{itemize}
+\end{itemize}
+
+Finally, when we process the location data (i.e., the location data of the reservoirs), we judge the province it belongs to according to its location and then fit it to the regional scale.
+
+\begin{table*}[!htbp]
+    \begin{center}
+    \small
+    \begin{minipage}{\linewidth}
+    \caption{Used datasets and their sources.}\label{tab:datasets}%
+    \resizebox{\linewidth}{!}{
+    \begin{tabular}{lrrrp{0.4\linewidth}}
+    \toprule
+    Dataset & Type & Spatial scale & Time scale & Source \\
+    \midrule
+    1. Administrative water use & Statistical & Prefectures & 1965-2013 & 2nd National Water Resources Assessment Program \cite{zhou2020}\\
+    2. GDP & Statistical & Province & 1949-2019 & Wind database \\
+    3. Streamflow withdrawals & Statistical & Watershed & 2003-2019 & Yearbooks \url{http://www.yrcc.gov.cn/other/hhgb/} \\
+    4. Reservoirs & Hydrological & Location & 1949-2015 & Publication \cite{wang2019c} \\
+    5. Measured runoff & Hydrological & Location & 1949-2019 & Measured data \cite{wang2019c,wang2016e} \\
+    6. Laws & Political & Documents & 1949-2013 & YRCC \cite{yellowriverconservancycommission2013} \\
+    7. History of YRCC & Political & Documents & 1949-2002 & YRCC \cite{yellowriverarchives2004} \\
+    8. YRB Events & Political & Documents & 1949-2015 & YRCC: \url{http://www.yrcc.gov.cn/hhyl/hhjs/} \\
+    \botrule
+    \end{tabular}}
+    \end{minipage}
+    \end{center}
+    \end{table*}
+
+    %% 表格
+\begin{table*}
+    \centering
+    \small
+    \caption{Policies and regulations above YRB level which affected the whole basin in water utilization}\label{tab:policies}
+    \begin{minipage}{\linewidth}
+    \resizebox{\linewidth}{!}{
+    \begin{tabular}{p{0.6\linewidth}rp{0.35\linewidth}}
+        Name & Year & Agency \\
+        \midrule
+        1. Water Law of PRC & 1988 & National People's Congress of the PRC \\
+        2. Water Law of PRC -revised 1 & 2009 & National People's Congress of the PRC \\
+        3. Water Law of PRC -revised 2 & 2016 & National People's Congress of the PRC \\
+        4. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees & 2006 & State Council of the PRC \\
+        5. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees -revised 1 & 2017 & State Council of the PRC \\
+        6. Regulations on the Allocation of Water in the Yellow River & 2006 & State Council of the PRC \\
+        7. Yellow River water supply distribution scheme & 1987 & State Council of the PRC \\
+        8. Measures for the Administration of Water Drawing Permits & 2008 & Ministry of Water Resources of the PRC \\
+        9. Measures for the Administration of Water Drawing Permits -revised 1 & 2015 & Ministry of Water Resources of the PRC \\
+        10. Measures for the Administration of Water Drawing Permits -revised 2 & 2017 & Ministry of Water Resources of the PRC \\
+        11. Regulations on the Allocation of Water in the Yellow River & 2006 & State Council of the PRC \\
+        12. Annual distribution of available water supply of the Yellow River and mainstream water dispatching scheme & 1998 & Ministry of Water Resources of the PRC \\
+        13. The Yellow River water dispatching management measures & 1998 & Ministry of Water Resources \\
+        14. Measures for the Implementation of the Yellow River Water Rights Conversion Management & 2004 & Ministry of Water Resources \\
+        15. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees & 2006 & State Council of the PRC \\
+        16. Measures for the implementation of the water drawing Permit system & 1993 \\ State Council of the PRC \\
+        17. Measures for the demonstration and management of water resources in construction projects & 2002 & Ministry of Water Resources of the PRC \\
+        18. Implementation Opinions on the Reform of Water Conservancy Project Management System & 2006 & State Council of the PRC \\
+        \bottomrule
+    \end{tabular}}
+
+    \footnotesize[1]{If a policy was proposed by multiple legacies, we only show the highest one.}
+    \end{minipage}
+\end{table*}
