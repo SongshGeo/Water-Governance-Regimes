@@ -24,18 +24,20 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	\end{equation}
 
 	\subsubsection*{Indicator of stress}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress ($SFV_i$) as the Indicator in a particular region $i$ \cite{qin2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the industrial structure of water use on the evaluation of water scarcity (see \textit{SI Appendix} Methods S4 for details). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., 2019 to evaluate water stress \cite{qin2019}. This metric takes into account management measures (such as the construction of reservoirs) and the impact of changes in the structure of water use on the evaluation of water scarcity. Based on the hydrological and economic context of YRB, four main regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{\ref{secA1}}). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
 
-	Where $SFV_i$ is the SFV-index for region $i$, and $i=1$ to $4$ refers SR, UR, MR, and DR (see \textit{SI Appendix} Methods S1 Definition of study area).
+	Where $SFV_i$ is the SFV-index for region $i$, and the detailed calculation of $SFV_i$ can be found in the \ref{secA2}.
 
 	\subsubsection*{Indicator of purpose}
 	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated, and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
 	\begin{equation}
 		NPS = \frac{WU_{pro}}{WU_{pro} + WU_{non-pro}}
 	\end{equation}
+
+	In this study, we consider water for livestock, rural or urban domestic and water for agriculture as provisioning water. Others are non-provisioning water uses, such as energy water use.
 
 	\subsubsection*{Indicator of allocations}
 	%$AEM$ 指标度量的是水资源配置“不均匀”的程度，类似于信息熵是对“混乱程度”的度量，即参与分配的各个单位之间，分配比例差距越大，则熵越小。
@@ -46,11 +48,9 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		I_A = CEM = \sum_{i=1}^N -log(p_{i}) * p_{i}
 	\end{equation}
 
-	where $p_{i}$ is the water proportion of region $i$ to the whole basin ($N$ regions in sum). The YRB is divided into 4 regions (i.e., $N = 4$) according to the natural and socio-economic backgrounds (see \textit{SI Appendix XX}).
+	where $p_{i}$ is the water proportion of region $i$ to the whole basin ($N=4$ regions in sum). Based on the hydrological and economic context of YRB, four main regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{\ref{secA1}}).
 
 	\subsection{Change points detection}
-		% The method makes no assumptions about the distribution of the data and detects breakpoints based solely on the probability of the data coming from different distributions before and after the breakpoint.
-
 		With no assumptions about the distribution of the data, we applied the Pettitt (1979) approach of change-point detection to detect a single change-point in hydrological time series with continuous data
         \cite{pettitt1979}.
 		It tests $H0$: The variables follow one or more distributions with the exact location parameter (no change) against the alternative: a change point exists.
@@ -71,8 +71,9 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		\end{equation}
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
-		We used $\alpha = 0.001$ as the threshold level of the p-value (see \textit{SI Appendix} Methods S5 for Sensitivity analysis), meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$.
-		Since this method can only return one significant change point, we divided the series into two at that point and analyzed each series separately until all significant change points were detected.
+		%实际上这个阈值取0.001至0.1不会影响我们的结果，我们识别的断点是相当稳定的
+		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two breakpoints were detected in the main text with $\alpha = 0.001$, in fact the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are fairly robust (see \textit{SI Appendix} Figure~\ref{fig:sensitivity}).
+
 
 	% % 计算贡献度
 	% \subsection{Contribution decomposition}

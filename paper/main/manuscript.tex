@@ -583,8 +583,182 @@ BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies
 
 \begin{appendices}
 
-\section{Section title of first appendix}\label{secA1}
+\section{YRB Regions}\label{secA1}
 
+Since the socio-economic and natural conditions were both considered in this study, we integrated the two schemes above and divided the Yellow River Basin into four regions, which can be distinguished by three important hydrological control stations (see Figure~\ref{fig:YRB}).
+% 之前的研究也表明，当考虑流域的社会用水和自然条件时，这样的划分是有效的，因为区域之间具有很强的异质性(见图S1-C)。
+Previous studies have also shown that such a division is valid when both social water use and the natural conditions of the basin are considered, as the regions exhibit strong heterogeneity among themselves (see Fig. S1-C) \cite{wang2019c}:
+
+\begin{itemize}
+    \item \textbf{Source Region (SR):} Over 50\% of natural runoff was produced in this region. The most ecology function here is water yield, as sparsely populated and less economically developed.
+    \item \textbf{Upper Region (UR):} With the highest per capita irrigated land area, there are numbers of large irrigation lands in this region. However, the efficiency of irrigation are used to be very low.
+    \item \textbf{Middle Region (MR):} Crossing Loess Plateau, famous rich-sand area, Yellow River loads most of its sediments here with the highest soil erosion risk. To reverse this situation, the grain for green project changed the water utilization here strikingly.
+    \item \textbf{Lower Region (LR):} With dense population and the traditional agricultural trajectory, lower region used to be the largest water use region. However, as the industrial transformation going, proportion of agriculture keeps decreasing, but LR is still the largest water use region in each aspect.
+\end{itemize}
+
+% 总体来看，黄河流域在经济布局、水资源分布、用水量分布、人口分布等方面存在明显的区域差异(图S2)。
+In general, there are obvious inter-regional differences in the economic layout, distribution of water resources, distribution of water consumption, and population distribution of the Yellow River Basin (Figure~\ref{fig:water resources}).
+% 在这些根本差异的基础上，社会发展和流域管理继续影响和重塑它们的变化，使黄河流域成为世界上联系最密切、变化最剧烈的大流域。
+On the basis of these fundamental differences, social development and watershed management continue to influence and reshape their changes, making the Yellow River Basin the world's most intimately connected and dramatically changing large river basin.
+
+% 补充图片1：研究区示意图
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.8\textwidth]{sup/s1_study_area.jpg}
+    % 黄河流域示意图
+    % A. 黄河流域示意图及研究区子区域的划分
+    % B. 黄河主河道的剖面图
+    % C. 典型景观
+    \caption{
+        The study area.
+        \textbf{A.} Diagram of the YRB and the subdivision of the basin (SR: Source Region, UR: Upper Region, MR: Middle Region, DR: Downstream region).
+        \textbf{B.} Profile of main channel of the Yellow River. SR, UR, MR and DR are divided by main hydrological stations.
+        \textbf{C.} Typical landscapes in different regions in the YRB.
+    }
+    \label{fig:YRB}
+\end{figure*}
+
+% 补充图片4：天然水资源量
+\begin{figure*}[tb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sup/sf_measured_runoff.pdf}
+    \caption{Water resources in different regions.
+        \textbf{A,} changing trend of measured runoff,
+        \textbf{B, C and D} average measured runoff within different periods.
+        \textbf{E, F and G} average total water consumptions within different periods.
+    }
+    \label{fig:water resources}
+\end{figure*}
+
+\section{SFV-index}
+By taking changes of water flexibility and variability into account, the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in developing perspective, which considered a valid metric of temporal changes in water stresses \cite{qin2019}.
+
+To apply this method, we need to combine three metrics following:
+
+First for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume, in year $j$ and region $i$:
+\begin{equation}
+    A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}}
+\end{equation}
+
+Second for flexibility, $B_{i, j}$ is the inflexible water use $WU_{inflexible}$ (i.e. for thermal power plants or humans and livestock) as a proportion of average multi-year runoff, in year $i$ and region $j$:
+\begin{equation}
+    B_{i, j} = \frac{WU_{i, j, inflexible}}{R_{i, avg}}
+\end{equation}
+
+Finally for variability, the capacity of the reservoir and the positive effects of storage on natural runoff fluctuations are also considered.
+\begin{gather}
+C_i = C1_i * (1 - C2_i) \\
+C1_{i, j} = \frac{R_{i, std}}{R_{i, avg}} \\
+C2_{i} = \frac{RC_{i}}{R_{i, avg}}, \ if RC < R_{i, avg} \\
+C2_{i} = 1, \ if RC >= R_{i, avg}
+\end{gather}
+
+In all the equations above, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
+
+Finally, assuming three metrics (scarcity, flexibility and variability) have the same weights, we can calculate $SFV$ index after normalizing them:
+\begin{gather}
+    V = \frac{A_{normalize} + B_{normalize} + C_{normalize}}{3}\\
+    a = \frac{1}{V_{max} - V_{min}};\\
+    b = \frac{1}{V_{min} - V_{max}} * V_{min}\\
+    SFV = a * V + b
+\end{gather}
+
+\begin{figure*}[tb!]
+	\centering
+	\includegraphics[width=0.9\linewidth]{sup/S3_wci.pdf}
+	\caption{
+	    Ratio of irrigated areas with water-saving equipments.
+	}
+	\label{fig:wci}
+\end{figure*}
+
+
+\begin{figure*}[tb]
+	\centering
+	\includegraphics[width=0.9\linewidth]{sup/reservoirs.pdf}
+	\caption{
+	    Reservoirs.
+	}
+	\label{fig:reservoirs}
+\end{figure*}
+
+\begin{figure*}
+    \centering
+    \includegraphics[width=0.95\textwidth]{sup/sensitivity.pdf}
+    \caption{
+        Sensitivity analysis of the threshold of p-values.
+        \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
+        \textbf{B.} A typical result of two breakpoints.
+        \textbf{C.} A typical result of three breakpoints.
+    }
+    \label{fig:sensitivity}
+\end{figure*}
+
+
+
+\begin{table*}[!htbp]
+\begin{center}
+\begin{minipage}{\linewidth}
+\caption{Used datasets and their sources.}\label{datasets}%
+\resizebox{\linewidth}{!}{
+\begin{tabular}{lrrrr}
+\toprule
+Dataset & Type & Spatial scale & Time limit & Source \\
+\midrule
+1. Water use & Statistical & Prefectures & 1965-2013 & 2nd National Water Resources Assessment Program \\
+2. GDP & Statistical & Province & 1949-2019 & Wind database \\
+3. Groundwater and surface water use & Statistical & Watershed & 2003-2019 & Yearbooks of YRB by the YRCC. \\
+4. Reservoirs & Hydrological & Location & 1949-2015 & Wang et al. \cite{wang2019c} \\
+5. Measured runoff & Hydrological & Location & 1949-2019 & Measured data from YRCC \\
+6. Laws & Political & Documents & 1949-2013 & YRCC \cite{yellowriverconservancycommission2013} \\
+7. History of YRCC & Political & Documents & 1949-2002 & YRCC \cite{yellowriverarchives2004} \\
+\botrule
+\end{tabular}}
+% \footnotetext{Source: This is an example of table footnote.
+% This is an example of table footnote.}
+% \footnotetext[1]{Example for a first table footnote.
+% This is an example of table footnote.}
+% \footnotetext[2]{Example for a second table footnote.
+% This is an example of table footnote.}
+\end{minipage}
+\end{center}
+\end{table*}
+
+%% 表格
+\begin{table*}
+    \centering
+    \caption{Policies and regulations above YRB level which affected the whole basin in water utilization}
+    \begin{minipage}{\linewidth}
+    % 表格
+    \resizebox{\linewidth}{!}{
+    \begin{tabular}{lrr}
+    Name & Year & Agency \\
+    \midrule
+    1. Water Law of PRC & 1988 & National People's Congress of the PRC \\
+    2. Water Law of PRC -revised 1 & 2009 & National People's Congress of the PRC \\
+    3. Water Law of PRC -revised 2 & 2016 & National People's Congress of the PRC \\
+    4. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees & 2006 & State Council of the PRC \\
+    5. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees -revised 1 & 2017 & State Council of the PRC \\
+    6. Regulations on the Allocation of Water in the Yellow River & 2006 & State Council of the PRC \\
+    7. Yellow River water supply distribution scheme & 1987 & State Council of the PRC \\
+    8. Measures for the Administration of Water Drawing Permits & 2008 & Ministry of Water Resources of the PRC \\
+    9. Measures for the Administration of Water Drawing Permits -revised 1 & 2015 & Ministry of Water Resources of the PRC \\
+    10. Measures for the Administration of Water Drawing Permits -revised 2 & 2017 & Ministry of Water Resources of the PRC \\
+    11. Regulations on the Allocation of Water in the Yellow River & 2006 & State Council of the PRC \\
+    12. Annual distribution of available water supply of the Yellow River and main stream water dispatching scheme & 1998 & Ministry of Water Resources of the PRC \\
+    13. The Yellow River water dispatching management measures & 1998 & Ministry of Water Resources \\
+    14. Measures for the Implementation of the Yellow River Water Rights Conversion Management & 2004 & Ministry of Water Resources \\
+    15. Regulations on the Administration of Water Drawing Licences and The Collection of water resource fees & 2006 & State Council of the PRC \\
+    16. Measures for the implementation of the water drawing Permit system & 1993 \\ State Council of the PRC \\
+    17. Measures for the demonstration and management of water resources in construction projects & 2002 & Ministry of Water Resources of the PRC \\
+    18. Implementation Opinions on the Reform of Water Conservancy Project Management System & 2006 & State Council of the PRC \\
+    \bottomrule
+    \end{tabular}}
+
+    \footnotesize[1]{If a policy was proposed by multiple legacies, we only show the highest one.}
+    \label{policies}
+\end{minipage}
+\end{table*}
 
 %%=============================================%%
 %% For submissions to Nature Portfolio Journals %%
