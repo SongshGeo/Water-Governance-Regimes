@@ -399,3 +399,4 @@ tex/sup/supplementary_information.pdf
 .idea
 .vscode
 data
+*.docs
