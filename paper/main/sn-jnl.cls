@@ -847,14 +847,14 @@
     \let\@evenfoot\@oddfoot%
       %%\def\@evenhead{{\headerfont\thepage\qquad\rightmark\hfill\includegraphics{springer-nature-logo}}}%
       %%\def\@oddhead{{\headerfont\includegraphics{springer-nature-logo}\hfill\leftmark\qquad\thepage}}%
-      \def\@evenhead{%
-      \vbox to 0pt{\vspace*{-39pt}%
-         \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}\par%%
-      \hspace*{-\textwidth}\hbox to \hsize{\headerfont\thepage\qquad\rightmark\hfill}}%
-      \def\@oddhead{%
-      \vbox to 0pt{\vspace*{-39pt}%
-         \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}\par%%
-      \hspace*{-\textwidth}\hbox to \hsize{\headerfont\hfill\leftmark\qquad\thepage}}%
+      % \def\@evenhead{%
+      % % \vbox to 0pt{\vspace*{-39pt}%
+      %   %  \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}\par%%
+      % \hspace*{-\textwidth}\hbox to \hsize{\headerfont\thepage\qquad\rightmark\hfill}}%
+      % \def\@oddhead{%
+      % \vbox to 0pt{\vspace*{-39pt}%
+      %    \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}\par%%
+      % \hspace*{-\textwidth}\hbox to \hsize{\headerfont\hfill\leftmark\qquad\thepage}}%
       \let\@mkboth\markboth%
       }%
 
@@ -876,9 +876,9 @@
 \def\ps@titlepage{%
      %%\def\@oddhead{\vbox{\vskip-36pt\hbox to \textwidth{\hfill\includegraphics{springer-nature-logo}\hspace*{-1pt}}}}%
      %%\let\@oddhead\@empty\let\@evenhead\@empty%
-      \def\@oddhead{%
-      \vbox to 0pt{\vspace*{-38pt}%
-         \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}}%%
+      % \def\@oddhead{%
+      % \vbox to 0pt{\vspace*{-38pt}%
+        %  \hbox to \hsize{\hfill Springer Nature 2021 \LaTeX\ template\hfill}}}%%
      \let\@evenhead\@oddhead%
      \def\@oddfoot{\vbox to 18pt{\vfill\reset@font\rmfamily\hfil\thepage\hfil}}%%
      \def\@evenfoot{}}%
@@ -1657,35 +1657,35 @@
 \if@Spr@basic@refstyle%
   \usepackage[authoryear]{natbib}%
   \gdef\NumBib{NO}%
-%
+  \bibliographystyle{sn-basic}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@Mathphys@refstyle%
   \usepackage[numbers,sort&compress]{natbib}%
   \gdef\NumBib{YES}%
-%
+  \bibliographystyle{sn-mathphys}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@APS@refstyle%
   \usepackage[numbers,sort&compress]{natbib}%
   \gdef\NumBib{YES}%
-%
+  \bibliographystyle{sn-APS}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@Vancouver@refstyle%
   \usepackage[numbers,sort&compress]{natbib}%
   \gdef\NumBib{YES}%
-%
+  \bibliographystyle{sn-vancouver}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
 \if@APA@refstyle%
   \usepackage[natbibapa]{apacite}%
   \gdef\NumBib{NO}%
-%
+  \bibliographystyle{sn-apacite}%
   \def\refdoi#1{\urlstyle{rm}\url{#1}}%
   \renewcommand{\doiprefix}{}%
   \AtBeginDocument{%
@@ -1697,7 +1697,7 @@
 \if@Chicago@refstyle%
   \usepackage[authoryear]{natbib}%
   \gdef\NumBib{NO}%
-%
+  \bibliographystyle{sn-chicago}%
   \hypersetup{urlcolor=black,colorlinks=false,pdfborder={0 0 0}}\urlstyle{same}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
@@ -1705,7 +1705,7 @@
 \if@Standard@Nature@refstyle%
   \usepackage[numbers,sort&compress]{natbib}%
   \gdef\NumBib{YES}%
-%
+  \bibliographystyle{sn-standardNature}%
   \setlength{\bibsep}{1em}%
   \def\bibfont{\reset@font\fontfamily{\rmdefault}\normalsize\selectfont}%
 \fi%
