@@ -52,6 +52,7 @@
 \jyear{2022}%
 \newgeometry{left=2cm, right=2cm}
 \linespread{1.5}
+\usepackage{lineno}
 
 %% as per the requirement new theorem styles can be included as shown below
 \theoremstyle{thmstyleone}%
@@ -116,7 +117,7 @@
 %%==================================%%
 %% sample for unstructured abstract %%
 %%==================================%%
-
+\linenumbers
 \abstract{
     Water governance determine ``who gets water, when, and how'' in most large river basins. Shifts in water governance regimes from natural to social-ecological or ``hydrosocial'' carry profound implications for human wellbeing; identifying regime changes in water governance is critical to navigating social-ecological transitions and guiding sustainability. We characterized water governance along with the three main aspects - stress, purpose, and allocation - to develop a quantitative Integrated Water Governance Index (IWGI) at a basin scale. Applying the IWGI to the rapidly-changing Yellow River Basin (YRB) in China clarifies shifts in water governance between massive supply, transformation governance, and adaptation-oriented regimes. In the YRB, the underlying causes of regime shifts were increasing water supply and demand before the governance transformation and re-allocation and regulation after the change. The IWGI offers a comprehensive and straightforward approach to linking water governance regimes to sustainability, providing valuable insights into hydrosocial transitions.
 }
@@ -200,6 +201,22 @@ Nature Portfolio journals: \url{https://www.nature.com/nature-research/editorial
 \bigskip\noindent
 BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies}
 \end{flushleft}
+%%===========================================================================================%%
+%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
+%% system, please include the references within the manuscript file itself. You may do this  %%
+%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
+%% file, and delete the associated \verb+\bibliography+ commands.                            %%
+%%===========================================================================================%%
+
+\newpage
+\bibliographystyle{sn-standardnature}
+\bibliography{mybib}% common bib file
+%% if required, the content of .bbl file can be included here once bbl is generated
+%%\input sn-article.bbl
+
+%% Default %%
+%%\input sn-sample-bib.tex%
+
 
 \begin{appendices}
 
@@ -221,12 +238,12 @@ BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies
 
 
 \begin{figure}[tb]
-	\centering
-	\includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
-	\caption{
-	    Numbers of new reservoirs in each year.
-	}
-	\label{fig:reservoirs}
+    \centering
+    \includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
+    \caption{
+        Numbers of new reservoirs in each year.
+    }
+    \label{fig:reservoirs}
 \end{figure}
 
 \begin{figure}
@@ -247,19 +264,5 @@ BMC journals: \url{https://www.biomedcentral.com/getpublished/editorial-policies
 
 \end{appendices}
 
-%%===========================================================================================%%
-%% If you are submitting to one of the Nature Portfolio journals, using the eJP submission   %%
-%% system, please include the references within the manuscript file itself. You may do this  %%
-%% by copying the reference list from your .bbl file, paste it into the main manuscript .tex %%
-%% file, and delete the associated \verb+\bibliography+ commands.                            %%
-%%===========================================================================================%%
-
-\bibliographystyle{sn-standardnature}
-\bibliography{mybib}% common bib file
-%% if required, the content of .bbl file can be included here once bbl is generated
-%%\input sn-article.bbl
-
-%% Default %%
-%%\input sn-sample-bib.tex%
 
 \end{document}
