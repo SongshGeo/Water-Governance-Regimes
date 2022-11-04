@@ -1,144 +1,587 @@
-\documentclass[default, sn-standardnature]{sn-jnl}% Default with double column layout
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% AGUtmpl.tex: this template file is for articles formatted with LaTeX2e,
+% Modified December 2018
+%
+% This template includes commands and instructions
+% given in the order necessary to produce a final output that will
+% satisfy AGU requirements.
+%
+% FOR FIGURES, DO NOT USE \psfrag
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% IMPORTANT NOTE:
+%
+% SUPPORTING INFORMATION DOCUMENTATION IS NOT COPYEDITED BEFORE PUBLICATION.
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Step 1: Set the \documentclass
+%
+%
+% PLEASE USE THE DRAFT OPTION TO SUBMIT YOUR PAPERS.
+% The draft option produces double spaced output.
+%
+% Choose the journal abbreviation for the journal you are
+% submitting to:
 
-%%%% Standard Packages
-%%<additional latex packages if required can be included here>
-%%%%
+% jgrga JOURNAL OF GEOPHYSICAL RESEARCH (use for all of them)
+% gbc   GLOBAL BIOCHEMICAL CYCLES
+% grl   GEOPHYSICAL RESEARCH LETTERS
+% pal   PALEOCEANOGRAPHY
+% ras   RADIO SCIENCE
+% rog   REVIEWS OF GEOPHYSICS
+% tec   TECTONICS
+% wrr   WATER RESOURCES RESEARCH
+% gc    GEOCHEMISTRY, GEOPHYSICS, GEOSYSTEMS
+% sw    SPACE WEATHER
+% ms    JAMES
+% ef    EARTH'S FUTURE
+%
+%
+%
+% (If you are submitting to a journal other than jgrga,
+% substitute the initials of the journal for "jgrga" below.)
 
-%%%%%=============================================================================%%%%
-%%%%  Remarks: This template is provided to aid authors with the preparation
-%%%%  of original research articles intended for submission to journals published
-%%%%  by Springer Nature. The guidance has been prepared in partnership with
-%%%%  production teams to conform to Springer Nature technical requirements.
-%%%%  Editorial and presentation requirements differ among journal portfolios and
-%%%%  research disciplines. You may find sections in this template are irrelevant
-%%%%  to your work and are empowered to omit any such section if allowed by the
-%%%%  journal you intend to submit to. The submission guidelines and policies
-%%%%  of the journal take precedence. A detailed User Manual is available in the
-%%%%  template package for technical guidance.
-%%%%%=============================================================================%%%%
+\documentclass[draft,wrr]{agutexSI2019}
+\usepackage{amsmath}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%  SUPPORTING INFORMATION TEMPLATE
+%
+%% ------------------------------------------------------------------------ %%
+%
+%
+%Please use this template when formatting and submitting your Supporting Information.
 
-\jyear{2022}%
-\newgeometry{left=2cm, right=2cm}
-\linespread{1.5}
+%This template serves as both a “table of contents” for the supporting information for your article and as a summary of files.
+%
+%
+%OVERVIEW
+%
+%Please note that all supporting information will be peer reviewed with your manuscript. It will not be copyedited if the paper is accepted.
+%In general, the purpose of the supporting information is to enable authors to provide and archive auxiliary information such as data tables, method information, figures, video, or computer software, in digital formats so that other scientists can use it.
+%The key criteria are that the data:
+% 1. supplement the main scientific conclusions of the paper but are not essential to the conclusions (with the exception of
+%    including %data so the experiment can be reproducible);
+% 2. are likely to be usable or used by other scientists working in the field;
+% 3. are described with sufficient precision that other scientists can understand them, and
+% 4. are not exe files.
+%
+%USING THIS TEMPLATE
+%
+%***All references should be included in the reference list of the main paper so that they can be indexed, linked, and counted as citations.  The reference section does not count toward length limits.
+%
+%All Supporting text and figures should be included in this document. Insert supporting information content into each appropriate section of the template. To add additional captions, simply copy and paste each sample as needed.
 
-%% as per the requirement new theorem styles can be included as shown below
-\theoremstyle{thmstyleone}%
-\newtheorem{theorem}{Theorem}%  meant for continuous numbers
-%%\newtheorem{theorem}{Theorem}[section]% meant for sectionwise numbers
-%% optional argument [theorem] produces theorem numbering sequence instead of independent numbers for Proposition
-\newtheorem{proposition}[theorem]{Proposition}%
-%%\newtheorem{proposition}{Proposition}% to get separate numbers for theorem and proposition etc.
+%Tables may be included, but can also be uploaded separately, especially if they are larger than 1 page, or if necessary for retaining table formatting. Data sets, large tables, movie files, and audio files should be uploaded separately. Include their captions in this document and list the file name with the caption. You will be prompted to upload these files on the Upload Files tab during the submission process, using file type “Supporting Information (SI)”
 
-\theoremstyle{thmstyletwo}%
-\newtheorem{example}{Example}%
-\newtheorem{remark}{Remark}%
+%IMPORTANT NOTE ON FIGURES AND TABLES
+% Placeholders for figures and tables appear after the \end{article} command, after references.
+% DO NOT USE \psfrag or \subfigure commands.
+%
+ \usepackage{graphicx}
+%
+%  Uncomment the following command to allow illustrations to print
+%   when using Draft:
+ \setkeys{Gin}{draft=false}
+%
+% You may need to use one of these options for graphicx depending on the driver program you are using.
+%
+% [xdvi], [dvipdf], [dvipsone], [dviwindo], [emtex], [dviwin],
+% [pctexps],  [pctexwin],  [pctexhp],  [pctex32], [truetex], [tcidvi],
+% [oztex], [textures]
+%
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  ENTER PREAMBLE
+%
+%% ------------------------------------------------------------------------ %%
 
-\theoremstyle{thmstylethree}%
-\newtheorem{definition}{Definition}%
-% \usepackage{tikz}
-% \newcommand*{\circled}[1]{\lower.7ex\hbox{\tikz\draw (0pt, 0pt)%
-%     circle (.5em) node {\makebox[1em][c]{\small #1}};}}
-\raggedbottom
-%%\unnumbered% uncomment this for unnumbered level heads
-%! path of figs
+% Author names in capital letters:
+%\authorrunninghead{BALES ET AL.}
 
-\graphicspath{{/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020/figures/}}
+% Shorter version of title entered in capital letters:
+%\titlerunninghead{SHORT TITLE}
+
+%Corresponding author mailing address and e-mail address:
+%\authoraddr{Corresponding author: A. B. Smith,
+%Department of Hydrology and Water Resources, University of
+%Arizona, Harshbarger Building 11, Tucson, AZ 85721, USA.
+%(a.b.smith@hwr.arizona.edu)}
+
 \begin{document}
 
-\title{Supporting Materials of ``Identifying regime transitions for water governance at a basin scale''}
+%% ------------------------------------------------------------------------ %%
+%
+%  TITLE
+%
+%% ------------------------------------------------------------------------ %%
 
-%%=============================================================%%
-%% Prefix	-> \pfx{Dr}
-%% GivenName	-> \fnm{Joergen W.}
-%% Particle	-> \spfx{van der} -> surname prefix
-%% FamilyName	-> \sur{Ploeg}
-%% Suffix	-> \sfx{IV}
-%% NatureName	-> \tanm{Poet Laureate} -> Title after name
-%% Degrees	-> \dgr{MSc, PhD}
-%% \author*[1,2]{\pfx{Dr} \fnm{Joergen W.} \spfx{van der} \sur{Ploeg} \sfx{IV} \tanm{Poet Laureate}
-%%                 \dgr{MSc, PhD}}\email{iauthor@gmail.com}
-%%=============================================================%%
+%\includegraphics{agu_pubart-white_reduced.eps}
 
-\author[1]{\fnm{Shuang} \sur{Song}}\email{songshgeo@mail.bnu.edu.cn}
+\graphicspath{{/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020/figures/}}
+\title{Supporting Information for ``Identifying regime transitions for water governance at a basin scale''}
+%
+% e.g., \title{Supporting Information for "Terrestrial ring current:
+% Origin, formation, and decay $\alpha\beta\Gamma\Delta$"}
+%
+%DOI: 10.1002/%insert paper number here%
 
-\author[1]{\fnm{Shuai} \sur{Wang}}\email{shuaiwang@bnu.edu.cn}
-% \equalcont{These authors contributed equally to this work.}
+%% ------------------------------------------------------------------------ %%
+%
+%  AUTHORS AND AFFILIATIONS
+%
+%% ------------------------------------------------------------------------ %%
 
-\author[1]{\fnm{Xutong} \sur{Wu}}\email{wuxutong@bnu.edu.cn}
-% \equalcont{These authors contributed equally to this work.}
-\author[2]{\fnm{Yongping} \sur{Wei}}\email{yongping.wei@uq.edu.au}
-\author[3]{\fnm{Graeme S.} \sur{Cumming}}\email{graeme.cumming@jcu.edu.au}
-\author[4]{\fnm{Yue} \sur{Qin}}\email{qinyue@pku.edu.cn}
-\author[5]{\fnm{Xilin} \sur{Wu}}\email{wuxilin20@mails.ucas.ac.cn}
-\author*[1,5]{\fnm{Bojie} \sur{Fu}}\email{bfu@rcees.ac.cn}
 
-\affil*[1]{\orgdiv{State Key Laboratory of Earth Surface Processes and Resource Ecology}, \orgname{Beijing Normal University,}, \orgaddress{\city{Beijing}, \postcode{100875}, \state{Beijing}, \country{China}}}
+% List authors by first name or initial followed by last name and
+% separated by commas. Use \affil{} to number affiliations, and
+% \thanks{} for author notes.
+% Additional author notes should be indicated with \thanks{} (for
+% example, for current addresses).
 
-\affil[2]{\orgdiv{School of Earth and Environmental Sciences}, \orgname{The University of Queensland}, \orgaddress{\city{Brisbane}, \postcode{4067}, \state{QLD}, \country{Australia}}}
+% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
+% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
 
-\affil[3]{\orgdiv{ARC Centre of Excellence for Coral Reef Studies}, \orgname{James Cook University}, \orgaddress{\city{Townsville}, \postcode{4811}, \state{QLD}, \country{Australia}}}
+\authors{
+      Shuang Song\affil{1},
+      Shuai Wang\affil{1},
+      Xutong Wu\affil{1},
+      yongping Wei\affil{2},
+      Graeme S. Cumming\affil{3},
+      Yue Qin\affil{4},
+      Xilin Wu\affil{5},
+      Bojie Fu\affil{1,5}
+}
 
-\affil[4]{\orgdiv{College of Environmental Sciences and Engineering} \orgname{Peking University}, \orgaddress{\city{Beijing}, \postcode{100875}, \state{Beijing}, \country{China}}}
 
-\affil[5]{\orgdiv{State Key Laboratory of Urban and Regional Ecology, Research Center for Eco-Environmental Sciences}, \orgname{Chinese Academy of Sciences}, \orgaddress{\city{Beijing}, \postcode{100875}, \state{Beijing}, \country{China}}}
-%%==================================%%
-%% sample for unstructured abstract %%
-%%==================================%%
+\affiliation{1}{
+      State Key Laboratory of Earth Surface Processes and Resource Ecology,
+      Beijing Normal University,
+      Beijing, 100875, Beijing, China.
+}
+\affiliation{2}{
+      School of Earth and Environmental Sciences,
+      The University of Queensland,
+      Brisbane, 4067, QLD, Australia.
+}
+\affiliation{3}{
+      ARC Centre of Excellence for Coral Reef Studies,
+      James Cook University,
+      Townsville, 4811, QLD, Australia.
+}
+\affiliation{4}{
+      College of Environmental Sciences and Engineering,
+      Peking University,
+      Beijing, 100875, Beijing, China.
+}
+\affiliation{5}{
+      State Key Laboratory of Urban and Regional Ecology,
+      Research Center for Eco-Environmental Sciences,
+      Chinese Academy of Sciences,
+      Beijing, 100875, Beijing, China.
+}
 
-%% Comment out or remove this line before generating final copy for submission; this will also remove the warning re: "Consecutive odd pages found".
-% \instructionspage
 
-\maketitle
 
-%% Adds the main heading for the SI text. Comment out this line if you do not have any supporting information text
 
-\section{YRB Regions}\label{secA1}
+%% ------------------------------------------------------------------------ %%
+%
+%  BEGIN ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+
+% The body of the article must start with a \begin{article} command
+%
+% \end{article} must follow the references section, before the figures
+%  and tables.
+
+\begin{article}
+
+%% ------------------------------------------------------------------------ %%
+%
+%  TEXT
+%
+%% ------------------------------------------------------------------------ %%
+
+
+
+\noindent\textbf{Contents of this file}
+%%%Remove or add items as needed%%%
+\begin{enumerate}
+\item Text S1 to S3
+\item Figures S1 to S3
+\item Tables S1 to S2
+%if Tables are larger than 1 page, upload as separate excel file
+\end{enumerate}
+% \noindent\textbf{Additional Supporting Information (Files uploaded separately)}
+% \begin{enumerate}
+% \item Captions for Datasets S1 to Sx
+% \item Captions for large Tables S1 to Sx (if larger than 1 page, upload as separate excel file)
+% \item Captions for Movies S1 to Sx
+% \item Captions for Audio S1 to Sx
+% \end{enumerate}
+
+\noindent\textbf{Introduction}
+%Type or paste your text here. The introduction gives a brief overview of the supporting information. You should include information %about as many of the following as possible (when appropriate):
+% 1. a general overview of the kind of data files;
+% 2. information about when and how the data were collected or created;
+% 3. a general description of processing steps used;
+% 4. any known imperfections or anomalies in the data.
+When calculating the indicators (especially the SFV water stress index and the allocation entropy metric), we should use data at a lower (regional scale in this study) spatial scale. Therefore, we divide the YRB into four regions: source region (SR), upper region (UR), middle region (MR), and lower region (LR), according to characteristics and customary practices in the \ref{secA1}.
+The formulation in detail for applying the SFV-index is available in the \ref{secA2}.
+We used multiple sources of datasets in this study, \\textit{Supporting Information}~\ref{secA3} introduces where they came from and how we harmonise them for analysis.
+%\clearpage
+
+%Delete all unused file types below. Copy/paste for multiples of each file type as needed.
+
+%Type or paste text here. This should be additional explanatory text, such as: extended descriptions of results, full details of models, extended lists of acknowledgements etc.  It should not be additional discussion, analysis, interpretation or critique. It should not be an additional scientific experiment or paper.
+%
+%Repeat for any additional Supporting Text
+\noindent\textbf{YRB Regions}\label{secA1}
 \input{01_yrb.tex}
 
-\section{SFV-index}\label{secA2}
+\noindent\textbf{SFV-index}\label{secA2}
 \input{02_indicator.tex}
 
-
-% \begin{figure}[tb!]
-% 	\centering
-% 	\includegraphics[width=0.9\linewidth]{sup/S3_wci.pdf}
-% 	\caption{
-% 	    Ratio of irrigated areas with water-saving equipments.
-% 	}
-% 	\label{fig:wci}
-% \end{figure}
-
-
 \begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
-    \caption{
-        Numbers of new reservoirs in each year.
-    }
-    \label{fig:reservoirs}
-\end{figure}
+      \centering
+      \includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
+      \caption{
+          Numbers of new reservoirs in each year.
+      }
+      \label{fig:reservoirs}
+  \end{figure}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{sup/sensitivity.pdf}
-    \caption{
-        Sensitivity analysis of the threshold of p-values.
-        \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
-        \textbf{B.} Threshold of p-values $\alpha=0.0005$.
-        \textbf{C.} Threshold of p-values $\alpha=0.05$.
-    }
-    \label{fig:sensitivity}
-\end{figure}
+  \begin{figure}
+      \centering
+      \includegraphics[width=\linewidth]{sup/sensitivity.pdf}
+      \caption{
+          Sensitivity analysis of the threshold of p-values.
+          \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
+          \textbf{B.} Threshold of p-values $\alpha=0.0005$.
+          \textbf{C.} Threshold of p-values $\alpha=0.05$.
+      }
+      \label{fig:sensitivity}
+  \end{figure}
 
 
-\section{Datasets}\label{secA3}
+\noindent\textbf{Datasets}\label{secA3}
 \input{03_datasets.tex}
 
-% \dataset{dataset_one.txt}{Type or paste legend here.}
+%%Enter Data Set, Movie, and Audio captions here
+%%EXAMPLE CAPTIONS
 
-% \dataset{dataset_two.txt}{Type or paste legend here. Adding longer text to show what happens, to decide on alignment and/or indentations for multi-line or paragraph captions.}
+% \noindent\textbf{Data Set S1.} %Type or paste caption here.
+%upload your dataset(s) to AGU's journal submission site and select "Supporting Information (SI)" as the file type. Following naming %convention: ds01.
 
-\bibliographystyle{sn-standardnature}
-\bibliography{mybib}% common bib file
+%Repeat for any additional Supporting data sets
+
+% \noindent\textbf{Movie S1.} %Type or paste caption here.
+%upload your movie(s) to AGU's journal submission site and select, "Supporting Information %(SI)" as the file type. Following naming convention: ms01.
+
+%Repeat any additional Supporting movies
+
+% \noindent\textbf{Audio S1.} %Type or paste caption here.
+%upload your audio file(s) to AGU's journal submission site and select "Supporting Information %(SI)" as the file type. Following naming convention: auds01.
+
+
+%Repeat for any additional Supporting audio files
+
+%%% End of body of article:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Optional Notation section goes here
+%
+% Notation -- End each entry with a period.
+% \begin{notation}
+% Term & definition.\\
+% Second term & second definition.\\
+% \end{notation}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% ------------------------------------------------------------------------ %%
+%%  REFERENCE LIST AND TEXT CITATIONS
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%
+\bibliography{/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020/paper/main/mybibtex.bib}
+%
+% no need to specify bibliographystyle
+%
+% Note that ALL references in this supporting information file must also be referenced in the primary manuscript
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% if you get an error about newblock being undefined, uncomment this line:
+%\newcommand{\newblock}{}
+
+% \bibliography{ uncomment this line and enter the name of your bibtex file here }
+
+
+
+
+%Reference citation instructions and examples:
+%
+% Please use ONLY \cite and \citeA for reference citations.
+% \cite for parenthetical references
+% ...as shown in recent studies (Simpson et al., 2019)
+% \citeA for in-text citations
+% ...Simpson et al (2019) have shown...
+% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
+%
+%
+%...as shown by \citeA{jskilby}.
+%...as shown by \citeA{lewin76}, \citeA{carson86}, \citeA{bartoldy02}, and \citeA{rinaldi03}.
+%...has been shown \cite<e.g.,>{jskilbye}.
+%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
+%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
+%
+% apacite uses < > for prenotes, not [ ]
+% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
+%
+
+%% ------------------------------------------------------------------------ %%
+%
+%  END ARTICLE
+%
+%% ------------------------------------------------------------------------ %%
+\end{article}
+\clearpage
+
+% Copy/paste for multiples of each file type as needed.
+
+% enter figures and tables below here: %%%%%%%
+%
+%
+%
+%
+% EXAMPLE FIGURES
+% ---------------
+% If you get an error about an unknown bounding box, try specifying the width and height of the figure with the natwidth and natheight options.
+% \begin{figure}
+%\setfigurenum{S1} %%You can change number for each figure if you want, not required. "S" prepended automatically.
+% \noindent\includegraphics[natwidth=800px,natheight=600px]{samplefigure.eps}
+%\caption{caption}
+%\label{epsfiguresample}
+%\end{figure}
+%
+%
+% Giving latex a width will help it to scale the figure properly. A simple trick is to use \textwidth. Try this if large figures run off the side of the page.
+% \begin{figure}
+% \noindent\includegraphics[width=\textwidth]{anothersample.png}
+%\caption{caption}
+%\label{pngfiguresample}
+%\end{figure}
+%
+%
+%\begin{figure}
+%\noindent\includegraphics[width=\textwidth]{athirdsample.pdf}
+%\caption{A pdf test figure}
+%\label{pdffiguresample}
+%\end{figure}
+%
+% PDFLatex does not seem to be able to process EPS figures. You may want to try the epstopdf package.
+%
+%
+% ---------------
+% EXAMPLE TABLE
+%
+%\begin{table}
+%\settablenum{S1} %%Change number for each table
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\centering
+%\begin{tabular}{l c}
+%\hline
+% Run  & Time (min)  \\
+%\hline
+%  $l1$  & 260   \\
+%  $l2$  & 300   \\
+%  $l3$  & 340   \\
+%  $h1$  & 270   \\
+%  $h2$  & 250   \\
+%  $h3$  & 380   \\
+%  $r1$  & 370   \\
+%  $r2$  & 390   \\
+%\hline
+%\end{tabular}
+%\tablenotetext{a}{Footnote text here.}
+%\end{table}
+% ---------------
+%
+% EXAMPLE LARGE TABLE (UPLOADED SEPARATELY)
+%\begin{table}
+%\settablenum{S1} %%Change number for each table
+%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
+%\end{table}
+
 
 \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+More Information and Advice:
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SECTION HEADS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Capitalize the first letter of each word (except for
+% prepositions, conjunctions, and articles that are
+% three or fewer letters).
+
+% AGU follows standard outline style; therefore, there cannot be a section 1 without
+% a section 2, or a section 2.3.1 without a section 2.3.2.
+% Please make sure your section numbers are balanced.
+% ---------------
+% Level 1 head
+%
+% Use the \section{} command to identify level 1 heads;
+% type the appropriate head wording between the curly
+% brackets, as shown below.
+%
+%An example:
+%\section{Level 1 Head: Introduction}
+%
+% ---------------
+% Level 2 head
+%
+% Use the \subsection{} command to identify level 2 heads.
+%An example:
+%\subsection{Level 2 Head}
+%
+% ---------------
+% Level 3 head
+%
+% Use the \subsubsection{} command to identify level 3 heads
+%An example:
+%\subsubsection{Level 3 Head}
+%
+%---------------
+% Level 4 head
+%
+% Use the \subsubsubsection{} command to identify level 3 heads
+% An example:
+%\subsubsubsection{Level 4 Head} An example.
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  IN-TEXT LISTS
+%
+%% ------------------------------------------------------------------------ %%
+%
+% Do not use bulleted lists; enumerated lists are okay.
+% \begin{enumerate}
+% \item
+% \item
+% \item
+% \end{enumerate}
+%
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATIONS
+%
+%% ------------------------------------------------------------------------ %%
+
+% Single-line equations are centered.
+% Equation arrays will appear left-aligned.
+
+Math coded inside display math mode \[ ...\]
+ will not be numbered, e.g.,:
+ \[ x^2=y^2 + z^2\]
+
+ Math coded inside \begin{equation} and \end{equation} will
+ be automatically numbered, e.g.,:
+ \begin{equation}
+ x^2=y^2 + z^2
+ \end{equation}
+
+% IF YOU HAVE MULTI-LINE EQUATIONS, PLEASE
+% BREAK THE EQUATIONS INTO TWO OR MORE LINES
+% OF SINGLE COLUMN WIDTH (20 pc, 8.3 cm)
+% using double backslashes (\\).
+
+% To create multiline equations, use the
+% \begin{eqnarray} and \end{eqnarray} environment
+% as demonstrated below.
+\begin{eqnarray}
+  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
+        && + (y - y_{0}) \sin \Theta  \nonumber \\
+  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
+        && + (y - y_{0}) \cos \Theta.
+\end{eqnarray}
+
+%If you don't want an equation number, use the star form:
+%\begin{eqnarray*}...\end{eqnarray*}
+
+% Break each line at a sign of operation
+% (+, -, etc.) if possible, with the sign of operation
+% on the new line.
+
+% Indent second and subsequent lines to align with
+% the first character following the equal sign on the
+% first line.
+
+% Use an \hspace{} command to insert horizontal space
+% into your equation if necessary. Place an appropriate
+% unit of measure between the curly braces, e.g.
+% \hspace{1in}; you may have to experiment to achieve
+% the correct amount of space.
+
+
+%% ------------------------------------------------------------------------ %%
+%
+%  EQUATION NUMBERING: COUNTER
+%
+%% ------------------------------------------------------------------------ %%
+
+% You may change equation numbering by resetting
+% the equation counter or by explicitly numbering
+% an equation.
+
+% To explicitly number an equation, type \eqnum{}
+% (with the desired number between the brackets)
+% after the \begin{equation} or \begin{eqnarray}
+% command.  The \eqnum{} command will affect only
+% the equation it appears with; LaTeX will number
+% any equations appearing later in the manuscript
+% according to the equation counter.
+%
+
+% If you have a multiline equation that needs only
+% one equation number, use a \nonumber command in
+% front of the double backslashes (\\) as shown in
+% the multiline equation above.
+
+%% ------------------------------------------------------------------------ %%
+%
+%  SIDEWAYS FIGURE AND TABLE EXAMPLES
+%
+%% ------------------------------------------------------------------------ %%
+%
+% For tables and figures, add \usepackage{rotating} to the paper and add the rotating.sty file to the folder.
+% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
+%
+% \begin{sidewaysfigure}
+% \includegraphics[width=20pc]{samplefigure.eps}
+% \caption{caption here}
+% \label{label_here}
+% \end{sidewaysfigure}
+%
+%
+%
+% \begin{sidewaystable}
+% \caption{}
+% \begin{tabular}
+% Table layout here.
+% \end{tabular}
+% \end{sidewaystable}
+%
+%

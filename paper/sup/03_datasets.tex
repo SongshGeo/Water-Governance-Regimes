@@ -45,16 +45,17 @@ Due to the wide sources of our data set and the different spatial scales, we nee
 
 Finally, when we process the location data (i.e., the location data of the reservoirs), we judge the province it belongs to according to its location and then fit it to the regional scale.
 
-\begin{table*}[!htbp]
+\begin{table}[!htbp]
+    \settablenum{S1}
     \begin{center}
-    \small
-    \begin{minipage}{\linewidth}
+    % \small
+    % \begin{minipage}{\linewidth}
     \caption{Used datasets and their sources.}\label{tab:datasets}%
-    \resizebox{\linewidth}{!}{
-    \begin{tabular}{lrrrp{0.4\linewidth}}
-    \toprule
+    % \resizebox{\linewidth}{!}{
+    \begin{tabular}{lrrrp{0.35\linewidth}}
+    \hline
     Dataset & Type & Spatial scale & Time scale & Source \\
-    \midrule
+    \hline
     1. Administrative water use & Statistical & Prefectures & 1965-2013 & 2nd National Water Resources Assessment Program \cite{zhou2020}\\
     2. GDP & Statistical & Province & 1949-2019 & Wind database \\
     3. Streamflow withdrawals & Statistical & Watershed & 2003-2019 & Yearbooks \url{http://www.yrcc.gov.cn/other/hhgb/} \\
@@ -63,22 +64,25 @@ Finally, when we process the location data (i.e., the location data of the reser
     6. Laws & Political & Documents & 1949-2013 & YRCC \cite{yellowriverconservancycommission2013} \\
     7. History of YRCC & Political & Documents & 1949-2002 & YRCC \cite{yellowriverarchives2004} \\
     8. YRB Events & Political & Documents & 1949-2015 & YRCC: \url{http://www.yrcc.gov.cn/hhyl/hhjs/} \\
-    \botrule
-    \end{tabular}}
-    \end{minipage}
+    \hline
+    \end{tabular}
+    % }
+    % \end{minipage}
     \end{center}
-    \end{table*}
+    \end{table}
 
     %% 表格
-\begin{table*}[!h]
+\begin{table}[!h]
+    \settablenum{S2} %%Change number for each table
     \centering
-    \small
+    % \small
+    \renewcommand\arraystretch{1.2}
     \caption{Policies and regulations above YRB level which affected the whole basin in water utilization}\label{tab:policies}
-    \begin{minipage}{\linewidth}
-    \resizebox{\linewidth}{!}{
+    % \begin{minipage}{\linewidth}
+    % \resizebox{\linewidth}{!}{
     \begin{tabular}{p{0.6\linewidth}rp{0.35\linewidth}}
         Name & Year & Agency \\
-        \midrule
+        \hline
         1. Water Law of PRC & 1988 & National People's Congress of the PRC \\
         2. Water Law of PRC -revised 1 & 2009 & National People's Congress of the PRC \\
         3. Water Law of PRC -revised 2 & 2016 & National People's Congress of the PRC \\
@@ -97,9 +101,10 @@ Finally, when we process the location data (i.e., the location data of the reser
         16. Measures for the implementation of the water drawing Permit system & 1993 \\ State Council of the PRC \\
         17. Measures for the demonstration and management of water resources in construction projects & 2002 & Ministry of Water Resources of the PRC \\
         18. Implementation Opinions on the Reform of Water Conservancy Project Management System & 2006 & State Council of the PRC \\
-        \bottomrule
-    \end{tabular}}
+        \hline
+    \end{tabular}
+    % }
 
-    \footnotesize[1]{If a policy was proposed by multiple legacies, we only show the highest one.}
-    \end{minipage}
-\end{table*}
+    \tablenotetext{1}{If a policy was proposed by multiple legacies, we only show the highest one.}
+    % \end{minipage}
+\end{table}

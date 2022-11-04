@@ -18,7 +18,7 @@ repos:
           - id: black
     # Flake8 lints the Python code
     - repo: https://github.com/pycqa/flake8
-      rev: 4.0.1
+      rev: 5.0.4
       hooks:
           - id: flake8
     # Isort sorts the imports

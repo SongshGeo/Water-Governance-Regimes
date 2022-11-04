@@ -24,12 +24,12 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	\end{equation}
 
 	\subsubsection*{Indicator of stress}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., (2019) to evaluate water stress \cite{qin2019}. This metric considers management measures (such as the construction of reservoirs) and the impact of changes in water use structure on the evaluation of water scarcity. Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Appendix}\ref{secA1}). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., (2019) to evaluate water stress \cite{qin2019}. This metric considers management measures (such as the construction of reservoirs) and the impact of changes in water use structure on the evaluation of water scarcity. Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information S1}). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
 
-	Where $SFV_i$ is the SFV-index for region $i$, and the detailed calculation of $SFV_i$ can be found in the \textit{Appendix}\ref{secA2}.
+	Where $SFV_i$ is the SFV-index for region $i$, and the detailed calculation of $SFV_i$ can be found in the \textit{Supporting Information S2}.
 
 	\subsubsection*{Indicator of purpose}
 	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated, and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
@@ -46,7 +46,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		I_A = CEM = \sum_{i=1}^N -log(p_{i}) * p_{i}
 	\end{equation}
 
-	where $p_{i}$ is the water proportion of region $i$ to the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Appendix}\ref{secA1}).
+	where $p_{i}$ is the water proportion of region $i$ to the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Supporting Information S1}).
 
 	\subsection{Change points detection}
 		With no assumptions about the distribution of the data, we applied the Pettitt (1979) approach of change-point detection to detect a single change-point in hydrological time series with continuous data
@@ -55,7 +55,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		Mathematically, when a sequence of random variables is divided into two segments represented by $\mathrm{x}_{1}, \mathrm{x}_{1}, \ldots, x_{t_{0}}$ and $x_{t_{0}+1}, x_{t_{0}+2}, \ldots, x_{T}$, if each segment has a common distribution function, i.e., $F_1(x)$, $F_2(x)$ and $F_1(x) \neq F_2(x)$, then the change point is identified at $t_0$. To achieve the identification of change point, a statistical index $U_{t,T}$ is defined as follows:
 
 		\begin{equation}
-			U_{t, T} = \sum_{i=1}^t\sum_{j=t+1}^T sgn(X_i - X_j), 1 \leqq t < T
+			U_{t, T} = \sum_{i=1}^t\sum_{j=t+1}^T sgn(X_i - X_j), 1 \leq t < T
 		\end{equation}
 
 		where:
@@ -70,8 +70,8 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
 		%实际上这个阈值取0.001至0.1不会影响我们的结果，我们识别的断点是相当稳定的
-		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see \textit{Appendix} Figure~\ref{fig:sensitivity}).
+		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see \\textit{Supporting Information} Figure~S3).
 
 	\subsection{Datasets}
 	% 为了计算 IWGI ，我们需要计算多个指标及子指标，所有使用的数据集都在表中列出，数据的详细介绍可见补充材料。
-	In order to calculate IWGI in the YRB, all the datasets we need are listed in the \textit{SI Appendix} Table~\ref{tab:datasets} with a detailed description in \ref{secA3}.
+	In order to calculate IWGI in the YRB, all the datasets we need are listed in the \textit{SI Appendix} Table~S1 with a detailed description in \textit{Supporting Information S3}.
