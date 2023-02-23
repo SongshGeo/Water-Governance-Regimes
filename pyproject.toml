@@ -24,3 +24,19 @@ tag_format = "$version"
 version_variable = 3.8 # or where your version is defined
 # repository_user_var = TWINE_USERNAME
 # repository_pass_var = TWINE_PASSWORD
+
+[tool.poetry]
+name = "regimes-yrb"
+version = "0.1.0"
+description = ""
+authors = ["Shuang Song <songshgeo@gmail.com>"]
+readme = "README.md"
+packages = [{include = "regimes_yrb"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
