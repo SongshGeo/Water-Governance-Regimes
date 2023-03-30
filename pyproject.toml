@@ -34,8 +34,31 @@ readme = "README.md"
 packages = [{include = "regimes_yrb"}]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">3.8.1,<3.12"
+hydra-core = "^1.3.2"
+mksci-font = "^0.1.3"
+pandas = "^1.5.3"
+openpyxl = "^3.1.2"
+seaborn = "^0.12.2"
+dbfread = "^2.0.7"
+scipy = "^1.10.1"
+python-ternary = "^1.0.8"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.2"
+allure-pytest = "^2.13.1"
+ipykernel = "^6.22.0"
+jupyterlab = "^3.6.2"
+jupyterlab-execute-time = "^2.3.1"
+jupyterlab-lsp = "^4.0.1"
+python-lsp-server = "^1.7.1"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+nbstripout = "^0.6.1"
+pydocstyle = "^6.3.0"
+pre-commit-hooks = "^4.4.0"
+sourcery = "^1.0.9"
 
 [build-system]
 requires = ["poetry-core"]
