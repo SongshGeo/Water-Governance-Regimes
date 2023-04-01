@@ -1,0 +1,21 @@
+defaults:
+  - db: dataset
+  - lang: language
+  - style: style
+  - _self_
+
+root: /Users/songshgeo/Documents/VSCode/WGRegimes_YRB_2020
+
+index:
+  normalization: log_zscore
+
+# 不具备弹性的用水类别
+inflexible_wu:
+  - "Urban domestic WU"
+  - "Rural domestic WU"
+  - "Rural livestock WU"
+  - "Thermal WU"  # 需要用 Thermal 的 WUI 和 GVA 相乘进行计算
+
+
+alpha_threshold: 0.0005
+span: 5

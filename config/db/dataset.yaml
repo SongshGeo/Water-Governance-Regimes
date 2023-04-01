@@ -1,0 +1,4 @@
+perfectures: data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv
+runoff: data/hydrology/1956-2016_runoff.csv
+reservoirs: data/hydrology/cum_reservoirs.csv
+consumptions: data/consumptions.csv

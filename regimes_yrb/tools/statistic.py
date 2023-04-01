@@ -15,7 +15,7 @@ from matplotlib import pyplot as plt
 def line_fit(x, y):
     N = float(len(x))
     sx, sy, sxx, syy, sxy = 0, 0, 0, 0, 0
-    for i in range(0, int(N)):
+    for i in range(int(N)):
         sx += x[i]
         sy += y[i]
         sxx += x[i] * x[i]
@@ -26,8 +26,18 @@ def line_fit(x, y):
     r = abs(sy * sx / N - sxy) / math.sqrt(
         (sxx - sx * sx / N) * (syy - sy * sy / N)
     )
-    formula = r"$k = %10.2f; R^2 =%10.2f$" % (a, r)
-    return formula
+    return r"$k = %10.2f; R^2 =%10.2f$" % (a, r)
+
+
+def get_optimal_fit_linear(x_arr, y_arr):
+    from scipy import optimize
+
+    def linear(x, slope, intercept):
+        return slope * x + intercept
+
+    k, b = optimize.curve_fit(linear, x_arr, y_arr)[0]  # optimize
+    y_sim = linear(x_arr, k, b)  # simulated y
+    return y_sim, k, b
 
 
 def compile_cols(data, col1, col2):
@@ -41,9 +51,7 @@ def compile_cols(data, col1, col2):
     # 3.分别对final进行赋值
     df_test_bigger["Value_Final"] = df_test_bigger[col1]
     df_test_litter["Value_Final"] = df_test_litter[col2]
-    # 4.使用concat函数将其聚合
-    df_result = pd.concat([df_test_bigger, df_test_litter])
-    return df_result
+    return pd.concat([df_test_bigger, df_test_litter])
 
 
 def normalization(data):
@@ -54,30 +62,28 @@ def normalization(data):
 def huanbi_rate(data, use_col, new_col):
     data = data.reset_index()
     result = []
-    for i in range(0, len(data)):
+    for i in range(len(data)):
         if i == 0:
             rate = np.nan
-            result.append(rate)
         else:
             rate = format(
                 (data[use_col][i] - data[use_col][i - 1])
                 / data[use_col][i - 1],
                 ".2%",
             )
-            result.append(rate)
+        result.append(rate)
     data[new_col] = result
 
 
 def difference(data, use_col, new_col):
     data = data.reset_index()
     result = []
-    for i in range(0, len(data)):
+    for i in range(len(data)):
         if i == 0:
             rate = np.nan
-            result.append(rate)
         else:
             rate = format((data[use_col][i] - data[use_col][i - 1]), ".2%")
-            result.append(rate)
+        result.append(rate)
     data[new_col] = result
 
 
@@ -89,24 +95,21 @@ def Pettitt_change_point_detection(inputdata, p_shr=0.05):
     k = range(n)
     inputdataT = pd.Series(inputdata)
     r = inputdataT.rank()
-    Uk = [2 * np.sum(r[0:x]) - x * (n + 1) for x in k]
+    Uk = [2 * np.sum(r[:x]) - x * (n + 1) for x in k]
     Uka = list(np.abs(Uk))
     U = np.max(Uka)
     K = index[Uka.index(U)]
-    pvalue = 2 * np.exp((-6 * (U ** 2)) / (n ** 3 + n ** 2))
-    if pvalue <= p_shr:
-        change_point_desc = "显著"
-    else:
-        change_point_desc = "不显著"
+    pvalue = 2 * np.exp((-6 * (U**2)) / (n**3 + n**2))
+    change_point_desc = "显著" if pvalue <= p_shr else "不显著"
     pettitt_result = {"突变点位置": K, "突变程度": change_point_desc}
     return K, pettitt_result
 
 
 # 循环检测所有显著的断点
-def Pettitt_change_points(inputdata, p_shr=0.001):
+def pettitt_change_points(inputdata, p_shr=0.001):
     change_points = []
     detect_series = [inputdata]
-    while len(detect_series) > 0:
+    while detect_series:
         tmp_detect = []
         for series in detect_series:
             K, Pettitt_result = Pettitt_change_point_detection(
@@ -130,7 +133,7 @@ def plot_pittitt_change_points(
     colors=None,
     returns="slopes",
     legend=True,
-    **kargs
+    **kargs,
 ):
     from scipy import optimize
 
@@ -139,7 +142,7 @@ def plot_pittitt_change_points(
 
     slopes = []
     if change_points is None:
-        change_points = sorted(Pettitt_change_points(series, p_shr))
+        change_points = sorted(pettitt_change_points(series, p_shr))
     change_points_index = [
         series.index.tolist().index(i) for i in change_points
     ]
@@ -162,7 +165,7 @@ def plot_pittitt_change_points(
                 yi,
                 label="P{}: {}-{}".format(i, xi[0], xi[-1]),
                 color=colors[i - 1],
-                **kargs
+                **kargs,
             )  # 源数据散点图
             ax.plot(xi, y_simu, "--", color=colors[i - 1])  # 拟合直线图
         else:
@@ -221,7 +224,7 @@ def ratio_contribution(numerator, denominator, breakpoints=[1978, 1993]):
         end_year = check_points[j]
         if end_year in breakpoints:
             end_year = end_year - 1
-        period = "P{}: {}-{}".format(j, start_year, end_year)
+        period = f"P{j}: {start_year}-{end_year}"
         periods.append(period)  # 每个阶段的标准化格式
 
         # 每个阶段的正常单位变化量
@@ -277,7 +280,7 @@ def plot_ratio_contribution(
     if denominator_color is None:
         denominator_color = "c"
     if ax is None:
-        fig, ax = plt.subplots()
+        _, ax = plt.subplots()
     for i in range(len(contribution_df.columns)):
         numerator_position = i - bar_width / 2
         denominator_position = i + bar_width / 2
@@ -335,3 +338,13 @@ def judge_one_way_f_test(group1, group2):
     else:
         print("接受原假设，两组均值可认为是相等，显著性是{:.5f}".format(p))
         return True
+
+
+def zscore(arr: np.ndarray) -> np.ndarray:
+    """最大-最小值归一化，所有数据映射到0-1之间"""
+    return (arr - arr.min()) / (arr.max() - arr.min())
+
+
+def norm_zscore(arr: np.ndarray) -> np.ndarray:
+    """先取对数，再最大-最小值归一化，所有数据映射到0-1之间"""
+    return zscore(np.log(arr))
