@@ -6,6 +6,7 @@
 
 import itertools
 import math
+from typing import List, Optional
 
 import numpy as np
 import pandas as pd
@@ -374,3 +375,45 @@ def calc_correlation(
         }
 
     return pd.DataFrame(correlations)
+
+
+def calc_contribution_ratio(
+    data: pd.DataFrame,
+    columns: Optional[list] = None,
+    start_yr: Optional[int] = None,
+    end_yr: Optional[int] = None,
+) -> pd.DataFrame:
+    """
+    计算指定时间段内列对其均值变化的贡献比例。
+
+    参数:
+        data (pd.DataFrame): 输入的 DataFrame，索引为时间序列，包含 A、B 和 C 三列。
+        start_date (str): 时间段的开始日期，格式为 'YYYY-MM-DD'。
+        end_date (str): 时间段的结束日期，格式为 'YYYY-MM-DD'。
+
+    返回:
+        dict: A、B 和 C 三列在指定时间段内对 SUM 变化的贡献比例。
+    """
+    if columns is None:
+        columns = data.select_dtypes(include=["number"]).columns.to_list()
+    if start_yr is None:
+        start_yr = data.index.min()
+    if end_yr is None:
+        end_yr = data.index.max()
+
+    # 检查输入数据是否包含 A、B 和 C 列
+    if not all(col in data.columns for col in columns):
+        raise ValueError("Please ensure the input DataFrame contains columns.")
+
+    # 根据指定的时间范围筛选数据
+    data = data.loc[start_yr:end_yr]
+
+    # 计算 SUM 列的变化量
+    delta_sum = data[columns].mean(axis=1).diff().sum()
+
+    contribution_ratio = {}
+    # 计算 A、B 和 C 三列的变化量
+    for col in columns:
+        delta = data[col].diff().sum() / len(columns)
+        contribution_ratio[col] = delta / delta_sum
+    return pd.Series(contribution_ratio)
