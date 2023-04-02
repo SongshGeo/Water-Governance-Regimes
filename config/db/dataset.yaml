@@ -1,4 +1,17 @@
 perfectures: data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv
 runoff: data/hydrology/1956-2016_runoff.csv
 reservoirs: data/hydrology/cum_reservoirs.csv
+clean_reservoirs: "data/hydrology/clean_reservoirs.csv"
 consumptions: data/consumptions.csv
+
+
+results:
+  S: data/results/index_S.csv
+  P: data/results/index_P.csv
+  A: data/results/index_A.csv
+  IWGI: data/results/IWGI.csv
+
+contribution:
+  S: data/results/contribution_S.csv
+  P: data/results/contribution_P.csv
+  A: data/results/contribution_A.csv

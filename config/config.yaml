@@ -19,3 +19,8 @@ inflexible_wu:
 
 alpha_threshold: 0.0005
 span: 5
+start: 1966
+end: 2013
+breakpoints:
+  - 1978
+  - 2001

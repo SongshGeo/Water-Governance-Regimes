@@ -6,22 +6,21 @@
 # Website: https://cv.songshgeo.com/
 
 import os
+from typing import List, Optional
 
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
-# 如果没有ternary包，就 uncommand 下面一行进行安装
-# pip install python-ternary
-import ternary
+import ternary  # pip install python-ternary
 from hydra import compose, initialize
 from matplotlib.gridspec import GridSpec
 from scipy import stats
 
 from regimes_yrb.tools.statistic import (
     get_optimal_fit_linear,
-    plot_pittitt_change_points,
+    pettitt_changes,
+    plot_pettitt_change_points,
     plot_ratio_contribution,
     zscore,
 )
@@ -44,7 +43,12 @@ total_water_use_color = COLORS.total_WU
 
 
 def plot_data(
-    data1, data2, change_points, ylabel1, ylabel2, denominator_label
+    index,
+    contribution,
+    ylabel1: str = "Index_Y_label",
+    ylabel2: str = "Contribution_Y_label",
+    denominator_label: str = "Denominator",
+    change_points: Optional[List[int]] = None,
 ):
     """绘制指标的以及它们的贡献"""
     fig = plt.figure(figsize=(8, 3), constrained_layout=True)
@@ -52,11 +56,11 @@ def plot_data(
     ax1 = fig.add_subplot(gs[0, 0])
     ax2 = fig.add_subplot(gs[0, 1])
 
-    plot_pittitt_change_points(
-        data1, change_points=change_points, ax=ax1, colors=period_colors
+    plot_pettitt_change_points(
+        index, change_points=change_points, ax=ax1, colors=period_colors
     )
     plot_ratio_contribution(
-        data2,
+        contribution,
         ax=ax2,
         colors=region_colors,
         denominator_color=total_water_use_color,
@@ -70,7 +74,7 @@ def plot_data(
     ax2.set_ylabel(ylabel2)
     ax2.tick_params(axis="x", tickdir="in", bottom=False, labelrotation=0)
     ax2.axhline(0.0, lw=2, color="gray")
-    ax2.set_ylim(-0.08, 0.08)
+    # ax2.set_ylim(-0.08, 0.08)
     ax2.set_yticks(np.arange(-0.08, 0.081, 0.04))
     ax2.axvline(1.5, ls=":", color="gray", lw=1.5)
     ax2.axvline(0.5, ls=":", color="gray", lw=1.5)
@@ -91,19 +95,20 @@ def plot_ternary(data, ax=None):
     priority = data["P"]
     allocation = data["A"]
     scarcity = data["S"]
+    # 开始、结束的时间
+    start, end = min(data.index), max(data.index)
+    breakpoints = pettitt_changes(data["IWGI"])
     if not ax:
         _, ax = plt.subplots(figsize=(4, 4))
     _, tax = ternary.figure(ax=ax, scale=1)
-    annotates = [1966, 1978, 2001, 2013]
+    annotates = [start, *breakpoints, end]
 
     points = []
     points_1, points_2, points_3 = [], [], []
     size_1, size_2, size_3 = [], [], []
     scale = 50
     for yr in data.index:
-        sumed = (
-            priority[yr] + allocation[yr] + scarcity[yr]
-        )  # 这里点的大小是三者 norm_score 相加
+        sumed = priority[yr] + allocation[yr] + scarcity[yr]  # 这里点的大小是三者 norm_score 相加
         point = (
             priority[yr] / sumed,
             allocation[yr] / sumed,
@@ -112,10 +117,10 @@ def plot_ternary(data, ax=None):
         if yr in annotates:
             tax.annotate(text=yr, position=point)
         points.append(point)
-        if yr < 1978:
+        if yr < breakpoints[0]:
             points_1.append(point)
             size_1.append(sumed * scale)
-        elif yr < 2001:
+        elif yr < breakpoints[1]:
             points_2.append(point)
             size_2.append(sumed * scale)
         else:

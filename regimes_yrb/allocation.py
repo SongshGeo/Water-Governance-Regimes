@@ -8,12 +8,10 @@
 import numpy as np
 import pandas as pd
 
-from regimes_yrb.tools.statistic import ratio_contribution
+from regimes_yrb.tools.statistic import pettitt_changes, ratio_contribution
 
 
-def calculate_yearly_indices(
-    region_consumption: pd.DataFrame, year: int
-) -> dict:
+def calculate_yearly_indices(region_consumption: pd.DataFrame, year: int) -> dict:
     """
     计算指定年份的水资源分配熵指数。
 
@@ -73,9 +71,7 @@ def calculate_water_consumption_indices(city_yr: pd.DataFrame) -> pd.DataFrame:
     """
     wu_cols = ["IRR", "IND", "DOM"]
     city_yr["DOM"] = city_yr["RUR"] + city_yr["URB"]  # 人居耗水
-    region_consumption = city_yr.groupby(["Year", "Region"])[
-        wu_cols
-    ].sum()  # 每个区域的总耗水量
+    region_consumption = city_yr.groupby(["Year", "Region"])[wu_cols].sum()  # 每个区域的总耗水量
 
     results = {
         yr: calculate_yearly_indices(region_consumption, yr)
@@ -90,5 +86,6 @@ def entropy_and_contribution(data):
     entropy_contributions = ratio_contribution(
         numerator=index_result[["Sectors", "Regions"]],
         denominator=index_result["Divisions"],
+        breakpoints=pettitt_changes(index_result["Ratio"]),
     )
     return index_result["Ratio"], entropy_contributions

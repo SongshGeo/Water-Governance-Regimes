@@ -5,7 +5,6 @@
 # project: WGRegimes_YRB_2020
 
 import math
-import os
 
 import numpy as np
 import pandas as pd
@@ -23,9 +22,7 @@ def line_fit(x, y):
         sxy += x[i] * y[i]
     a = (sy * sx / N - sxy) / (sx * sx / N - sxx)
     # b = (sy - a * sx) / N
-    r = abs(sy * sx / N - sxy) / math.sqrt(
-        (sxx - sx * sx / N) * (syy - sy * sy / N)
-    )
+    r = abs(sy * sx / N - sxy) / math.sqrt((sxx - sx * sx / N) * (syy - sy * sy / N))
     return r"$k = %10.2f; R^2 =%10.2f$" % (a, r)
 
 
@@ -67,8 +64,7 @@ def huanbi_rate(data, use_col, new_col):
             rate = np.nan
         else:
             rate = format(
-                (data[use_col][i] - data[use_col][i - 1])
-                / data[use_col][i - 1],
+                (data[use_col][i] - data[use_col][i - 1]) / data[use_col][i - 1],
                 ".2%",
             )
         result.append(rate)
@@ -88,7 +84,8 @@ def difference(data, use_col, new_col):
 
 
 # Pettitt 断点检测法
-def Pettitt_change_point_detection(inputdata, p_shr=0.05):
+def pettitt_change_point_detection(inputdata, p_shr=0.05):
+    """使用一次 Pettitt 断点检测"""
     index = inputdata.index
     inputdata = np.array(inputdata.values)
     n = inputdata.shape[0]
@@ -106,18 +103,17 @@ def Pettitt_change_point_detection(inputdata, p_shr=0.05):
 
 
 # 循环检测所有显著的断点
-def pettitt_change_points(inputdata, p_shr=0.001):
+def pettitt_changes(inputdata, p_shr=0.001):
+    """根据给定阈值进行循环，找到所有断点"""
     change_points = []
     detect_series = [inputdata]
     while detect_series:
         tmp_detect = []
         for series in detect_series:
-            K, Pettitt_result = Pettitt_change_point_detection(
-                series, p_shr=p_shr
-            )
-            if Pettitt_result["突变程度"] == "显著":
-                change_points.append(K)
-                tmp_detect.extend([series.loc[: K - 1], series.loc[K + 1 :]])
+            k, pettitt_result = pettitt_change_point_detection(series, p_shr=p_shr)
+            if pettitt_result["突变程度"] == "显著":
+                change_points.append(k)
+                tmp_detect.extend([series.loc[: k - 1], series.loc[k + 1 :]])
             else:
                 continue
         detect_series = tmp_detect
@@ -125,7 +121,7 @@ def pettitt_change_points(inputdata, p_shr=0.001):
     return change_points
 
 
-def plot_pittitt_change_points(
+def plot_pettitt_change_points(
     series,
     ax=None,
     p_shr=0.001,
@@ -135,6 +131,7 @@ def plot_pittitt_change_points(
     legend=True,
     **kargs,
 ):
+    """将所有断点直观地展示出来"""
     from scipy import optimize
 
     def linear(x, k, b):
@@ -142,14 +139,12 @@ def plot_pittitt_change_points(
 
     slopes = []
     if change_points is None:
-        change_points = sorted(pettitt_change_points(series, p_shr))
-    change_points_index = [
-        series.index.tolist().index(i) for i in change_points
-    ]
+        change_points = sorted(pettitt_changes(series, p_shr))
+    change_points_index = [series.index.tolist().index(i) for i in change_points]
     x_arr = np.split(series.index, change_points_index)
     y_arr = np.split(series.values, change_points_index)
     if ax is None:
-        fig, ax = plt.subplots()
+        _, ax = plt.subplots()
     i = 0
     legends = []
     for xi, yi in zip(x_arr, y_arr):
@@ -169,9 +164,7 @@ def plot_pittitt_change_points(
             )  # 源数据散点图
             ax.plot(xi, y_simu, "--", color=colors[i - 1])  # 拟合直线图
         else:
-            a = ax.scatter(
-                xi, yi, label="P{}: {}-{}".format(i, xi[0], xi[-1]), **kargs
-            )
+            a = ax.scatter(xi, yi, label="P{}: {}-{}".format(i, xi[0], xi[-1]), **kargs)
             ax.plot(xi, y_simu, "--")
         legends.append(a)
     if legend:
@@ -201,7 +194,7 @@ def plot_slopes(slopes, ax=None, colors=None):
 
 
 # 计算分子除以分母各自的贡献
-def ratio_contribution(numerator, denominator, breakpoints=[1978, 1993]):
+def ratio_contribution(numerator, denominator, breakpoints):
     """numerator 是一个 DataFrame，index 应该和分母一样，列可以有多个，是加总的关系"""
     if len(numerator.shape) == 1:  # 这时候传入的是一个 Series
         ratio = numerator / denominator
@@ -232,9 +225,7 @@ def ratio_contribution(numerator, denominator, breakpoints=[1978, 1993]):
         result[period] = {}
 
         # 每个阶段的 ln 变化量
-        ratio_change = np.log(ratio.loc[end_year]) - np.log(
-            ratio.loc[start_year]
-        )
+        ratio_change = np.log(ratio.loc[end_year]) - np.log(ratio.loc[start_year])
         # 分子分母的变化量
         numerator_change = np.log(
             numerator_sum.loc[end_year] / numerator_sum.loc[start_year]
@@ -245,9 +236,7 @@ def ratio_contribution(numerator, denominator, breakpoints=[1978, 1993]):
 
         # 分子分母各自的贡献率
         result[period]["Total"] = changes[period]
-        result[period]["Numerator"] = (
-            changes[period] * numerator_change / ratio_change
-        )
+        result[period]["Numerator"] = changes[period] * numerator_change / ratio_change
         result[period]["Denominator"] = (
             changes[period] * denominator_change / ratio_change
         )
