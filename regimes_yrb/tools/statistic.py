@@ -4,11 +4,13 @@
 # Email: SongshGeo@Gmail.com
 # project: WGRegimes_YRB_2020
 
+import itertools
 import math
 
 import numpy as np
 import pandas as pd
 from matplotlib import pyplot as plt
+from scipy.stats import pearsonr
 
 
 def line_fit(x, y):
@@ -337,3 +339,38 @@ def zscore(arr: np.ndarray) -> np.ndarray:
 def norm_zscore(arr: np.ndarray) -> np.ndarray:
     """先取对数，再最大-最小值归一化，所有数据映射到0-1之间"""
     return zscore(np.log(arr))
+
+
+def calc_correlation(
+    data: pd.DataFrame, columns: list = None, significance_level: float = 0.01
+) -> pd.DataFrame:
+    """
+    计算 DataFrame 中指定的 4 列之间两两的相关系数和显著性水平。
+
+    参数:
+        data (pd.DataFrame): 输入的 DataFrame。
+        columns (list): 列名列表，包含需要计算相关系数的 4 列。
+        significance_level (float): 显著性水平（0 到 1 之间的值，例如 0.05）。
+
+    返回:
+        dict: 关于相关系数和显著性的字典。
+    """
+
+    if columns is None:
+        columns = data.select_dtypes(include="number").columns.tolist()
+
+    correlations = {}
+
+    for col1, col2 in itertools.combinations(columns, 2):
+        corr, p_value = pearsonr(data[col1], data[col2])
+
+        is_significant = (
+            "Significant" if p_value < significance_level else "Not Significant"
+        )
+        correlations[f"{col1} vs {col2}"] = {
+            "correlation": corr,
+            "p_value": p_value,
+            "significance": is_significant,
+        }
+
+    return pd.DataFrame(correlations)
