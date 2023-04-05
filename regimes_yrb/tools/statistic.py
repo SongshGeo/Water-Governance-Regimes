@@ -383,17 +383,7 @@ def calc_contribution_ratio(
     start_yr: Optional[int] = None,
     end_yr: Optional[int] = None,
 ) -> pd.DataFrame:
-    """
-    计算指定时间段内列对其均值变化的贡献比例。
-
-    参数:
-        data (pd.DataFrame): 输入的 DataFrame，索引为时间序列，包含 A、B 和 C 三列。
-        start_date (str): 时间段的开始日期，格式为 'YYYY-MM-DD'。
-        end_date (str): 时间段的结束日期，格式为 'YYYY-MM-DD'。
-
-    返回:
-        dict: A、B 和 C 三列在指定时间段内对 SUM 变化的贡献比例。
-    """
+    """ """
     if columns is None:
         columns = data.select_dtypes(include=["number"]).columns.to_list()
     if start_yr is None:
