@@ -30,26 +30,26 @@ def calculate_yearly_indices(region_consumption: pd.DataFrame, year: int) -> dic
     region_p = data.sum(axis=1) / data.sum().sum()
     region_entropy = np.sum(-region_p * np.log(region_p))
 
-    section_entropy = (
-        data.apply(lambda row: row / row.sum(), axis=0)
-        .apply(lambda row: row.apply(lambda p: -p * np.log(p)).sum(), axis=0)
-        .mean()
-    )
-    section_max_p = data.sum() / data.sum().sum()
-    section_max_entropy = section_max_p.apply(lambda p: -p * np.log(p)).sum()
-    # section_index = section_entropy / section_max_entropy
+    # section_entropy = (
+    #     data.apply(lambda row: row / row.sum(), axis=0)
+    #     .apply(lambda row: row.apply(lambda p: -p * np.log(p)).sum(), axis=0)
+    #     .mean()
+    # )
+    # section_max_p = data.sum() / data.sum().sum()
+    # section_max_entropy = section_max_p.apply(lambda p: -p * np.log(p)).sum()
+    # # section_index = section_entropy / section_max_entropy
 
     index_ratio = region_entropy / -np.log(1 / 4)
 
     return {
         "Regions": region_entropy,
-        "Divisions": section_entropy,
-        "Sectors": section_max_entropy,
+        # "Divisions": section_entropy,
+        # "Sectors": section_max_entropy,
         "Ratio": index_ratio,
     }
 
 
-def calculate_water_consumption_indices(city_yr: pd.DataFrame) -> pd.DataFrame:
+def calc_regional_entropy(city_yr: pd.DataFrame) -> pd.DataFrame:
     """
     计算每年各区域的总用水，并计算区域间、部门间以及总体的水资源分配熵指数。
 
@@ -77,15 +77,15 @@ def calculate_water_consumption_indices(city_yr: pd.DataFrame) -> pd.DataFrame:
         yr: calculate_yearly_indices(region_consumption, yr)
         for yr in city_yr["Year"].unique()
     }
-    return pd.DataFrame(results).T
+    return pd.DataFrame(results).T["Ratio"]
 
 
-def entropy_and_contribution(data):
-    """熵指数和各地区的贡献"""
-    index_result = calculate_water_consumption_indices(data)
-    entropy_contributions = ratio_contribution(
-        numerator=index_result[["Sectors", "Regions"]],
-        denominator=index_result["Divisions"],
-        breakpoints=pettitt_changes(index_result["Ratio"]),
-    )
-    return index_result["Ratio"], entropy_contributions
+# def entropy_and_contribution(data):
+#     """熵指数和各地区的贡献"""
+#     index_result = calculate_water_consumption_indices(data)
+#     entropy_contributions = ratio_contribution(
+#         numerator=index_result[["Sectors", "Regions"]],
+#         denominator=index_result["Divisions"],
+#         breakpoints=pettitt_changes(index_result["Ratio"]),
+#     )
+#     return index_result["Ratio"], entropy_contributions

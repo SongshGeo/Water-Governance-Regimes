@@ -180,6 +180,8 @@ def plot_pettitt_change_points(
         return slopes
     elif returns == "legend":
         return legends
+    elif returns == "ax":
+        return ax
 
 
 def plot_slopes(slopes, ax=None, colors=None):
@@ -293,13 +295,15 @@ def plot_ratio_contribution(
             color_index = 0
             for j in range(3, len(contribution_df)):
                 height = contribution_df.iloc[j, i]
-                # bar = ax.bar(x=numerator_position,
-                #              height=height,
-                #              bottom=bottom,
-                #              label=contribution_df.index[j],
-                #              width=bar_width,
-                #              color=colors[color_index],
-                #              edgecolor='lightgray')
+                ax.bar(
+                    x=numerator_position,
+                    height=height,
+                    bottom=bottom,
+                    label=contribution_df.index[j],
+                    width=bar_width,
+                    color=colors[color_index],
+                    edgecolor="lightgray",
+                )
                 bottom += height
                 color_index += 1
         ax.bar(
@@ -315,6 +319,7 @@ def plot_ratio_contribution(
             ax.legend(loc=legend_loc)
     ax.set_xticks(np.arange(0, len(contribution_df.columns), 1))
     ax.set_xticklabels(contribution_df.columns.tolist())
+    return ax
 
 
 def judge_one_way_f_test(group1, group2):

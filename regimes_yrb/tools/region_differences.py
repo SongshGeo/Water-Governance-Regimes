@@ -8,8 +8,9 @@
 
 import numpy as np
 import pandas as pd
-from processing import get_region_by_province_name
-from values import INDUSTRIES, REGIONS, INDUSTRIES_eng
+
+from regimes_yrb.tools.processing import get_region_by_province_name
+from regimes_yrb.tools.values import INDUSTRIES, REGIONS, INDUSTRIES_eng
 
 
 def get_yr_gdp_data(how="gdp"):
@@ -22,7 +23,7 @@ def get_yr_gdp_data(how="gdp"):
 
     # 加载经济数据
     gdp = (
-        pd.read_excel("../data/GDP.xlsx")  # 读取数据
+        pd.read_excel("data/GDP.xlsx")  # 读取数据
         .drop(0)  # 删除单位行
         .astype(float)  # 转为浮点
         .rename({"指标名称": "Year"}, axis=1)  # 将年份列改名
@@ -31,9 +32,7 @@ def get_yr_gdp_data(how="gdp"):
         .replace(0.0, np.nan)  # 空值是没数据，不可能为 0
         .drop(list(np.arange(1949, 1965)), axis=0)  # 删除不考虑的时间范围
     )
-    region_dict = {
-        region: pd.DataFrame() for region in REGIONS
-    }  # 用来储存每个区域的GDP数据
+    region_dict = {region: pd.DataFrame() for region in REGIONS}  # 用来储存每个区域的GDP数据
     for col in gdp:
         province = clean_col_names(col)[0]  # 清洗列名
         region = get_region_by_province_name(province)  # 属于哪个区域
@@ -96,11 +95,7 @@ def plot_bar_by_category(
             )
         else:
             bar = ax.bar(
-                x=position,
-                bottom=bottom,
-                height=height,
-                color=colors[i],
-                **kargs
+                x=position, bottom=bottom, height=height, color=colors[i], **kargs
             )
         # 每次循环之后：
         bottom += height  # 原先的高作为新的底
@@ -138,9 +133,7 @@ def plot_gdp(ax, colors, start_yr, end_yr, **kargs):
         # 对每个产业进行处理
         for industry in INDUSTRIES:
             # 该区域、该产业的gdp序列，以产业为键存入字典，以供函数调用
-            gdp_region_data[industry] = extract_gdp_by_industry(
-                use_data, industry
-            )
+            gdp_region_data[industry] = extract_gdp_by_industry(use_data, industry)
 
         legends = plot_bar_by_category(
             ax=ax,
@@ -165,16 +158,14 @@ def plot_gdp(ax, colors, start_yr, end_yr, **kargs):
 def plot_pop(ax, colors, start_yr, end_yr, **kargs):
     # 加载阈值为 0.05的数据，即与黄河流域相交面积大于全市总面积 5% 的所有市
     city_yr = pd.read_csv(
-        "../data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
+        "data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
     )
 
     # 包含人口的列
     population = ["Urban population", "Rural population"]
     pop = city_yr[["Year", "Region"] + population]
     for i, region in enumerate(REGIONS):
-        use_data = (
-            pop.groupby(["Region", "Year"]).sum().loc[region]
-        )  # 关注区域的年人口变化
+        use_data = pop.groupby(["Region", "Year"]).sum().loc[region]  # 关注区域的年人口变化
         legends = plot_bar_by_category(
             ax=ax,
             data=use_data,
@@ -197,14 +188,12 @@ def plot_pop(ax, colors, start_yr, end_yr, **kargs):
 def plot_wu(ax, colors, start_yr, end_yr, **kargs):
     # 包含人口的列
     city_yr = pd.read_csv(
-        "../data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
+        "data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
     )
     water_use = city_yr[["Year", "Region", "Total water use"]]
     legends = []
     for i, region in enumerate(REGIONS):
-        use_data = (
-            water_use.groupby(["Region", "Year"]).sum().loc[region]
-        )  # 关注区域的年人口变化
+        use_data = water_use.groupby(["Region", "Year"]).sum().loc[region]  # 关注区域的年人口变化
         mean, std = extract_data_by_yr(use_data, start_yr, end_yr)
         bar = ax.bar(
             x=i,
@@ -229,7 +218,7 @@ def get_measured_runoff(region):
         "花园口": "MR",  # 花园口控制中游
         "利津": "DR",  # 利津控制下游
     }
-    measured_runoff = pd.read_csv(r"../data/hydrology/1956-2016_runoff.csv")
+    measured_runoff = pd.read_csv(r"data/hydrology/1956-2016_runoff.csv")
     measured_runoff = measured_runoff.loc[:, use_cols.keys()]
     measured_runoff.rename(use_cols, axis=1, inplace=True)
     measured_runoff.set_index("Year", inplace=True)
@@ -251,13 +240,11 @@ def get_runoff_difference(region):
 def get_consumptions(region):
     """计算从此区域及其上游区域，合计的【水资源】消耗量"""
     city_yr = pd.read_csv(
-        "../data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
+        "data/perfectures/yr/perfectures_in_YR_with_threshold_0.05.csv"
     )
     water_use = city_yr[["Year", "Region", "Total water use"]]
     consumption = (
-        water_use.groupby(["Region", "Year"])
-        .sum()
-        .loc[region]["Total water use"]
+        water_use.groupby(["Region", "Year"]).sum().loc[region]["Total water use"]
     )
     flag = 0
     index = REGIONS.index(region)
@@ -273,7 +260,7 @@ def get_consumptions(region):
 
 # 计算每个区域的地表/地下水修正系数
 def get_surface_groundwater_coefficient(region):
-    watersheds = pd.read_csv(r"../data/watershed_merged.csv")
+    watersheds = pd.read_csv(r"data/watershed_merged.csv")
 
     def get_type_data(d, p):
         return d.groupby("项目").get_group(p)
@@ -300,11 +287,7 @@ def get_surface_groundwater_coefficient(region):
         data[sector + "_ratio"] = data[gro] / data[sector + "_sum"]
         return data
 
-    data = (
-        calculate_ratio(withdraw, "合计")
-        .groupby(["region", "年份"])
-        .mean()["合计_ratio"]
-    )
+    data = calculate_ratio(withdraw, "合计").groupby(["region", "年份"]).mean()["合计_ratio"]
     return data.loc[region]
 
 

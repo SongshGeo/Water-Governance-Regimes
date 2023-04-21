@@ -10,7 +10,6 @@ from typing import List, Optional
 
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import ternary  # pip install python-ternary
 from hydra import compose, initialize
@@ -75,7 +74,7 @@ def plot_data(
     ax2.tick_params(axis="x", tickdir="in", bottom=False, labelrotation=0)
     ax2.axhline(0.0, lw=2, color="gray")
     # ax2.set_ylim(-0.08, 0.08)
-    ax2.set_yticks(np.arange(-0.08, 0.081, 0.04))
+    # ax2.set_yticks(np.arange(-0.08, 0.081, 0.04))
     ax2.axvline(1.5, ls=":", color="gray", lw=1.5)
     ax2.axvline(0.5, ls=":", color="gray", lw=1.5)
 
@@ -85,8 +84,7 @@ def plot_data(
         ax.spines["left"].set_visible(True)
         ax.spines["right"].set_visible(False)
     ax1.spines["bottom"].set_visible(True)
-
-    plt.show()
+    return ax1, ax2
 
 
 # 制作三元图
