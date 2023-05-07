@@ -161,3 +161,4 @@ multirun
 # MacOS
 .DS_Store
 .obsidian
+**/*.pdf
