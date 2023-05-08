@@ -34,10 +34,36 @@
 
 % Quotation styles
 
+
+% Quotation styles
 \usepackage{framed}
+\usepackage{xkeyval} % To define custom key-value pairs
+
+\makeatletter
+% Define the keys
+\define@key{myquote}{page}{\def\mypage{#1}}
+\define@key{myquote}{sline}{\def\mysline{#1}}
+\define@key{myquote}{eline}{\def\myeline{#1}}
+\presetkeys{myquote}{page=Unknown, sline=Unknown, eline=}{}
+
 \let\oldquote=\quote
 \let\endoldquote=\endquote
-\renewenvironment{quote}{\begin{fquote}\advance\leftmargini -2.4em\begin{oldquote}}{\end{oldquote}\end{fquote}}
+\renewenvironment{quote}[1][]{%
+    \setkeys{myquote}{#1}% Process the keys
+    \begin{fquote}
+    \ifx\myeline\empty
+        \noindent\textbf{Page: \mypage, Line: \mysline} \\
+    \else
+        \noindent\textbf{Page: \mypage, Line: \mysline\textasciitilde\myeline} \\
+    \fi
+    \advance\leftmargini -2.4em
+    \begin{oldquote}
+}{
+    \end{oldquote}
+    \end{fquote}
+}
+\makeatother
+
 
 \usepackage{xcolor}
 \newenvironment{fquote}
