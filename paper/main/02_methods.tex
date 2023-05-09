@@ -1,3 +1,5 @@
+% chktex-file 46
+
 To develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three aspects (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 using change point detection methods. The normalized Indicator for each dimension affects the IWGI by changing trends and contributions.
 
 \subsection{Integrated Water Governance Index (IWGI)}
@@ -10,7 +12,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 
 	We selected an indicator ($I_x$, $x=S$, $P$, or $A$, corresponding to stress, purpose, and allocation, respectively) to quantify the aspects effectively. Then, the above equation was transformed into a natural logarithm to facilitate calculation:
 	\begin{equation}
-		Transformation \propto ln(I_S) + ln(I_P) + ln(I_A)
+		Transformation \propto \ln(I_S) + \ln(I_P) + \ln(I_A)
 	\end{equation}
 
 	Then, the Integrated Water Governance Index (IWGI) is an average of the normalized indicators $I'_x$:
@@ -20,11 +22,11 @@ To develop a comprehensive and straightforward approach to identifying water gov
 
 	where:
 	\begin{equation}
-		I'_x = (I_x - I_{x, min}) / (I_{x, max} - I_{x, min})
+		I'_x = (I_x - I_{x, \min}) / (I_{x, \max} - I_{x, \min})
 	\end{equation}
 
 	\subsubsection*{Indicator of stress}
-	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., (2019) to evaluate water stress \cite{qin2019}. This metric considers management measures (such as the construction of reservoirs) and the impact of changes in water use structure on the evaluation of water scarcity. Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information S1}). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
+	We used the scarcity-flexibility-variability (SFV) water stress index proposed in Qin et al., (2019) to evaluate water stress~\cite{qin2019}. This metric considers management measures (such as the construction of reservoirs) and the impact of changes in water use structure on the evaluation of water scarcity. Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information S1}). For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
@@ -43,14 +45,13 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	To describe allocations $I_A$, we designed an indicator based on entropy, called Allocation Entropy Metric (AEM), which measures the degree of evenness in water allocation:
 
 	\begin{equation}
-		I_A = CEM = \sum_{i=1}^N -log(p_{i}) * p_{i}
+		I_A = CEM = \sum_{i=1}^N - \log(p_{i}) * p_{i}
 	\end{equation}
 
 	where $p_{i}$ is the water proportion of region $i$ to the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Supporting Information S1}).
 
 	\subsection{Change points detection}
-		With no assumptions about the distribution of the data, we applied the Pettitt (1979) approach of change-point detection to detect a single change-point in hydrological time series with continuous data
-        \cite{pettitt1979}.
+		With no assumptions about the distribution of the data, we applied the Pettitt (1979) approach of change-point detection to detect a single change-point in hydrological time series with continuous data~\cite{pettitt1979}.
 		It tests $H0$: The variables follow one or more distributions with the exact location parameter (no change) against the alternative: a change point exists.
 		Mathematically, when a sequence of random variables is divided into two segments represented by $\mathrm{x}_{1}, \mathrm{x}_{1}, \ldots, x_{t_{0}}$ and $x_{t_{0}+1}, x_{t_{0}+2}, \ldots, x_{T}$, if each segment has a common distribution function, i.e., $F_1(x)$, $F_2(x)$ and $F_1(x) \neq F_2(x)$, then the change point is identified at $t_0$. To achieve the identification of change point, a statistical index $U_{t,T}$ is defined as follows:
 
@@ -63,7 +64,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 			\operatorname{sgn}(\theta)= \begin{cases}1 & \text { if } \theta>0 \\ 0 & \text { if } \theta=0 \\ -1 & \text { if } \theta<0\end{cases}
 		\end{equation}
 
-		The most probable change point $\tau$ is found where its value satisfies $K_{\tau} = max|U_{t, T}|$ and the significance probability associated with value $K_{\tau}$ is approximately evaluated as:
+		The most probable change point $\tau$ is found where its value satisfies $K_{\tau} = \max|U_{t, T}|$ and the significance probability associated with value $K_{\tau}$ is approximately evaluated as:
 		\begin{equation}
 			p=2 \exp \left(\frac{-6 K_{\tau}^{2}}{T^{2}+T^{3}}\right)
 		\end{equation}
