@@ -86,7 +86,7 @@
 %
 %  Uncomment the following command to allow illustrations to print
 %   when using Draft:
- \setkeys{Gin}{draft=false}
+\setkeys{Gin}{draft=true}
 %
 % You may need to use one of these options for graphicx depending on the driver program you are using.
 %
@@ -114,101 +114,10 @@
 %(a.b.smith@hwr.arizona.edu)}
 
 \begin{document}
+\noindent\textbf{\large{Supplementary Information for}}
 
-%% ------------------------------------------------------------------------ %%
-%
-%  TITLE
-%
-%% ------------------------------------------------------------------------ %%
-
-%\includegraphics{agu_pubart-white_reduced.eps}
-
-\graphicspath{{/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020/figures/}}
-\title{Supporting Information for ``Identifying regime transitions for water governance at a basin scale''}
-%
-% e.g., \title{Supporting Information for "Terrestrial ring current:
-% Origin, formation, and decay $\alpha\beta\Gamma\Delta$"}
-%
-%DOI: 10.1002/%insert paper number here%
-
-%% ------------------------------------------------------------------------ %%
-%
-%  AUTHORS AND AFFILIATIONS
-%
-%% ------------------------------------------------------------------------ %%
-
-
-% List authors by first name or initial followed by last name and
-% separated by commas. Use \affil{} to number affiliations, and
-% \thanks{} for author notes.
-% Additional author notes should be indicated with \thanks{} (for
-% example, for current addresses).
-
-% Example: \authors{A. B. Author\affil{1}\thanks{Current address, Antartica}, B. C. Author\affil{2,3}, and D. E.
-% Author\affil{3,4}\thanks{Also funded by Monsanto.}}
-
-\authors{
-      Shuang Song\affil{1},
-      Shuai Wang\affil{1},
-      Xutong Wu\affil{1},
-      yongping Wei\affil{2},
-      Graeme S. Cumming\affil{3},
-      Yue Qin\affil{4},
-      Xilin Wu\affil{5},
-      Bojie Fu\affil{1,5}
-}
-
-
-\affiliation{1}{
-      State Key Laboratory of Earth Surface Processes and Resource Ecology,
-      Beijing Normal University,
-      Beijing, 100875, Beijing, China.
-}
-\affiliation{2}{
-      School of Earth and Environmental Sciences,
-      The University of Queensland,
-      Brisbane, 4067, QLD, Australia.
-}
-\affiliation{3}{
-      ARC Centre of Excellence for Coral Reef Studies,
-      James Cook University,
-      Townsville, 4811, QLD, Australia.
-}
-\affiliation{4}{
-      College of Environmental Sciences and Engineering,
-      Peking University,
-      Beijing, 100875, Beijing, China.
-}
-\affiliation{5}{
-      State Key Laboratory of Urban and Regional Ecology,
-      Research Center for Eco-Environmental Sciences,
-      Chinese Academy of Sciences,
-      Beijing, 100875, Beijing, China.
-}
-
-
-
-
-%% ------------------------------------------------------------------------ %%
-%
-%  BEGIN ARTICLE
-%
-%% ------------------------------------------------------------------------ %%
-
-% The body of the article must start with a \begin{article} command
-%
-% \end{article} must follow the references section, before the figures
-%  and tables.
-
+\input{../metadata.tex}
 \begin{article}
-
-%% ------------------------------------------------------------------------ %%
-%
-%  TEXT
-%
-%% ------------------------------------------------------------------------ %%
-
-
 
 \noindent\textbf{Contents of this file}
 %%%Remove or add items as needed%%%
@@ -218,13 +127,6 @@
 \item Tables S1 to S2
 %if Tables are larger than 1 page, upload as separate excel file
 \end{enumerate}
-% \noindent\textbf{Additional Supporting Information (Files uploaded separately)}
-% \begin{enumerate}
-% \item Captions for Datasets S1 to Sx
-% \item Captions for large Tables S1 to Sx (if larger than 1 page, upload as separate excel file)
-% \item Captions for Movies S1 to Sx
-% \item Captions for Audio S1 to Sx
-% \end{enumerate}
 
 \noindent\textbf{Introduction}
 %Type or paste your text here. The introduction gives a brief overview of the supporting information. You should include information %about as many of the following as possible (when appropriate):
@@ -232,16 +134,10 @@
 % 2. information about when and how the data were collected or created;
 % 3. a general description of processing steps used;
 % 4. any known imperfections or anomalies in the data.
-When calculating the indicators (especially the SFV water stress index and the allocation entropy metric), we should use data at a lower (regional scale in this study) spatial scale. Therefore, we divide the YRB into four regions: source region (SR), upper region (UR), middle region (MR), and lower region (LR), according to characteristics and customary practices in the \ref{secA1}.
-The formulation in detail for applying the SFV-index is available in the \ref{secA2}.
-We used multiple sources of datasets in this study, \\textit{Supporting Information}~\ref{secA3} introduces where they came from and how we harmonise them for analysis.
-%\clearpage
+When calculating the indicators (especially the SFV water stress index and the allocation entropy metric), we should use data at a lower (regional scale in this study) spatial scale. Therefore, we divide the YRB into four regions: source region (SR), upper region (UR), middle region (MR), and lower region (LR), according to characteristics and customary practices in the~\ref{secA1}.
+The formulation in detail for applying the SFV-index is available in the~\ref{secA2}.
+We used multiple sources of datasets in this study, \\textit{Supporting Information}~\ref{secA3} introduces where they came from and how we harmonies them for analysis.
 
-%Delete all unused file types below. Copy/paste for multiples of each file type as needed.
-
-%Type or paste text here. This should be additional explanatory text, such as: extended descriptions of results, full details of models, extended lists of acknowledgements etc.  It should not be additional discussion, analysis, interpretation or critique. It should not be an additional scientific experiment or paper.
-%
-%Repeat for any additional Supporting Text
 \noindent\textbf{YRB Regions}\label{secA1}
 \input{01_yrb.tex}
 
@@ -253,8 +149,7 @@ We used multiple sources of datasets in this study, \\textit{Supporting Informat
       \includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
       \caption{
           Numbers of new reservoirs in each year.
-      }
-      \label{fig:reservoirs}
+      }\label{fig:reservoirs}
   \end{figure}
 
   \begin{figure}
@@ -263,10 +158,9 @@ We used multiple sources of datasets in this study, \\textit{Supporting Informat
       \caption{
           Sensitivity analysis of the threshold of p-values.
           \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
-          \textbf{B.} Threshold of p-values $\alpha=0.0005$.
-          \textbf{C.} Threshold of p-values $\alpha=0.05$.
-      }
-      \label{fig:sensitivity}
+          \textbf{B.} Threshold of p-values \(\alpha=0.0005\).
+          \textbf{C.} Threshold of p-values \(\alpha=0.05\).
+      }\label{fig:sensitivity}
   \end{figure}
 
 
@@ -311,277 +205,7 @@ We used multiple sources of datasets in this study, \\textit{Supporting Informat
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 %
-\bibliography{/Users/songshgeo/Documents/Pycharm/WGRegimes_YRB_2020/paper/main/mybibtex.bib}
-%
-% no need to specify bibliographystyle
-%
-% Note that ALL references in this supporting information file must also be referenced in the primary manuscript
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% if you get an error about newblock being undefined, uncomment this line:
-%\newcommand{\newblock}{}
-
-% \bibliography{ uncomment this line and enter the name of your bibtex file here }
-
-
-
-
-%Reference citation instructions and examples:
-%
-% Please use ONLY \cite and \citeA for reference citations.
-% \cite for parenthetical references
-% ...as shown in recent studies (Simpson et al., 2019)
-% \citeA for in-text citations
-% ...Simpson et al (2019) have shown...
-% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
-%
-%
-%...as shown by \citeA{jskilby}.
-%...as shown by \citeA{lewin76}, \citeA{carson86}, \citeA{bartoldy02}, and \citeA{rinaldi03}.
-%...has been shown \cite<e.g.,>{jskilbye}.
-%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
-%...has been shown \cite{lewin76,carson86,bartoldy02,rinaldi03}.
-%
-% apacite uses < > for prenotes, not [ ]
-% DO NOT use other cite commands (e.g., \citet, \citep, \citeyear, \nocite, \citealp, etc.).
-%
-
-%% ------------------------------------------------------------------------ %%
-%
-%  END ARTICLE
-%
-%% ------------------------------------------------------------------------ %%
+\bibliography{../mybibtex.bib}
 \end{article}
 \clearpage
-
-% Copy/paste for multiples of each file type as needed.
-
-% enter figures and tables below here: %%%%%%%
-%
-%
-%
-%
-% EXAMPLE FIGURES
-% ---------------
-% If you get an error about an unknown bounding box, try specifying the width and height of the figure with the natwidth and natheight options.
-% \begin{figure}
-%\setfigurenum{S1} %%You can change number for each figure if you want, not required. "S" prepended automatically.
-% \noindent\includegraphics[natwidth=800px,natheight=600px]{samplefigure.eps}
-%\caption{caption}
-%\label{epsfiguresample}
-%\end{figure}
-%
-%
-% Giving latex a width will help it to scale the figure properly. A simple trick is to use \textwidth. Try this if large figures run off the side of the page.
-% \begin{figure}
-% \noindent\includegraphics[width=\textwidth]{anothersample.png}
-%\caption{caption}
-%\label{pngfiguresample}
-%\end{figure}
-%
-%
-%\begin{figure}
-%\noindent\includegraphics[width=\textwidth]{athirdsample.pdf}
-%\caption{A pdf test figure}
-%\label{pdffiguresample}
-%\end{figure}
-%
-% PDFLatex does not seem to be able to process EPS figures. You may want to try the epstopdf package.
-%
-%
-% ---------------
-% EXAMPLE TABLE
-%
-%\begin{table}
-%\settablenum{S1} %%Change number for each table
-%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
-%\centering
-%\begin{tabular}{l c}
-%\hline
-% Run  & Time (min)  \\
-%\hline
-%  $l1$  & 260   \\
-%  $l2$  & 300   \\
-%  $l3$  & 340   \\
-%  $h1$  & 270   \\
-%  $h2$  & 250   \\
-%  $h3$  & 380   \\
-%  $r1$  & 370   \\
-%  $r2$  & 390   \\
-%\hline
-%\end{tabular}
-%\tablenotetext{a}{Footnote text here.}
-%\end{table}
-% ---------------
-%
-% EXAMPLE LARGE TABLE (UPLOADED SEPARATELY)
-%\begin{table}
-%\settablenum{S1} %%Change number for each table
-%\caption{Time of the Transition Between Phase 1 and Phase 2\tablenotemark{a}}
-%\end{table}
-
-
 \end{document}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-More Information and Advice:
-
-%% ------------------------------------------------------------------------ %%
-%
-%  SECTION HEADS
-%
-%% ------------------------------------------------------------------------ %%
-
-% Capitalize the first letter of each word (except for
-% prepositions, conjunctions, and articles that are
-% three or fewer letters).
-
-% AGU follows standard outline style; therefore, there cannot be a section 1 without
-% a section 2, or a section 2.3.1 without a section 2.3.2.
-% Please make sure your section numbers are balanced.
-% ---------------
-% Level 1 head
-%
-% Use the \section{} command to identify level 1 heads;
-% type the appropriate head wording between the curly
-% brackets, as shown below.
-%
-%An example:
-%\section{Level 1 Head: Introduction}
-%
-% ---------------
-% Level 2 head
-%
-% Use the \subsection{} command to identify level 2 heads.
-%An example:
-%\subsection{Level 2 Head}
-%
-% ---------------
-% Level 3 head
-%
-% Use the \subsubsection{} command to identify level 3 heads
-%An example:
-%\subsubsection{Level 3 Head}
-%
-%---------------
-% Level 4 head
-%
-% Use the \subsubsubsection{} command to identify level 3 heads
-% An example:
-%\subsubsubsection{Level 4 Head} An example.
-%
-%% ------------------------------------------------------------------------ %%
-%
-%  IN-TEXT LISTS
-%
-%% ------------------------------------------------------------------------ %%
-%
-% Do not use bulleted lists; enumerated lists are okay.
-% \begin{enumerate}
-% \item
-% \item
-% \item
-% \end{enumerate}
-%
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATIONS
-%
-%% ------------------------------------------------------------------------ %%
-
-% Single-line equations are centered.
-% Equation arrays will appear left-aligned.
-
-Math coded inside display math mode \[ ...\]
- will not be numbered, e.g.,:
- \[ x^2=y^2 + z^2\]
-
- Math coded inside \begin{equation} and \end{equation} will
- be automatically numbered, e.g.,:
- \begin{equation}
- x^2=y^2 + z^2
- \end{equation}
-
-% IF YOU HAVE MULTI-LINE EQUATIONS, PLEASE
-% BREAK THE EQUATIONS INTO TWO OR MORE LINES
-% OF SINGLE COLUMN WIDTH (20 pc, 8.3 cm)
-% using double backslashes (\\).
-
-% To create multiline equations, use the
-% \begin{eqnarray} and \end{eqnarray} environment
-% as demonstrated below.
-\begin{eqnarray}
-  x_{1} & = & (x - x_{0}) \cos \Theta \nonumber \\
-        && + (y - y_{0}) \sin \Theta  \nonumber \\
-  y_{1} & = & -(x - x_{0}) \sin \Theta \nonumber \\
-        && + (y - y_{0}) \cos \Theta.
-\end{eqnarray}
-
-%If you don't want an equation number, use the star form:
-%\begin{eqnarray*}...\end{eqnarray*}
-
-% Break each line at a sign of operation
-% (+, -, etc.) if possible, with the sign of operation
-% on the new line.
-
-% Indent second and subsequent lines to align with
-% the first character following the equal sign on the
-% first line.
-
-% Use an \hspace{} command to insert horizontal space
-% into your equation if necessary. Place an appropriate
-% unit of measure between the curly braces, e.g.
-% \hspace{1in}; you may have to experiment to achieve
-% the correct amount of space.
-
-
-%% ------------------------------------------------------------------------ %%
-%
-%  EQUATION NUMBERING: COUNTER
-%
-%% ------------------------------------------------------------------------ %%
-
-% You may change equation numbering by resetting
-% the equation counter or by explicitly numbering
-% an equation.
-
-% To explicitly number an equation, type \eqnum{}
-% (with the desired number between the brackets)
-% after the \begin{equation} or \begin{eqnarray}
-% command.  The \eqnum{} command will affect only
-% the equation it appears with; LaTeX will number
-% any equations appearing later in the manuscript
-% according to the equation counter.
-%
-
-% If you have a multiline equation that needs only
-% one equation number, use a \nonumber command in
-% front of the double backslashes (\\) as shown in
-% the multiline equation above.
-
-%% ------------------------------------------------------------------------ %%
-%
-%  SIDEWAYS FIGURE AND TABLE EXAMPLES
-%
-%% ------------------------------------------------------------------------ %%
-%
-% For tables and figures, add \usepackage{rotating} to the paper and add the rotating.sty file to the folder.
-% AGU prefers the use of {sidewaystable} over {landscapetable} as it causes fewer problems.
-%
-% \begin{sidewaysfigure}
-% \includegraphics[width=20pc]{samplefigure.eps}
-% \caption{caption here}
-% \label{label_here}
-% \end{sidewaysfigure}
-%
-%
-%
-% \begin{sidewaystable}
-% \caption{}
-% \begin{tabular}
-% Table layout here.
-% \end{tabular}
-% \end{sidewaystable}
-%
-%
