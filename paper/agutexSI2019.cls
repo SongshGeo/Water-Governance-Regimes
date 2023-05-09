@@ -1240,10 +1240,10 @@ $$%
 \newif\iffullwidthtable
 \def\table{\def\tabular{\tabletextsize\xtabular}
 \let\endtabular\endxtabular
-\expandafter\def\csname tabular*\endcsname ##1{%
+\expandafter\def\csname tabulARs\endcsname ##1{%
 \global\setbox\savecurrtable\hbox\bgroup\tabletextsize%
 \def\@halignto{to ##1}\@tabular}
-\expandafter \let \csname endtabular*\endcsname = \endxtabular
+\expandafter \let \csname endtabulARs\endcsname = \endxtabular
 \def\label##1{\gdef\catchlabel{##1}}
 \def\caption##1{\gdef\catchcaption{##1}}%
 \tabletextsize%\@float{table}
