@@ -1,4 +1,5 @@
 % chktex-file 10
+% chktex-file 1
 \documentclass{article}
 	\def\papertitle{Identifying regime transitions for water governance at a basin scale}
 	\def\authors{Shuang Song, Shuai Wang*, Xutong Wu, Yongping Wei, Graeme S. Cumming, Yue Qin, Xilin Wu, Bojie Fu}
@@ -64,8 +65,10 @@ For example, climate change may alter water scarcity levels and make it more dif
 Additionally, adapting to climate change could lead to societal transformations, prompting a reevaluation of governance strategies that increasingly focus on industrial and economic development (priority).
 We have now addressed these topics in our discussion, illustrating the various ways in which climate change influences the adaptive capacity of a basin and its subsequent governance requirements.
 
-\begin{quote}
-	Climate change may alter water scarcity levels and make it more difficult to effectively allocate water resources due to extreme climate events.
+\begin{quote}[page=3, sline=83, eline=88]
+	\DIFadd{An important reason for developing this new index is practices of water governance changes throughout development under a hybrid of social and natural drivers.
+	First, besides climate change impacts embedded in current water yield concerns, water stress is also tightly related to an }\DIFaddend increasingly insatiable demands from economic activities\DIFdelbegin \DIFdel{such as irrigation and industry; water storage can resolve some but not all of these issues
+	}\DIFdelend \DIFaddbegin \DIFadd{, while developing water storage to release the stress~}\DIFaddend~\cite{qin2019,wada2014,huang2021}.
 \end{quote}
 
 \begin{figure}[!htb]
@@ -81,13 +84,15 @@ We have now addressed these topics in our discussion, illustrating the various w
 % 结果是总结性的。我建议提供更多关于三个指数和IWGI结果的信息。例如，三个指标的结果，以及分区域的结果。请解释IS、IP、IA和IWGI这三个指标的范围，以及不同数值的含义。这些细节可以帮助读者理解结果的合理性。
 \RC{} The results are summative. I would suggest providing more information on the results of the three indices and the IWGI.\ For example, the results of the three indices, and the results for the sub-regions. And please explain the range of the three indicators, IS, IP, IA, and the IWGI, and the meanings of different values. These details could help readers understand the reasonability of the results.
 
+% 感谢您指出这一点，非常抱歉过于总结性的手稿带来的困惑。
 % 在新的手稿中，我们将各指数的情况总结到补充材料，并在正文中对有关各指数情况的图表总结。
-% 再方法中补充了指标的取值范围（三个子指标的变化范围都是0～1）。
-\AR{} Thanks for point it out! Now
+% 在方法中，我们补充了指标的取值范围（三个子指标的变化范围都是0～1）。
+\AR{} Thank you for pointing this out, and we apologize for the confusion caused by the overly conclusive manuscript. In the revised manuscript, we have summarized the indicators by graphs with description in supplementary material:in the supplementary material.
 
+% TODO 这里记得写一下是哪几个附图
 \AR*{} Figure SX to SX are three indicators changing trends with different regions' contribution.
 
-\AR*{} Ranges of three indicators and meaning of their values are further explained in the methodology section, now:
+\AR*{} In the method, we added the value range of the index. Ranges of three indicators and meaning of their values are further explained in the methodology section, now:
 
 \begin{quote}[page=1, sline=1]
 	Methods
@@ -221,4 +226,6 @@ However, our
 % 结论:对定量分析的结果进行了描述，但是Discussion中的叙事分析似乎没有得到充分的体现。建议对此添加几行。
 \RC{} Conclusion: The results of the quantitative analysis are described, but the narrative analysis in the Discussion does not seem to be fully reflected. It is recommended to add a few lines about it.
 
+\bibliography{../../../mybib.bib}
+\bibliographystyle{apacite}
 \end{document}

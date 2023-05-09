@@ -45,7 +45,7 @@
 % (If you are submitting to a journal other than jgrga,
 % substitute the initials of the journal for "jgrga" below.)
 
-\documentclass[draft,wrr]{agutexSI2019}
+\documentclass[draft,wrr]{../agutexSI2019}
 \usepackage{amsmath}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
@@ -145,24 +145,58 @@ We used multiple sources of datasets in this study, \\textit{Supporting Informat
 \input{02_indicator.tex}
 
 \begin{figure}[tb]
-      \centering
-      \includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
-      \caption{
-          Numbers of new reservoirs in each year.
-      }\label{fig:reservoirs}
-  \end{figure}
+\centering
+\includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
+\caption{
+      Numbers of new reservoirs in each year.
+}\label{fig:reservoirs}
+\end{figure}
 
-  \begin{figure}
-      \centering
-      \includegraphics[width=\linewidth]{sup/sensitivity.pdf}
-      \caption{
-          Sensitivity analysis of the threshold of p-values.
-          \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
-          \textbf{B.} Threshold of p-values \(\alpha=0.0005\).
-          \textbf{C.} Threshold of p-values \(\alpha=0.05\).
-      }\label{fig:sensitivity}
-  \end{figure}
+\begin{figure}
+\centering
+\includegraphics[width=\linewidth]{sup/sensitivity.pdf}
+\caption{
+      Sensitivity analysis of the threshold of p-values.
+      \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
+      \textbf{B.} Threshold of p-values \(\alpha=0.0005\).
+      \textbf{C.} Threshold of p-values \(\alpha=0.05\).
+}\label{fig:sensitivity}
+\end{figure}
 
+% 构成稀缺情况的指标（SFV指数）在研究时段（包括三个不同时期）内呈现出先降低、然后迅速增加、最后再次略微降低的变化趋势（图~\ref{ch4:fig:scarcity}~A），表明水资源压力先减少再迅速增加，后趋于稳定。
+% 源区、上游、中游、下游这四个不同的区域中（图~\ref{ch4:fig:scarcity}~B），源区对三个时段的SFV指标变化几乎没有贡献，下游也仅在治理转变时期和适应增强时期呈现微弱的负向贡献。
+% 对稀缺情况影响最大的是黄河的上游和中游，上游在集中供水时期和治理转变时期都是SFV变化的最大贡献区域，中游则在适应增强时期做出最大贡献。
+The index of scarcity (SFV index) in the study period (including three different periods) showed A change trend of first decreasing, then rapidly increasing, and finally slightly decreasing again (Figure~\ref{fig:scarcity}~A), indicating that water resource pressure first decreased, then rapidly increased, and then stabilized.
+In the four different regions (Figure~\ref{fig:scarcity}~B), the source region has almost no contribution to SFV index changes in the three periods, and the downstream region only has a weak negative contribution in the governance transition period and the adaptation enhancement period.
+The upper and middle reaches of the Yellow River had the greatest impact on the scarcity. The upper reaches made the greatest contribution to SFV change in the period of centralized water supply and governance change, while the middle reaches made the greatest contribution in the period of adaptation enhancement.
+
+
+% 在用水目的上，供给性用水比例在集中供水时期基本保持不变，但在治理转变时期和适应增强时期呈现迅速下降的趋势（图\ref{ch4:fig:priority}~A）。
+% 三个时段都是由灌溉用水的变化主导了该比例变化，城市、农村的人居用水、农村牲畜用水等几乎对该比例的变化没有影响（图\ref{ch4:fig:allocation}~B）。
+In terms of water use purpose, the proportion of supply water remained basically unchanged in the period of centralized water supply, but showed A rapid decline in the period of governance transformation and adaptation enhancement (Figure~\ref{fig:priority}~A).
+In the three periods, the change of irrigation water dominated the change of the proportion, while urban and rural water for human settlements and rural livestock had almost no influence on the change of the proportion (Figure~\ref{fig:allocation}~B).
+
+% 分配方式的指标变化呈现明显“V形”趋势，表明黄河的源区、上游、中游、下游之间水资源呈现先逐渐远离均匀分配，又在2000年后逐渐趋于平均的变化过程（图\ref{ch4:fig:allocation}）。
+The index change of distribution mode showed an obvious ``V-shaped'' trend, indicating that water resources in the source region, upper, middle and lower reaches of the Yellow River first gradually moved away from uniform distribution, and then gradually tended to average distribution after 2000 (Figure~\ref{fig:allocation}).
+
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{sup/priority.jpg}
+\caption{Changing trend of the indicator of priority}\label{fig:priority}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{sup/allocation.png}
+\caption{Changing trend of the indicator of allocation}\label{fig:allocation}
+\end{figure}
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=\textwidth]{sup/scarcity.png}
+\caption{Changing trend of the indicator of stress}\label{fig:scarcity}
+\end{figure}
 
 \noindent\textbf{Datasets}\label{secA3}
 \input{03_datasets.tex}
