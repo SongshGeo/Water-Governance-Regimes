@@ -9,17 +9,44 @@
 
 \graphicspath{{/Users/songshgeo/Documents/VSCode/WGRegimes_YRB_2020/figures/}}
 
-\section{Associate Editor}\label{editor}
 \input{source/editor}
 
-\newpage
-\section{Reviewer \#1}\label{reviewer_1}
-\input{source/reviewer_1}
+\include{source/reviewer_1}
 
-\newpage
-\section{Reviewer \#2}\label{reviewer_2}
-\input{source/reviewer_2}
+\include{source/reviewer_2}
 
-\bibliography{../mybib.bib}
+\bibliography{../mybibtex.bib}
 \bibliographystyle{apacite}
+
+\appendix
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[width=\textwidth]{sup/sf_measured_runoff.jpg}
+	\caption{
+		\textbf{a.} Measured runoff of different regions in the Yellow River Basin from 1965 to 2013.
+		\textbf{b.} Measured runoff of different regions under different water governance regimes.
+		\textbf{c.} Natural river runoff of different regions under different water governance regimes.
+	}\label{fig:runoff}
+\end{figure}
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{sup/priority.jpg}
+	\caption{Changing trend of the indicator of priority}\label{fig:priority}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{sup/allocation.png}
+	\caption{Changing trend of the indicator of allocation}\label{fig:allocation}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{sup/scarcity.png}
+	\caption{Changing trend of the indicator of stress}\label{fig:scarcity}
+\end{figure}
+
+
 \end{document}
