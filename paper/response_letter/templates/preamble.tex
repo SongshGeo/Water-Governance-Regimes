@@ -16,12 +16,12 @@
 % Citation
 \usepackage{apacite}
 
-% Table
+% % Table
 
 \usepackage{adjustbox} % center large tables across textwidth by surrounding tabular with \begin{adjustbox}{center}
-\renewcommand{\arraystretch}{1.5} % enlarge spacing between rows
-\usepackage{caption}
-\captionsetup[table]{skip=10pt} % enlarge spacing between caption and table
+% \renewcommand{\arraystretch}{1.5} % enlarge spacing between rows
+% \usepackage{caption}
+% \captionsetup[table]{skip=10pt} % enlarge spacing between caption and table
 
 % Section styles
 
@@ -81,9 +81,9 @@
 
 % Table styles
 
-\let\oldtabular=\tabular
-\let\endoldtabular=\endtabular
-\renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
+% \let\oldtabular=\tabular
+% \let\endoldtabular=\endtabular
+% \renewenvironment{tabular}[1]{\begin{adjustbox}{center}\begin{oldtabular}{#1}}{\end{oldtabular}\end{adjustbox}}
 
 \makeatletter
 \newcommand{\AR}{\@ifstar{\@ARstar}{\@AR}}
