@@ -28,7 +28,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	Since the IWGI essentially comprises by three aspects' indicator with same weights, its prerequisite is to keep the same data source for each indicator throughout time, to ensure time series continuity.
 	However, vary data sources can be used when estimating the specific indicator or cross different indicators, which makes IWGI a flexible framework for substituted indicators.
 
-	\subsubsection*{Indicator of stress}
+	\subsubsection{Indicator of stress (IS)}
 	We used the scarcity-flexibility-variability (SFV) water stress index proposed by \citeA{qin2019} to evaluate water stress.
 	This indicator integrates the share of runoff being consumed, the share of consumption in these inflexible categories and the historical variability of runoff weighted by storage capacity~\cite{qin2019}, where impacts from both management measures and climate changes are included.
 	% 这个指数得到了许多应用，是就我们已知范围内考虑因素最为齐全的，反应水资源压力的指数。
@@ -40,9 +40,37 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
 
-	Where $SFV_i$ is the SFV-index for region $i$, and the detailed calculation of $SFV_i$ can be found in the \textit{Supporting Information S2}.
+	Where $SFV_i$ is the scarcity-flexibility-variability (SFV) index of region $i$. By taking water flexibility and variability into account, the SFV focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses~\cite{qin2019}. To apply this method, we need to combine three metrics following:
 
-	\subsubsection*{Indicator of purpose}
+	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \\textit{Supporting Information}~\ref{secA1}):
+	\begin{equation}
+		A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}}
+	\end{equation}
+
+	Second, for flexibility, $B_{i, j}$ is the inflexible water use $WU_{inflexible}$ (i.e.\ for thermal power plants or humans and livestock) as a proportion of average multi-year runoff, in year $i$ and region $j$:
+	\begin{equation}
+		B_{i, j} = \frac{WU_{i, j, inflexible}}{R_{i, avg}}
+	\end{equation}
+
+	Finally for variability, the capacity of the reservoir and the positive effects of storage on natural runoff fluctuations are also considered.
+	\begin{gather}
+	C_i = C1_i * (1 - C2_i) \\
+	C1_{i, j} = \frac{R_{i, std}}{R_{i, avg}} \\
+	C2_{i} = \frac{RC_{i}}{R_{i, avg}}, \ if RC < R_{i, avg} \\
+	C2_{i} = 1, \ if RC >= R_{i, avg}
+	\end{gather}
+
+	In all the equations above, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
+
+	Finally, assuming three metrics (scarcity, flexibility and variability) have the same weights, we can calculate the $SFV$ index after normalizing them:
+	\begin{gather}
+		V = \frac{A_{normalize} + B_{normalize} + C_{normalize}}{3}\\
+		a = \frac{1}{V_{\max} - V_{\min}};\\
+		b = \frac{1}{V_{\min} - V_{\max}} * V_{\min}\\
+		SFV = a * V + b
+	\end{gather}
+
+	\subsubsection{Indicator of purpose (IP)}
 	To quantify purpose $I_P$, we used Non-Provisioning purpose Shares (NPS) of water use as an indicator. While provisioning purpose water use ($WU_{pro}$) includes domestic, irrigated, and livestock water uses, non-provisioning purpose water use ($WU_{non-pro}$) includes industrial and urban services water uses. We calculated the NPS as:
 	\begin{equation}
 		NPS = \frac{WU_{pro}}{WU_{pro} + WU_{non-pro}}
@@ -50,7 +78,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 
 	In this study, we consider livestock water use, rural and urban domestic water use, and agricultural water use as provisioning water because they directly service for survival. Others are non-provisioning: services and industrial water use because they mainly service the economy.
 
-	\subsubsection*{Indicator of allocations}
+	\subsubsection{Indicator of allocations (IA)}
 	To describe allocations $I_A$, we designed an indicator based on entropy, called Allocation Entropy Metric (AEM), which measures the degree of evenness in water allocation:
 
 	\begin{equation}
