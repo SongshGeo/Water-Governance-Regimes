@@ -88,7 +88,27 @@ For clarity, we first modified our expression of SFV-index, which is the indicat
 % 本研究中使用的数据似乎有不同的时间段，大多数数据来自2013年之前。近十年来，黄河的水文状况和水治理应该发生了重大变化。因此，结合近十年的结果将使这项研究更加可靠。
 \RC{} The data used in this study seem to have different time periods, and most data are from before 2013. The hydrological regime and water governance in the Yellow River should have changed significantly in the recent decade. Therefore, incorporating the result from the recent decade would make this study more solid.
 
-\AR{} Multiple-source dataset.
+% 感谢审稿人的宝贵建议，但出于以下原因，我们无法在新的手稿中将研究时段后延至今
+\AR{} Thanks for the reviewer's valuable advice, but for the following reasons, we are unable to postpone the study period to date in the main text. Instead, we added robustness test by using different-source data in supplementary material.
+
+% 首先，本研究结论希望展现黄河水治理演变过程，尤其是重点关注1978到2001年之间的治理转型过程。尽管许多数据能在近二十年间计算IWGI，但代价是忽略了更远的时间段。而正如我们在新手稿的方法部分所补充说明的，使用不同的数据源容易造成时间不连续的问题（通常它们的统计口径是不一样的）。
+\AR*{} Firstly, the conclusion of this study aims to show the evolution process of water governance of the Yellow River, especially focusing on the governance transformation between 1978 and 2001. Although many dataset allow IWGI to be calculated over the last two decades, the cost is to ignore the more important past periods. In addition, it's difficult to assimilate the different data sources because datasets usually have different statistical approach when categorizing water use sectors. Now, we added an explanation in the methods section of the new manuscript:
+
+\begin{quote}
+	Since the IWGI essentially comprises by three aspects' indicator with same weights, its prerequisite is to keep the same data source for each indicator throughout time, to ensure time series continuity.
+\end{quote}
+
+\AR*{} Secondly, as the reviewer noticed, we used multiple-source dataset to implement our approach, which means time periods of a coherent analysis is limited by the shortest data. To cover study period from 1960s to 2000s, water use data developed by \citeA{zhou2020} is the most good quality and widely used dataset. The shortage, however, is not enough to cover the period after 2013. We contacted the original author team, but only confirmed that latest dataset is still unavailable. As some of the source data used to produce this crucial dataset could not be easily supplemented, this was not an effort that could be supplemented in this study. Therefore, we decided to keep the analysis discontinued in 2013 in main texts:
+
+\begin{quote}
+	Another limitation is the lack of latest datasets which is coherent with the historical datasets, so our analysis had to discontinued in 2013 despite potential shifts existing.
+\end{quote}
+
+\AR*{} Last, we tried our best to strengthen robustness of this study despite the above limitations. We calculated IWGI by using another data source for the past two decades. Since our results suggest no significant regime change, we think it is robust that the YRB experienced two significant water governance regime changes.
+
+\begin{quote}
+	As a supplement, we examined IWGI framework with fewer datasets from different source in recent decades where showing no significant regime changes (supplementary Figure~\ref{fig:summary}).  % TODO 补充材料新图
+\end{quote}
 
 \subsection{Major concern \#4}
 % 这三个指标之间可能存在相互作用/相互联系。作者是否检查了指标之间的关系?
@@ -102,7 +122,7 @@ For clarity, we first modified our expression of SFV-index, which is the indicat
 	By analyzing the correlation of the integrated management index (IWGI) and its three sub-indexes: stress (IS), priority (IP) and allocation (IA) in three different periods, namely, the massive supply regime (P1: $1965 \sim 1978$), governance transforming regime (P2: $1979 \sim 2001$) and adaptation oriented regime (P3: $2002 \sim 2013$), the following results are obtained.
 
 	When we focus on the correlation from P1 to P3, the results show significant negative correlation between IS and IP (correlation coefficient is $r = -0.75$, $p < 0.01$), indicating that there is a strong negative relationship between IS and IP.\
-	On the other hand, there is a significant positive correlation between IA and IWGI (correlation coefficients are $r = 0.75$, $p < 0.01$), indicating a positive relationship between IA and IWGI. However, the correlations of other combinations are not statistically significant overall.
+	On the other hand, there is a significant positive correlation between IA and IWGI (correlation coefficients are $r = 0.75$, $p < 0.01$), indicating a positive relationship between IA and IWGI.\ However, the correlations of other combinations are not statistically significant overall.
 
 	The correlations between time periods are very different with the overall trend above.
 	There is no significant correlation between any indicator combinations in the massive supply regime (P1).
@@ -188,11 +208,11 @@ However, as we have shown in Table~\ref{tab:corr}, the relationship between IS, 
 \subsection{Detailed issues}
 
 % 我没有在引用的文献中找到“用水的三个核心方面”。这三个方面是作者提出的吗?
-\RC{} Line 57-62: I did not find the "three core aspects of water use" in the cited reference. Were the three aspects put forward by the authors?
+\RC{} Line 57\-62: I did not find the ``three core aspects of water use'' in the cited reference. Were the three aspects put forward by the authors?
 
 \RC{} Line 92: missing information for the citation?
 
-\RC{} Line 94-95: the sentence is unclear.
+\RC{} Line 94\-95: the sentence is unclear.
 
 \RC{} Line 121: Repeated citation Qin et al. 2019.
 
@@ -200,7 +220,7 @@ However, as we have shown in Table~\ref{tab:corr}, the relationship between IS, 
 
 \RC{} Equation (6): Why is the numerator WUpro not WUnon-pro? Please check the equation.
 
-\RC{} Equation (7): CEM => AEM?
+\RC{} Equation (7): CEM => AEM?\
 
 \RC{} Line 154: Please explain the source of irrigated area data.
 
