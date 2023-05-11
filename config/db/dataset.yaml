@@ -15,3 +15,8 @@ contribution:
   S: data/results/contribution_S.csv
   P: data/results/contribution_P.csv
   A: data/results/contribution_A.csv
+
+
+year_book:
+  gw: "data/province_groundwater_withdraw_2003-2017.csv"
+  sw: "data/province_runoff_withdraw_2003-2017.csv"

@@ -27,6 +27,9 @@ def integrated_water_governance_index(
         raise KeyError("'norm' must be 'log_zscore' or 'zscore'")
     results["IWGI"] = results.sum(axis=1) / 3
     breakpoints = pettitt_changes(results["IWGI"])
+    if len(breakpoints) == 0:
+        results["stage"] = "P1"
+        return results
     results.loc[results.index < breakpoints[0], "stage"] = "P1"
     results.loc[
         (breakpoints[0] <= results.index) & (results.index < breakpoints[1]),

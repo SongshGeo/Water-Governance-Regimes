@@ -49,7 +49,7 @@ def calculate_yearly_indices(region_consumption: pd.DataFrame, year: int) -> dic
     }
 
 
-def calc_regional_entropy(city_yr: pd.DataFrame) -> pd.DataFrame:
+def calc_regional_entropy(city_yr: pd.DataFrame, wu_cols: list = None) -> pd.DataFrame:
     """
     计算每年各区域的总用水，并计算区域间、部门间以及总体的水资源分配熵指数。
 
@@ -69,8 +69,9 @@ def calc_regional_entropy(city_yr: pd.DataFrame) -> pd.DataFrame:
                   - "Sectors": 总体熵指数
                   - "Ratio": 区域间与部门间熵指数之比
     """
-    wu_cols = ["IRR", "IND", "DOM"]
-    city_yr["DOM"] = city_yr["RUR"] + city_yr["URB"]  # 人居耗水
+    if wu_cols is None:
+        wu_cols = ["IRR", "IND", "DOM"]
+        city_yr["DOM"] = city_yr["RUR"] + city_yr["URB"]  # 人居耗水
     region_consumption = city_yr.groupby(["Year", "Region"])[wu_cols].sum()  # 每个区域的总耗水量
 
     results = {
