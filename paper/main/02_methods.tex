@@ -1,6 +1,6 @@
 % chktex-file 46
 
-To develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three aspects (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 using change point detection methods. The normalized Indicator for each dimension affects the IWGI by changing trends and contributions.
+To develop a comprehensive and straightforward approach to identifying water governance regimes. First, we constructed the Integrated Water Governance Index (IWGI) based on three aspects (Stress, Purpose, and Allocation, see Figure~\ref{fig:framework}). Then, we analyzed the changes in the IWGI from 1965 to 2013 using change point detection methods. The normalized indicator for each dimension affects the IWGI by changing trends and contributions.
 
 \subsection{Integrated Water Governance Index (IWGI)}
 
@@ -20,7 +20,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		IWGI = (I'_S + I'_P + I'_A) / 3
 	\end{equation}
 
-	where:
+	where $I'_x$ is calculated by Min-Max normalization of $I_x$ (thus ranges from zero to one):
 	\begin{equation}
 		I'_x = (I_x - I_{x, \min}) / (I_{x, \max} - I_{x, \min})
 	\end{equation}
