@@ -3,7 +3,8 @@ runoff: data/hydrology/1956-2016_runoff.csv
 reservoirs: data/hydrology/cum_reservoirs.csv
 clean_reservoirs: "data/hydrology/clean_reservoirs.csv"
 consumptions: data/consumptions.csv
-
+policy: data/policy.xlsx
+events: data/processed/big_events.csv
 
 results:
   S: data/results/index_S.csv
