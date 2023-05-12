@@ -40,7 +40,8 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
 	\end{equation}
 
-	Where $SFV_i$ is the scarcity-flexibility-variability (SFV) index of region $i$. By taking water flexibility and variability into account, the SFV focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses~\cite{qin2019}. To apply this method, we need to combine three metrics following:
+	Where $SFV_i$ is the scarcity-flexibility-variability (SFV) index of region $i$. By taking water flexibility and variability into account, the SFV focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses~\cite{qin2019}. To apply this method, we need to combine three metrics: scarcity, flexibility and variability.
+	In all the equations following, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
 
 	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \\textit{Supporting Information}~\ref{secA1}):
 	\begin{equation}
@@ -59,8 +60,6 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	C2_{i} = \frac{RC_{i}}{R_{i, avg}}, \ if RC < R_{i, avg} \\
 	C2_{i} = 1, \ if RC >= R_{i, avg}
 	\end{gather}
-
-	In all the equations above, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
 
 	Finally, assuming three metrics (scarcity, flexibility and variability) have the same weights, we can calculate the $SFV$ index after normalizing them:
 	\begin{gather}
@@ -85,7 +84,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		I_A = AEM = \sum_{i=1}^N - \log(p_{i}) * p_{i}
 	\end{equation}
 
-	where $p_{i}$ is the water proportion of region $i$ to the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Supporting Information S1}).
+	where $p_{i}$ is the proportion of regional water use in $i$ to water use of the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Supporting Information S1}).
 
 	\subsection{Change points detection}
 		We applied the Pettitt (1979) approach to detect change-points of IWGI within continuous data, since this method has no assumptions about the distribution of the data~\cite{pettitt1979}.
