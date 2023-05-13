@@ -41,7 +41,7 @@
 % Quotation styles
 \usepackage{framed}
 \usepackage{xkeyval} % To define custom key-value pairs
-
+\usepackage{xstring}
 \makeatletter
 % Define the keys
 \define@key{myquote}{page}{\def\mypage{#1}}
@@ -55,7 +55,11 @@
     \setkeys{myquote}{#1}% Process the keys
     \begin{fquote}
     \ifx\myeline\empty
+      \IfInteger{\mypage}{
         \noindent\textbf{Page: \mypage, Line: \mysline} \\
+      }{
+        \noindent\textbf{\mypage}
+      }
     \else
         \noindent\textbf{Page: \mypage, Line: \mysline\textasciitilde\myeline} \\
     \fi

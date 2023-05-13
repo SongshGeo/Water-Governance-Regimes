@@ -16,18 +16,16 @@
 % 导言:与流域和水资源相关的指标有很多，其中一些指标具有与治理和政策相关的参数。为了突出你所制定的IWGI的新颖性，也许你可以加上对其他相关指标的审查。
 \RC{} Introduction: There are many indicators related to watersheds and water resources, some of which have parameters related to governance and policy. To highlight the novelty of the IWGI that you have developed, perhaps you could add a review of other relevant indicators.
 
-\AR{} Thanks for valuable suggestion. We now added a whole paragraph to the introduction:  % TODO 检查引用
+\AR{} Thanks for valuable suggestion. We now added a whole paragraph to the introduction:
 
-\begin{quote}
-    Responding the questions for better water governance practices, previous studies can divide into two categories of comprehensive indicators by focusing on water systems or governance systems.
-    From the governance side, an integrated index can explicitly denote what practices are effecting water governance.
-    However, a comprehensive and detailed list of the key components for assessment of water governance is rare, hence quantitative studies usually propose indexes by using proxy dataset of human activities as a simpler way~\cite{varis2019}.
-    A qualitative approach to the assessment of water governance can list more elements regarding to water governance, where OECD's index and assessment dataset are the most widely used. % todo cite OECD
-    From the water side, intuitive indexes can provide an embodiment of governance outcomes.
-    Water stress is the most widely concerned aspect, which has been far developed in comprehensive index when incorporating human's regulation step by step.
-    As instances, traditional water stress index only demands and supply, water scarcity index by involving accessibility, and SFV-index further integrated flexibility.
-    These easy-to-use indexes of water stress, however, seem to have difficulty in providing a comprehensive characterization of the above water governance aspects without concerning its social usage (i.e., water use purpose and water allocation).
-    Standing from water side for comprehensively quantify governance outcomes, here we aim to develop an integrated water governance index to identify its changes by involving apportions of water uses between regions and sectors.
+\begin{quote}[page=2, sline=60, eline=77]
+    Research into index-based water governance assessment generally fall into two categories: those that focus on water systems, and those that concentrate on governance systems.
+    On one hand, studies on governance systems typically employ an qualitative assessment to demonstrate what practices influence water governance, e.g., the OECD framework~\cite{oecd2018a}.
+    For quantitative studies, due to the lack of comprehensive and detailed information on key components for water governance assessment, these studies often resort to proxy datasets of human activities to create simpler indices~\cite{varis2019,huggins2020}.
+    On the other hand, studies focusing on water systems utilize intuitive indices to encapsulate the outcomes of governance, like the most widely concerned -water stress has been far developed by incorporating human's regulation step by step.
+    Specifically, traditional water stress index only demands and supply~\cite{gleick1996}, water scarcity index by involving storage~\cite{damkjaer2017}, and the even more integrated SFV-index includes flexibility~\cite{qin2019}.
+    Despite their usefulness, these water stress indices tend not to provide a comprehensive characterization of water governance, as they overlook the social aspect of water usage, i.e., the purpose and allocation of water use.
+    As a solution, we propose an integrated water governance index (IWGI) that factors in regional water use allocations and sectoral water use purpose, thereby offering a more comprehensive quantification of governance outcomes.
 \end{quote}
 
 \subsection{Comment \#3}
@@ -36,22 +34,21 @@
 
 \AR{} Thanks for the comment. ``CEM'' should be ``AEM'' -the indicator we applied for IA.\ This has been revised in the new manuscript:
 
-\begin{quote}
-    \begin{equation}
-		I_A = AEM = \sum_{i=1}^N - \log(p_{i}) * p_{i}
-	\end{equation}
+\begin{quote}[page=6, sline=163, eline=164]
+    To describe allocations $I_A$, we designed an indicator based on entropy, called Allocation Entropy Metric (AEM), which measures the degree of evenness in water allocation:
+    \[I_A = AEM = \sum_{i=1}^N - \log(p_{i}) * p_{i}\]
 \end{quote}
 
 \AR*{} Also, sorry about the misunderstanding term. We modified the sentence with ``water proportion'' to:
 
-\begin{quote}
+\begin{quote}[page=6, sline=165, eline=166]
     where $p_{i}$ is the proportion of regional water use in $i$ to water use of the whole basin (here, $N=4$ considering divided regions in the YRB, see \textit{Supporting Information S1}).
 \end{quote}
 
 % 很抱歉关于SFV计算的部分也造成了困惑。实际上我们提到了这些符号的意义，只不过是在所有公式之后。这的确会造成误解，因此在返修后的文章中我们将这段叙述放到了公式之前：
 \AR*{} Sorry that the part about SFV calculation also caused confusion. We actually mentioned the meaning of these symbols, but only after all the equations since they shared the same symbols. This indeed can be misleading, so in the revised article we put this statement before the formula:
 
-\begin{quote}
+\begin{quote}[page=6, sline=154, eline=156]
     In all the equations following, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
 \end{quote}
 
@@ -61,7 +58,7 @@
 
 \AR{} Thanks for pointing it out! Pettitt approach was applied to IWGI time series data. We now clarify that in the method section:
 
-\begin{quote}
+\begin{quote}[page=7, sline=168, eline=170]
     We applied the Pettitt (1979) approach to detect change-points of IWGI within continuous data, since this method has no assumptions about the distribution of the data~\cite{pettitt1979}.
 \end{quote}
 
@@ -74,7 +71,7 @@
 
 \AR*{} To make that more explicit, we modified the corresponding description in the Supplementary Materials:
 
-\begin{quote}
+\begin{quote}[page=Supplementary Materials]
     In addition, for capturing more specific water governance practices in the YRB had been recorded in ``Yellow River Events'' by the YRCC;\ we collected these documents from \url{http://www.yrcc.gov.cn/hhyl/hhjs/}.
     The original documents of those ``Events'' come from the Yellow River Conservancy Commission (YRCC), the agency that manages the YRB, which records and compiles ``major events'' related to the river. This study only recorded the number of these ``events'' year by year according to the time they occurred.
 \end{quote}
@@ -85,20 +82,20 @@
 
 \AR{} Thanks for the suggestion. We now append refers in discussion when figure 3 is supporting:
 
-\begin{quote}
-    During the massive supply regime with lower water stress ($1965 \sim 1978$ in the YRB), water governance thus tended to boost water supply for services (mainly provisioning purposes then -livestock and crops) by constructing reservoirs and channels (Figure~\ref{fig:Causes}~B).
+\begin{quote}[page=10, sline=247, eline=250]
+    During the massive supply regime with lower water stress ($1965 \sim 1978$ in the YRB), water governance thus tended to boost water supply for services (mainly provisioning purposes then -livestock and crops) by constructing reservoirs and channels (Figure~3~B).
 \end{quote}
 
-\begin{quote}
-    The rapid expansion of irrigated farmland and water diversion facilities in the same decade brought the overburdened YRB close to a critical point (Figure~\ref{fig:Causes}), where increasing supply to meet demand was impractical~\cite{loch2020}.
+\begin{quote}[page=10, sline=253, eline=255]
+    The rapid expansion of irrigated farmland and water diversion facilities in the same decade brought the overburdened YRB close to a critical point (Figure~3), where increasing supply to meet demand was impractical~\cite{loch2020}.
 \end{quote}
 
-\begin{quote}
-    The start of the governance transforming regime (P2: $1979 \sim 2001$) coincided with rising competition for water use after the ``reform and opening-up'' (Figure~\ref{fig:Causes}~C).
+\begin{quote}[page=10, sline=260, eline=261]
+    The start of the governance transforming regime (P2: $1979 \sim 2001$) coincided with rising competition for water use after the ``reform and opening-up'' (Figure~3~C).
 \end{quote}
 
-\begin{quote}
-    As a pioneer in shifting governing institutions, the YRB triggered institutional changes during this regime. These include, for example, slowing the growth of irrigated acreage and leading water-saving infrastructure (Figure~\ref{fig:Causes});
+\begin{quote}[page=10, sline=264, eline=268]
+    As a pioneer in shifting governing institutions, the YRB triggered institutional changes during this regime. These include, for example, slowing the growth of irrigated acreage and leading water-saving infrastructure (Figure~3);
 \end{quote}
 
 \subsection{Comment \#7}
@@ -126,7 +123,7 @@
 % 很抱歉之前的手稿造成了此困惑，我们现在在返修后的手稿中增加了以下内容，以便更清晰地说明
 \AR{} I'm sorry for the confusion caused by the previous manuscript. We have now added the following content to the caption of that figure in revised manuscript:
 
-\begin{quote}
+\begin{quote}[page=Supplementary Materials]
     Transition schema in hydrosocial cycle and water governance regimes. The natural water cycle dominates blue pathways, while socio-economic feedback dominates red.
     The large circular arrows indicate the social and hydrological processes that dominate in different stages.
     Provisioning water includes water used by human, livestock and crops while non-provisioning water includes used by industry and service.
@@ -136,10 +133,10 @@
 
 \AR*{} In addition, other two sentences in discussion can make it clearer:
 
-\begin{quote}
-    To support water use in early stage (Figure~\ref{fig:summary}~A), strategies tend to manage natural water processes in order to maintain the provisioning (larger) and non-provisioning water (less).
-    At the later stage (Figure~\ref{fig:summary}~B), emphasis is governing across the whole basin, water governance practices are adaptively designed to meet the increasing needs of the socio-economic system and carried out.
-    With the above gradually shifting, the emergence of different regimes drives water governance challenges at a basin-scale: these were primarily economic and environmental before the transformation, but social and policy-related towards the end (Figure~\ref{fig:summary})~\cite{singh2019,porcher2019}.
+\begin{quote}[page=10, sline=289, eline=296]
+    To support water use in early stage (Figure~4~A), strategies tend to manage natural water processes in order to maintain the provisioning (larger) and non-provisioning water (less).
+    At the later stage (Figure~4~B), emphasis is governing across the whole basin, water governance practices are adaptively designed to meet the increasing needs of the socio-economic system and carried out.
+    With the above gradually shifting, the emergence of different regimes drives water governance challenges at a basin-scale: these were primarily economic and environmental before the transformation, but social and policy-related towards the end (Figure~4)~\cite{singh2019,porcher2019}.
 \end{quote}
 
 \subsection{Comment \#9}
@@ -148,7 +145,7 @@
 
 \AR{} Sure! Thanks for the valuable suggestion. We now added narrative analysis in the discussion to our conclusion:
 
-\begin{quote}
+\begin{quote}[page=13, sline=346, eline=353]
     During the massive supply regime (P1: $1965 \sim 1978$), water governance tended to boost water supply by constructing reservoirs and channels in the YRB.\
     Then, the start of the governance transforming regime (P2: $1979 \sim 2001$) coincided with rising competition for water use and led to institutional changes like water-saving improvements, water quota policies, and cross-boundary water transfer plans.
     Last, adaptation-oriented regime (P3: $2002 \sim 2013$) with stable high water stress resulted in trade-offs and joint regulating between water-dependent regions and sectors.
