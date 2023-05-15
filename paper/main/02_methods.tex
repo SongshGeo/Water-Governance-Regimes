@@ -34,7 +34,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	% 这个指数得到了许多应用，是就我们已知范围内考虑因素最为齐全的，反应水资源压力的指数。
 	The SFV-index, which has many applications, is the most comprehensive index of water stress we know. % todo citation
 
-	Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information S1}).
+	Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information Section~S1}).
 	For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
@@ -43,7 +43,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	Where $SFV_i$ is the scarcity-flexibility-variability (SFV) index of region $i$. By taking water flexibility and variability into account, the SFV focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses~\cite{qin2019}. To apply this method, we need to combine three metrics: scarcity, flexibility and variability.
 	In all the equations following, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
 
-	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \\textit{Supporting Information}~\ref{secA1}):
+	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \textit{Supporting Information Section S1}):
 	\begin{equation}
 		A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}}
 	\end{equation}
@@ -107,14 +107,14 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
 		%实际上这个阈值取0.001至0.1不会影响我们的结果，我们识别的断点是相当稳定的
-		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see Figure~\ref{SIfig:sensitivity}).
+		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see Figure~S6).
 
-	\subsection{Datasets}
+	\subsection{Datasets}\label{sec:datasets}
 
 	For calculating IWGI, three datasets were used: reservoirs, measured runoff, and water uses.
-	The reservoir dataset was collected by~\citeA{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Supplementary Materials Figure~\ref{SIfig:reservoirs}).
+	The reservoir dataset was collected by~\citeA{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Accessible with reasonable request).
 	Among all the reservoirs, YRCC labelled the ``major reservoirs'' which were constructed mainly for regulating and managing (see \url{http://www.yrcc.gov.cn/hhyl/sngc/}).
-	In addition, annual measured runoff data was collected from the Yellow River Sediment Bulletin (\url{http://www.yrcc.gov.cn/nishagonggao/}) and four controlling stations are measuring different reaches of the Yellow River (see Supplementary Materials Section~\ref{SIsecA1}).
+	In addition, annual measured runoff data was collected from the Yellow River Sediment Bulletin (\url{http://www.yrcc.gov.cn/nishagonggao/}) and four controlling stations are measuring different reaches of the Yellow River (see Supporting Informations Section~S1).
 	The water resources use dataset was from National Long-term Water Use Dataset of China (NLWUD) published by \citeA{zhou2020}, which includes water uses, water-consuming economic variables, and water use intensities by sectors the prefectures level.
 	We determined the prefectures belong to the YRB by filtering the NLWUD dataset with a threshold of $95\%$ intersected area.
 
@@ -123,4 +123,4 @@ To develop a comprehensive and straightforward approach to identifying water gov
 	Data of laws were collected from~\citeA{yellowriverwaterconservancycommission2010}, which reviewed all important laws at the basin scale related to the Yellow River from the last century.
 	The original documents of ``big events'' related to the Yellow River come from the YRCC, the agency at the basin scale, which recorded and compiled these events (\url{http://www.yrcc.gov.cn/hhyl/hhjs/}).
 
-	% We summarized the multiple-source dataset in Table~\ref{tab:datasets}.
+	We calculated the IWGI from 2001 to 2017 (the latest) in the Supporting Information Section S4 for robustness test with another water use dataset from Yellow River Water Resources Bulletin (\url{http://www.yrcc.gov.cn/zwzc/gzgb/gb/szygb/}).
