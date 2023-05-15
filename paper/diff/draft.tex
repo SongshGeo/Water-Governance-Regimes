@@ -16,7 +16,7 @@
 
 
 \graphicspath{{/Users/songshgeo/Documents/VSCode/WGRegimes_YRB_2020/figures}}
-\title{Identifying regime transitions for water governance: Take the Yellow River Basin in China as case}
+\title{Identifying regime transitions for water governance at the Yellow River Basin, China}
 
 
 
@@ -76,9 +76,9 @@
 
 
 \begin{keypoints}
-\item We developed an Integrated Water Governance Index (IWGI) to detect regime shifts in water governance.
-\item We interpret how water governance shifts within a rapidly-changing large river basin.
-\item We developed an approach to analyzing intertwines of water governance, hydrosocial transition, and human-water relationships.
+\item An Integrated Water Governance Index (IWGI) was devised to identify regime shifts in water governance practices.
+\item The study interprets the transformation of water governance within a rapidly evolving large river basin -the Yellow River Basin.
+\item A novel approach was developed to analyze the complex interconnections between water governance, hydrosocial transition, and human-water relationships.
 \end{keypoints}
 
 
@@ -187,7 +187,7 @@ As shown in the framework Figure~\ref{fig:framework}, the IWGI combines the thre
 	This indicator integrates the share of runoff being consumed, the share of consumption in these inflexible categories and the historical variability of runoff weighted by storage capacity~\cite{qin2019}, where impacts from both management measures and climate changes are included.
 The SFV-index, which has many applications, is the most comprehensive index of water stress we know.
 
-	Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information S1}).
+	Based on the hydrological and economic context of YRB, four second-level regions are divided (Source Region, Upper Region, Middle Region, and Lower Region, see \textit{Supporting Information Section~S1}).
 	For the whole YRB, the indicator of water stress $I_S$ is the average of all regions' SFV-index:
 	\begin{equation}
 		I_S = \frac{1}{4} * \sum_{i=1}^4 SFV_{i}
@@ -196,7 +196,7 @@ The SFV-index, which has many applications, is the most comprehensive index of w
 	Where $SFV_i$ is the scarcity-flexibility-variability (SFV) index of region $i$. By taking water flexibility and variability into account, the SFV focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses~\cite{qin2019}. To apply this method, we need to combine three metrics: scarcity, flexibility and variability.
 	In all the equations following, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
 
-	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \\textit{Supporting Information}~\ref{secA1}):
+	First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \textit{Supporting Information Section S1}):
 	\begin{equation}
 		A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}}
 	\end{equation}
@@ -259,10 +259,23 @@ The SFV-index, which has many applications, is the most comprehensive index of w
 		\end{equation}
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
-We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see \\textit{Supporting Information} Figure~S3).
+We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see Figure~S6).
 
-	\subsection{Datasets}
-Multiple sources of data were used in this study, and we have attached a summarized data table as Supporting Information and their processing are detailed described in the supplementary documentation.
+	\subsection{Datasets}\label{sec:datasets}
+
+	For calculating IWGI, three datasets were used: reservoirs, measured runoff, and water uses.
+	The reservoir dataset was collected by~\citeA{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Accessible with reasonable request).
+	Among all the reservoirs, YRCC labelled the ``major reservoirs'' which were constructed mainly for regulating and managing (see \url{http://www.yrcc.gov.cn/hhyl/sngc/}).
+	In addition, annual measured runoff data was collected from the Yellow River Sediment Bulletin (\url{http://www.yrcc.gov.cn/nishagonggao/}) and four controlling stations are measuring different reaches of the Yellow River (see Supporting Informations Section~S1).
+	The water resources use dataset was from National Long-term Water Use Dataset of China (NLWUD) published by \citeA{zhou2020}, which includes water uses, water-consuming economic variables, and water use intensities by sectors the prefectures level.
+	We determined the prefectures belong to the YRB by filtering the NLWUD dataset with a threshold of $95\%$ intersected area.
+
+	For analyzing its causes of changing water, irrigated area, gross added values of industry and services, and water use intensities data were also from NLWUD dataset~\cite{zhou2020}.
+	Besides, two water governance policies datasets are used: laws data and ``big events'' documents dataset.
+	Data of laws were collected from~\citeA{yellowriverwaterconservancycommission2010}, which reviewed all important laws at the basin scale related to the Yellow River from the last century.
+	The original documents of ``big events'' related to the Yellow River come from the YRCC, the agency at the basin scale, which recorded and compiled these events (\url{http://www.yrcc.gov.cn/hhyl/hhjs/}).
+
+	Finally, we calculated the IWGI from 2001 to 2017 (the latest) in the Supporting Information Section S4 for robustness test with another water use dataset from Yellow River Water Resources Bulletin (\url{http://www.yrcc.gov.cn/zwzc/gzgb/gb/szygb/}).
  \section{Results}\label{sec2}
 \subsection{Water governance regimes}\label{Res.1}
 
@@ -294,13 +307,14 @@ Taken together, the overall features of the three aspects in different periods a
 		\textbf{B.} Changes in gross values added (GVA) of industry and services (blue line) and their water use intensities ($WU/GVA$ WU divided by the GVA, the red dot line).
 		\textbf{C.} Completed time of each new reservoir and their located region's water use (LWU) percentages as a proportion of the total basinal water use (BWU) at that time. Dashed lines denote average of these percentages in different regimes. Red circles (Major Reservoirs) denote the reservoirs mainly for managing and regulating the whole basin.
 		The size of each circle indicates the magnitude of its water storage capacity.
-		\textbf{D.} Social atmosphere (red triangles) and national-level governance policies (the circles, different colours denote signed by different state institutions, see \textit{Supporting Information} Table~S2). The light grey bars count official documents related to the YRB on a basinal scale (the Yellow River Events).
+		\textbf{D.} Social atmosphere (red triangles) and national-level governance policies (the circles, different colours denote signed by different state agencies). The light grey bars count official documents related to the YRB on a basinal scale (the Yellow River Events).
 	}\label{fig:Causes}
 \end{figure*}
 
 The underlying causes of changes in the IWGI are different in the two regime shifts.
 Changing water demands and supply were critical to the shift between P1 and P2.
-As the dominant water demand during the P1, the area of irrigated agriculture in the YRB expanded rapidly at a rate of $0.25*10^6~ha/yr$ (Figure\ref{fig:Causes}~A), simultaneously supported by increasing supply through the construction of reservoirs (\textit{Supporting Information} Figure~S2). Ensuing the P2, however, the expansion of irrigated areas slowed down, and industry and services gradually took off (Figure\ref{fig:Causes}~A and B).
+As the dominant water demand during the P1, the area of irrigated agriculture in the YRB expanded rapidly at a rate of $0.25*10^6~ha/yr$ (Figure\ref{fig:Causes}~A), simultaneously supported by increasing supply through the construction of reservoirs.
+Ensuing the P2, however, the expansion of irrigated areas slowed down, and industry and services gradually took off (Figure\ref{fig:Causes}~A and B).
 Then, the efficiency of water use changed obviously from P2 to P3.
 Not only did irrigated areas continue to expand slowly during the P3 (Figure\ref{fig:Causes}~A), but industry and urban services also assumed a more vital economic role (represented by Gross Added Values, GVA) (Figure~\ref{fig:Causes}~B).
 Because of increased efficiency, however, they both experienced significant declines in water use for a unit irrigated area or unit production (Figure~\ref{fig:Causes}~A and Figure~\ref{fig:Causes}~B).
@@ -309,7 +323,7 @@ As a result, the differences between sectors and regions in water use reduced wh
 Environmental context, social atmosphere, and policies played roles in all three periods.
 We calculated the ratios of regional and basinal water use for each reservoir (R/B ratio) (Figure~\ref{fig:Causes}C), with a higher ratio representing a potential role in water supply rather than basinal regulations.
 Under the banner of ``conquering nature'' most of the reservoirs were built in regions with high water demands during the P1 (R/B ratios were significantly higher ($p<0.01$, see Figure~\ref{fig:Causes}C)).
-Ensuing the P2, the number of new reservoirs decreased but boosted their role in water regulating and management (more red circles in Figure~\ref{fig:Causes}~C, and larger water conveyance variability in Supporting Informations Figure~S7).  Basin policies significantly increased, rigorously controlled the allocation of water (Figure~\ref{fig:Causes}D, $p<0.01$ and \textit{Supporting Information} Figure~S2).
+Ensuing the P2, the number of new reservoirs decreased but boosted their role in water regulating and management (more red circles in Figure~\ref{fig:Causes}~C, and larger water conveyance variability in Supporting Informations Figure~S7).  Basin policies significantly increased, rigorously controlled the allocation of water (Figure~\ref{fig:Causes}D, $p<0.01$).
 During the P3, authorities proposed more national-level water governance policies under the guidance of the national strategy ``environmental regulation'' (Figure~\ref{fig:Causes}D).
 The regime shift from P1 to P2 is in line with the increasing water supply and demands; while driven by regulatory policies and efficiency enhancement under stable water stress from P2 to P3.
 
@@ -334,7 +348,7 @@ As a pioneer in shifting governing institutions, the YRB triggered institutional
 Consequently, although water stress remained and increased (due to reducing streamflow and flexibility), the last depletion of the Yellow River in 1999 led to a climax in this transformation in water governance~\cite{wang2019e}.
 
 The ensuing adaptation-oriented regime (P3: $2002 \sim 2013$) involved a significant societal shift in adapting to stable high water stress.
-Partially because of changed climate~\cite{han2023,liu2020c}, the runoff of the YRB was significantly lower than before when the overall water uses remained stable, which was an important reason for the rise of water stress in this stage (Supporting Informations Figure~\ref{fig:runoff} and Figure~\ref{fig:scarcity}).
+Partially because of changed climate~\cite{han2023,liu2020c}, the runoff of the YRB was significantly lower than before when the overall water uses remained stable, which was an important reason for the rise of water stress in this stage (Supporting Informations Figure~S2 and Figure~S3).
 Socio-economic trade-offs between water-dependent regions and sectors, however, played a more important role in this regime, so water governance had to achieve efficient water allocation while balancing different demands in the face of limited water supply~\cite{dalin2015,song2022}.
 Widespread reconstruction of resources in different industries and regions led to calls for adaptation in water governance, using the urgent requirements of adjusting rigid quota shares from the previous regime as an example~\cite{wang2019e}.
 Many national-level governance practices were proposed under the regime because the absence of such policies to support high-quality development became new a structural challenge for water governance~\cite{konar2019}.
@@ -412,7 +426,7 @@ Linking regime shifts to the underlying causes, the implementation of IWGI offer
 
 
 \section*{Open Research Section}
-All the used datasets and access source are listed in the \textit{SI Appendix} Table~S1 with a detailed description in \textit{Supporting Information S3}.
+All the used datasets and their links are detailed described in the Section~\ref{sec:datasets}.
 
 
 
@@ -420,10 +434,6 @@ All the used datasets and access source are listed in the \textit{SI Appendix} T
 Funding was provided by the National Natural Science Foundation of China (CN) (Grant Nos. NSFC 42041007).
 
 \bibliography{../mybibtex.bib}
-
-
-
-
 
 
 \end{document}
