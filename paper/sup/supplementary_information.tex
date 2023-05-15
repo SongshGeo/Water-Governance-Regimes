@@ -126,8 +126,7 @@
 %%%Remove or add items as needed%%%
 \begin{enumerate}
 \item Text S1 to S3
-\item Figures S1 to S3
-\item Tables S1 to S2
+\item Figures S1 to Figure~\ref{fig:conveyance}
 %if Tables are larger than 1 page, upload as separate excel file
 \end{enumerate}
 
@@ -137,93 +136,28 @@
 % 2. information about when and how the data were collected or created;
 % 3. a general description of processing steps used;
 % 4. any known imperfections or anomalies in the data.
-When calculating the indicators (especially the SFV water stress index and the allocation entropy metric), we should use data at a lower (regional scale in this study) spatial scale. Therefore, we divide the YRB into four regions: source region (SR), upper region (UR), middle region (MR), and lower region (LR), according to characteristics and customary practices in the~\ref{secA1}.
-The formulation in detail for applying the SFV-index is available in the~\ref{secA2}.
-We used multiple sources of datasets in this study, \\textit{Supporting Information}~\ref{secA3} introduces where they came from and how we harmonies them for analysis.
+Section~\ref{secA1} provides a brief introduction to four regions (Source Region, Upper Region, Middle Region, and Lower Region -SR, UR, MR, and LR) of the YRB.\
+Section~\ref{secA2} detailed explains the changing trend of three indicators.
+Section~\ref{secA3} describes the correlations between the three indicators and
+Section~\ref{secA4} provides some sensitivity analysis for testing robustness.
+
+% Based on vary characteristics, we divide the YRB into four regions: source region (SR), upper region (UR), middle region (MR), and lower region (LR), according to characteristics and customary practices in the~\ref{secA1}.
 
 \noindent\textbf{YRB Regions}\label{secA1}
 \input{01_yrb.tex}
 
-% \noindent\textbf{SFV-index}\label{secA2}
-% \input{02_indicator.tex}
-
-\begin{figure}[tb]
-\centering
-\includegraphics[width=0.6\linewidth]{sup/reservoirs.pdf}
-\caption{
-      Numbers of new reservoirs in each year.
-}\label{fig:reservoirs}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[width=\linewidth]{sup/sensitivity.pdf}
-\caption{
-      Sensitivity analysis of the threshold of p-values.
-      \textbf{A.} number of breakpoints in different p-values, the scheme with two-breakpoints are the dominant situation.
-      \textbf{B.} Threshold of p-values \(\alpha=0.0005\).
-      \textbf{C.} Threshold of p-values \(\alpha=0.05\).
-}\label{fig:sensitivity}
-\end{figure}
-
 \noindent\textbf{Trend of Indicators}\label{secA2}
+\input{02_indicator.tex}
 
-% 构成稀缺情况的指标（SFV指数）在研究时段（包括三个不同时期）内呈现出先降低、然后迅速增加、最后再次略微降低的变化趋势（图~\ref{ch4:fig:scarcity}~A），表明水资源压力先减少再迅速增加，后趋于稳定。
-% 源区、上游、中游、下游这四个不同的区域中（图~\ref{ch4:fig:scarcity}~B），源区对三个时段的SFV指标变化几乎没有贡献，下游也仅在治理转变时期和适应增强时期呈现微弱的负向贡献。
-% 对稀缺情况影响最大的是黄河的上游和中游，上游在集中供水时期和治理转变时期都是SFV变化的最大贡献区域，中游则在适应增强时期做出最大贡献。
-The index of stress (SFV indicator, IS) in the study period (including three different periods) showed a change trend of first decreasing, then rapidly increasing, and finally slightly decreasing again (Figure~\ref{fig:scarcity}~A), indicating that water resource pressure first decreased, then rapidly increased, and then stabilized.
-Among the four different regions (Figure~\ref{fig:scarcity}~B), the source region (SR) has almost no contribution to IS changes in the three periods, and the downstream region (DR) only has a weak negative contribution in the governance transforming regime and the adaptation oriented regime.
-The upper and middle reaches (UR and MR) had the greatest impact on the IS changes. Wherein, the upper region (UR) made the greatest contribution during the massive supply regime and governance transforming regime, while the middle reaches made the greatest contribution in adaptation oriented regime.
+\noindent\textbf{Correlation of Indicators}\label{secA3}
+\input{03_correlation.tex}
 
-
-% 在用水目的上，供给性用水比例在集中供水时期基本保持不变，但在治理转变时期和适应增强时期呈现迅速下降的趋势（图\ref{ch4:fig:purpose}~A）。
-% 三个时段都是由灌溉用水的变化主导了该比例变化，城市、农村的人居用水、农村牲畜用水等几乎对该比例的变化没有影响（图\ref{ch4:fig:allocation}~B）。
-In terms of water use purpose indicator, IP remained basically unchanged in a massive supply regime, but showed a rapid decline in the period of governance transformation and adaptation oriented regime (Figure~\ref{fig:purpose}~A).
-Throughout the three periods, the change of irrigation water dominated the change of the IP, while urban and rural water for human settlements and rural livestock had almost no influence on the change of IP (Figure~\ref{fig:allocation}~B).
-
-% 分配方式的指标变化呈现明显“V形”趋势，表明黄河的源区、上游、中游、下游之间水资源呈现先逐渐远离均匀分配，又在2000年后逐渐趋于平均的变化过程（图\ref{ch4:fig:allocation}）。
-The water allocation (IA) showed an obvious ``V-shaped'' trend, indicating that water resources in the different regions within the YRB first gradually moved away from uniform distribution, and then gradually tended to uniform distribution since 2000 (Figure~\ref{fig:allocation}).
+\noindent\textbf{Robustness}\label{secA4}
+\input{04_robustness.tex}
 
 
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{sup/priority.jpg}
-\caption{Changing trend of the indicator of purpose}\label{fig:purpose}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{sup/allocation.png}
-\caption{Changing trend of the indicator of allocation}\label{fig:allocation}
-\end{figure}
-
-\begin{figure}[htb]
-\centering
-\includegraphics[width=\textwidth]{sup/scarcity.png}
-\caption{Changing trend of the indicator of stress}\label{fig:scarcity}
-\end{figure}
-
-
-By analyzing the correlation of the integrated management index (IWGI) and its three sub-indexes: stress (IS), purpose (IP) and allocation (IA) in three different periods, namely, the massive supply regime (P1: $1965 \sim 1978$), governance transforming regime (P2: $1979 \sim 2001$) and adaptation oriented regime (P3: $2002 \sim 2013$), the following results are obtained.
-
-When we focus on the correlation from P1 to P3, the results show significant negative correlation between IS and IP (correlation coefficient is $r = -0.75$, $p < 0.01$), indicating that there is a strong negative relationship between IS and IP.
-On the other hand, there is a significant positive correlation between IA and IWGI (correlation coefficients are $r = 0.75$, $p < 0.01$), indicating a positive relationship between IA and IWGI. However, the correlations of other combinations are not statistically significant overall.
-
-The correlations between time periods are very different with the overall trend above.
-There is no significant correlation between any indicator combinations in the massive supply regime (P1).
-In the governance transforming regime (P2), there is a significant negative correlation between IS and IP (correlation coefficient $r = -0.90$, $p < 0.01$), a significant negative correlation between IS and IA (correlation coefficient $r = -0.87$, $p < 0.01$), and a significant positive correlation between IP and IA (correlation coefficient $r = 0.77$, $p < 0.01$).
-The correlations between IS and IP, IS and IA, and IS and IWGI were not statistically significant in the adaptation oriented regime (P3). However, there is a significant negative correlation between IP and IA (correlation coefficients are $r = -0.86$, $p < 0.01$).
-
-\input{../response_letter/source/tab_corr.tex}
-
-\begin{figure}[htb]
-      \centering
-      \includegraphics[width=0.8\textwidth]{sup/conveyance.png}
-      \caption{Monthly conveyance flow differences of the reservoirs mainly for managing and regulating the whole basin and their variability}\label{fig:conveyance}
-\end{figure}
-
-\noindent\textbf{Datasets}\label{secA3}
-\input{03_datasets.tex}
+% \noindent\textbf{Datasets}\label{secA3}
+% \input{03_datasets.tex}
 
 %%Enter Data Set, Movie, and Audio captions here
 %%EXAMPLE CAPTIONS

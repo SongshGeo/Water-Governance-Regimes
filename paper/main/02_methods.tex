@@ -107,9 +107,20 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
 		%实际上这个阈值取0.001至0.1不会影响我们的结果，我们识别的断点是相当稳定的
-		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see \\textit{Supporting Information} Figure~S3).
+		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the breakpoints we identified are robust (see Figure~\ref{SIfig:sensitivity}).
 
 	\subsection{Datasets}
-	% 本研究使用了多源数据，我们附上了一个数据表作为补充材料，并在补充文档中
-	% 为了计算 IWGI ，我们需要计算多个指标及子指标，所有使用的数据集都在表中列出，数据的详细介绍可见补充材料。
-	Multiple sources of data were used in this study, and we have attached a summarized data table as supplementary material and their processing are detailed described in the supplementary documentation.
+
+	For calculating IWGI, three datasets were used: reservoirs, measured runoff, and water uses.
+	The reservoir dataset was collected by~\citeA{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Supplementary Materials Figure~\ref{SIfig:reservoirs}).
+	Among all the reservoirs, YRCC labelled the ``major reservoirs'' which were constructed mainly for regulating and managing (see \url{http://www.yrcc.gov.cn/hhyl/sngc/}).
+	In addition, annual measured runoff data was collected from the Yellow River Sediment Bulletin (\url{http://www.yrcc.gov.cn/nishagonggao/}) and four controlling stations are measuring different reaches of the Yellow River (see Supplementary Materials Section~\ref{SIsecA1}).
+	The water resources use dataset was from National Long-term Water Use Dataset of China (NLWUD) published by \citeA{zhou2020}, which includes water uses, water-consuming economic variables, and water use intensities by sectors the prefectures level.
+	We determined the prefectures belong to the YRB by filtering the NLWUD dataset with a threshold of $95\%$ intersected area.
+
+	For analyzing its causes of changing water, irrigated area, gross added values of industry and services, and water use intensities data were also from NLWUD dataset~\cite{zhou2020}.
+	Besides, two water governance policies datasets are used: laws data and ``big events'' documents dataset.
+	Data of laws were collected from~\citeA{yellowriverwaterconservancycommission2010}, which reviewed all important laws at the basin scale related to the Yellow River from the last century.
+	The original documents of ``big events'' related to the Yellow River come from the YRCC, the agency at the basin scale, which recorded and compiled these events (\url{http://www.yrcc.gov.cn/hhyl/hhjs/}).
+
+	% We summarized the multiple-source dataset in Table~\ref{tab:datasets}.

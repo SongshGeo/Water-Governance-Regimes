@@ -1,22 +1,8 @@
+% chktex-file 46
 \subsection*{Descriptions}
 This study used multiple types of data (see Table~\ref{tab:datasets}): statistical datasets, hydrological datasets, and political datasets.
 
-\subsubsection*{Statistical datasets}
-% We used GDP data; water resources uses data extracted from the 2nd National Water Resources Assessment Program \cite{zhou2020} and statistical yearbooks \url{http://www.yrcc.gov.cn/other/hhgb/}.
-The water resources use dataset was published by Zhou et al. \cite{zhou2020}, which records water utilization in different sectors along with social-economic situations at the Prefectures level. 2nd National Water Resources Assessment Program mainly extracted this dataset launched in 2002, led by the National Development and Reform Commission and the Ministry of Water Resources (see ref (1) and \url{http://www.mwr.gov.cn/english/publs/} for more details). Since then, the statistics from the survey using the same criteria have been supplemented and harmonized with the 2013 administrative divisions.
-
-The data covers a total of subcategories of water use under four broad categories: agriculture (IRR), industry (IND), urban (URB) and rural (RUR) water use (see Zhou et al., for details \cite{zhou2020}).
-% There is uncertainty at the county scale for each disaggregated water use sector, but because the corrected data has been for statistical information using the water balance method, the data are adequate for the regional scale used in this study.
-
-\subsubsection*{Hydrological datasets}
-The reservoir dataset was collected by Wang et al. \cite{wang2019c}, which introduced includes the significant new reservoirs built in the YRB since 1949 (Figure~\ref{fig:reservoirs}). YRCC labelled the regulation-oriented reservoirs among them, see \url{http://www.yrcc.gov.cn/hhyl/sngc/}). In addition, annual runoff data derived from hydrological station measurements are the same as the datasets used in \cite{wang2019c} and \cite{wang2016e}.
-
-\subsubsection*{Political datasets}
-The policy dataset collects laws and policies listed in the book \cite{yellowriverconservancycommission2013}, which are related to the Yellow River basin promulgated and implemented by departments at (such as YRCC) and above (such as national institutions) at the Basin's level (Table~\ref{tab:policies}).
-In addition, for capturing more specific water governance practices in the YRB had been recorded in ``Yellow River Events'' by the YRCC;\ we collected these documents from \url{http://www.yrcc.gov.cn/hhyl/hhjs/}.
-The original documents of those ``Events'' come from the Yellow River Conservancy Commission (YRCC), the agency that manages the YRB, which records and compiles ``major events'' related to the river. This study only recorded the number of these ``events'' year by year according to the time they occurred.
-
-\subsection*{Methods S3. Harmonization}
+\subsection*{Data Harmonization}
 Due to the wide sources of our data set and the different spatial scales, we need to harmonize them into a practical scale.
 \begin{itemize}
     \item 1. Datasets at watersheds scales:
@@ -25,7 +11,7 @@ Due to the wide sources of our data set and the different spatial scales, we nee
         We calculate the area of each prefecture to determine whether they belong to a region, with the threshold of $95\%$:
 
         \begin{equation}
-            S_{ij} = MAX(S_ij / S_i)
+            S_{ij} = MAX(S_{ij} / S_i)
         \end{equation}
 
         Where $i$ refers to a specific prefecture and $j$ refers to a region within YRB, i.e. SR, UR, MR, or DR. $S_i$ refers to the area of perfect $i$, and $S_{ij}$ refers intersecting area between perfect $i$ and region $j$.
@@ -44,7 +30,7 @@ Due to the wide sources of our data set and the different spatial scales, we nee
     \end{itemize}
 \end{itemize}
 
-Finally, when we process the location data (i.e., the location data of the reservoirs), we judge the province it belongs to according to its location and then fit it to the regional scale.
+% Finally, when we process the location data (i.e., the location data of the reservoirs), we judge the province it belongs to according to its location and then fit it to the regional scale.
 
 \begin{table}[!htbp]
     \settablenum{S1}

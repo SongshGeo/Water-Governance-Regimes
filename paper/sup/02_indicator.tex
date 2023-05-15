@@ -1,29 +1,36 @@
-By taking water flexibility and variability into account, the scarcity-flexibility-variability (SFV) index focus more on dynamic responses to water resources in a developing perspective, which is a valid metric of temporal changes in water stresses \cite{qin2019}. To apply this method, we need to combine three metrics following:
 
-First, for scarcity, $A_{i, j}$ is the total water consumption as a proportion of regional multi-year average runoff volume in year $j$ and region $i$ (in this study, four regions in the YRB, \\textit{Supporting Information}~\ref{secA1}):
-\begin{equation}
-    A_{i, j} = \frac{WU_{i,j}}{R_{i, avg}}
-\end{equation}
+% 构成稀缺情况的指标（SFV指数）在研究时段（包括三个不同时期）内呈现出先降低、然后迅速增加、最后再次略微降低的变化趋势（图~\ref{ch4:fig:scarcity}~A），表明水资源压力先减少再迅速增加，后趋于稳定。
+% 源区、上游、中游、下游这四个不同的区域中（图~\ref{ch4:fig:scarcity}~B），源区对三个时段的SFV指标变化几乎没有贡献，下游也仅在治理转变时期和适应增强时期呈现微弱的负向贡献。
+% 对稀缺情况影响最大的是黄河的上游和中游，上游在集中供水时期和治理转变时期都是SFV变化的最大贡献区域，中游则在适应增强时期做出最大贡献。
+The index of stress (SFV indicator, IS) in the study period (including three different periods) showed a change trend of first decreasing, then rapidly increasing, and finally slightly decreasing again (Figure~\ref{fig:scarcity}~A), indicating that water resource pressure first decreased, then rapidly increased, and then stabilized.
+Among the four different regions (Figure~\ref{fig:scarcity}~B), the source region (SR) has almost no contribution to IS changes in the three periods, and the downstream region (DR) only has a weak negative contribution in the governance transforming regime and the adaptation oriented regime.
+The upper and middle reaches (UR and MR) had the greatest impact on the IS changes. Wherein, the upper region (UR) made the greatest contribution during the massive supply regime and governance transforming regime, while the middle reaches made the greatest contribution in adaptation oriented regime.
 
-Second, for flexibility, $B_{i, j}$ is the inflexible water use $WU_{inflexible}$ (i.e. for thermal power plants or humans and livestock) as a proportion of average multi-year runoff, in year $i$ and region $j$:
-\begin{equation}
-    B_{i, j} = \frac{WU_{i, j, inflexible}}{R_{i, avg}}
-\end{equation}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{sup/priority.jpg}
+    \caption{Changing trend of the indicator of purpose}\label{fig:purpose}
+\end{figure}
 
-Finally for variability, the capacity of the reservoir and the positive effects of storage on natural runoff fluctuations are also considered.
-\begin{gather}
-C_i = C1_i * (1 - C2_i) \\
-C1_{i, j} = \frac{R_{i, std}}{R_{i, avg}} \\
-C2_{i} = \frac{RC_{i}}{R_{i, avg}}, \ if RC < R_{i, avg} \\
-C2_{i} = 1, \ if RC >= R_{i, avg}
-\end{gather}
+% 在用水目的上，供给性用水比例在集中供水时期基本保持不变，但在治理转变时期和适应增强时期呈现迅速下降的趋势（图\ref{ch4:fig:purpose}~A）。
+% 三个时段都是由灌溉用水的变化主导了该比例变化，城市、农村的人居用水、农村牲畜用水等几乎对该比例的变化没有影响（图\ref{ch4:fig:allocation}~B）。
+In terms of water use purpose indicator, IP remained basically unchanged in a massive supply regime, but showed a rapid decline in the period of governance transformation and adaptation oriented regime (Figure~\ref{fig:purpose}~A).
+Throughout the three periods, the change of irrigation water dominated the change of the IP, while urban and rural water for human settlements and rural livestock had almost no influence on the change of IP (Figure~\ref{fig:allocation}~B).
 
-In all the equations above, $R_{i, avg}$ is the average runoff in region $i$, $RC_i$ is the total storage capacities of reservoirs in the region $i$, $R_{i, std}$ is the standard deviation of runoff in the region $i$.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.8\textwidth]{sup/allocation.png}
+    \caption{Changing trend of the indicator of allocation}\label{fig:allocation}
+\end{figure}
 
-Finally, assuming three metrics (scarcity, flexibility and variability) have the same weights, we can calculate the $SFV$ index after normalizing them:
-\begin{gather}
-    V = \frac{A_{normalize} + B_{normalize} + C_{normalize}}{3}\\
-    a = \frac{1}{V_{max} - V_{min}};\\
-    b = \frac{1}{V_{min} - V_{max}} * V_{min}\\
-    SFV = a * V + b
-\end{gather}
+% 分配方式的指标变化呈现明显“V形”趋势，表明黄河的源区、上游、中游、下游之间水资源呈现先逐渐远离均匀分配，又在2000年后逐渐趋于平均的变化过程（图\ref{ch4:fig:allocation}）。
+The water allocation (IA) showed an obvious ``V-shaped'' trend, indicating that water resources in the different regions within the YRB first gradually moved away from uniform distribution, and then gradually tended to uniform distribution since 2000 (Figure~\ref{fig:allocation}).
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{sup/scarcity.png}
+    \caption{
+        \textbf{Left} Changing trend of the indicator of stress (IS).
+        \textbf{Right} contributions of different region to the IS's changes.
+    }\label{fig:scarcity}
+\end{figure}
