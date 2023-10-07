@@ -15,7 +15,7 @@ Accurate Key Points: Yes
 
 Reviewer \#1 (Formal Review for Authors (shown to authors)):
 
-\RC{} The study on water governance stages relies heavily on the integrated index IWGI at the basin scale, which offers significant advantages for decision-making support. Nonetheless, in large basins, the index may obscure crucial details and spatial heterogeneity. For instance, averaging the water stress of areas with and without water stress could lead to a misleading "no water stress" result. To improve the discussion on water governance transition, I recommend the authors link the three periods to well-known phenomena or policies, such as the occurrence of zero-flow in the Yellow River.
+\RC{} The study on water governance stages relies heavily on the integrated index IWGI at the basin scale, which offers significant advantages for decision-making support. Nonetheless, in large basins, the index may obscure crucial details and spatial heterogeneity. For instance, averaging the water stress of areas with and without water stress could lead to a misleading ``no water stress'' result. To improve the discussion on water governance transition, I recommend the authors link the three periods to well-known phenomena or policies, such as the occurrence of zero-flow in the Yellow River.
 
 \AR{} We sincerely appreciate your constructive feedback and acknowledgment of our work. We concur that the IWGI index is designed to provide an overall understanding of the basin, and in this process, some spatial heterogeneity may indeed be overlooked.
 
@@ -23,11 +23,22 @@ Reviewer \#1 (Formal Review for Authors (shown to authors)):
 
 \RC{} Additionally, the current separation of periods using the Pettitt method for change point detection could be improved or compared to other methods, considering its sensitivity to time series changes.
 
-\AR{} Regarding the separation of periods using the Pettitt method for change point detection, we have taken your feedback into account. To address this, we have incorporated results from other change point detection techniques to demonstrate the robustness of our stage delineations, particularly in the context of the Yellow River basin. The updated results indicate a consistent pattern, reaffirming the credibility of our initial findings:
+\AR{} Regarding the separation of periods using the Pettitt method for change point detection, we have taken your feedback into account. To address this, we have incorporated results from other change point detection techniques to demonstrate the robustness of our stage delineations, particularly in the context of the Yellow River basin. The updated results indicate a consistent pattern, reaffirming the credibility of our initial findings.
+
+Specifically, we employed the Generalized ESD Test, Dynamic Programming, Binary Segmentation, and Bottom-Up Segmentation methods to identify the change points in our index. The Generalized ESD Test, which does not require the pre-specification of the number of change points, identified three significant points: 1975, 1978, and 2000. On the other hand, Dynamic Programming, Binary Segmentation, and Bottom-Up Segmentation, which require the pre-specification of the number of change points, consistently pointed to 1975 and 2000.
+
+We observed that the first change point identified by the Generalized ESD Test is close to 1975 and 1978. After careful consideration, we opted for 1978 as the first change point to ensure that the total number of years across the three identified periods is more balanced. This decision aligns with our objective to provide a more comprehensive and equitable analysis of the different time frames, thereby enhancing the robustness and reliability of our findings.
 
 \begin{quote}
-	The results from the Pettitt method are robust to the inclusion of other change point detection techniques.
+	We have also employed a series of popular breakpoint detection methods to validate the results obtained through the Pettitt test. The names of these methods, their respective results, and the references to the pertinent literature can be found in the accompanying table S2. A consensus was observed among all methods regarding the identification of the second breakpoint, which consistently emerged around the year 2000. There was a minor variation of three years in the identification of the first breakpoint, pinpointed either in 1975 or 1978.
+
+	% 我们综合考虑每个时间段的年份数量后，选择了较为居中的、识别出1977年作为第一个断点的 Pettitt 方法。但可以看得出，本研究所依赖的断点识别结果，对于算法选择的鲁棒性也足够强。
+	After a thorough evaluation, we opted for the Pettitt method, which identified 1977 as the first breakpoint. This decision was influenced by our intent to ensure a balanced distribution of the number of years across each identified period. The consistency in the identification of breakpoints, especially the second one, across different methods underscores the robustness of our findings, attesting to their insensitivity to the choice of the breakpoint detection algorithm. This robustness reinforces the credibility and reliability of our analyses and conclusions, reflecting the methodological rigor embedded in our study.
 \end{quote}
+
+We believe that the consistency in the change points identified by different methods, despite their varied approaches and assumptions, underscores the robustness of our period delineations. We have included these additional analyses in the revised manuscript to offer a more comprehensive view and address any concerns regarding the sensitivity of our results to the change point detection method employed.
+
+We hope this clarification and the additional analyses sufficiently address your concern, and we are open to further discussions to enhance the quality of our work.
 
 \subsection*{Specific comments}
 
@@ -35,10 +46,10 @@ Equation (5): Would adopting an area-weighted average be more appropriate in Equ
 
 Page 5: I guess WUi,j reflects water use (or water withdrawal) rather than water consumption.
 
-Page 10, Line 265-266: It is crucial to rectify the statement claiming lower water stress during Period 1 (P1) as it contradicts the occurrence of zero-flow in the river five times between 1972 and 1978, with an average duration of 13 days per occurrence. Furthermore, since 2000, zero-flow has not reappeared, which could be accounted for in the analysis.
+Page 10, Line 265\-266: It is crucial to rectify the statement claiming lower water stress during Period 1 (P1) as it contradicts the occurrence of zero-flow in the river five times between 1972 and 1978, with an average duration of 13 days per occurrence. Furthermore, since 2000, zero-flow has not reappeared, which could be accounted for in the analysis.
 
-Page 11, Line 308: Could you elaborate on "manage natural water processes"?
+Page 11, Line 308: Could you elaborate on ``manage natural water processes''?
 
-Page 11, Line 313-314: For better comprehension, consider listing some of the environmental, economic, social, and policy challenges faced during the various water governance stages.
+Page 11, Line 313\-314: For better comprehension, consider listing some of the environmental, economic, social, and policy challenges faced during the various water governance stages.
 
-Page 11, Line 314-317: Please clarify the purpose of this sentence to ensure its relevance to the discussion.
+Page 11, Line 314\-317: Please clarify the purpose of this sentence to ensure its relevance to the discussion.
