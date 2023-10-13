@@ -107,6 +107,7 @@ To develop a comprehensive and straightforward approach to identifying water gov
 		Given a certain significance level $\alpha$, if $p < \alpha$, we reject the null hypothesis and conclude that $x_{\tau}$ is a significant change point at level $\alpha$.
 
 		%实际上这个阈值取0.001至0.1不会影响我们的结果，我们识别的断点是相当稳定的
+		For robustness, we tried different change points detection methodologies~\cite{matteson2014,killick2012,bai1997,keogh2001} and the results are close (see \textit{Supporting Information~S4} and Table~S2).
 		We used $\alpha = 0.001$ as the threshold level of the p-value, meaning that the probability of a statistically significant change-point judgment being valid was more than $99.9\%$. We divided the series into two at that point and analyzed each series separately until all significant change points were detected. Though two break points in the main text with $\alpha = 0.001$, the threshold from $0.0005$ to $0.05$ does not affect our results, and the change points we identified are robust (see Figure~S6).
 
 	\subsection{Datasets}\label{sec:datasets}
